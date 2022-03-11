@@ -193,3 +193,15 @@ files\415_09_1models.html
 files\415_09_final.html
 files\index.html
 files\new.html
+core\gm82core.html
+core\gm82core_constants.html
+core\gm82core_globals.html
+core\gm82core_utility.html
+core\gm82core_files.html
+core\gm82core_colors.html
+core\gm82core_math.html
+core\gm82core_geometry.html
+core\gm82core_strings.html
+core\gm82core_windows.html
+core\gm82core_studio.html
+core\gm82core_license.html
