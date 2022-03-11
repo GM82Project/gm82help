@@ -1,1 +1,1 @@
-"C:\Program Files (x86)\HTML Help Workshop\hhc.exe" gmaker.hhp
+"C:\Program Files (x86)\HTML Help Workshop\hhc.exe" Game_Maker.hhp

@@ -9,11 +9,48 @@
 
 <!--START-->
 
+<h1>What is New in 8.2</h1>
+
+<p>
+    Version 8.2 of <i>Game Maker</i> has a lot of improvements and bug fixes over 8.1.          
+
+<h3>Changes</h3>                                                                                
+<ul>                                                                                            
+    <li>Added a completely new room editor, designed from the ground up</li><br>
+    <li>Added the ability to swap the order of create events and instance creation code             </li><br>
+    <li>Added Draw Self drag and drop action                                                        </li><br>
+    <li>Added buttons to access constants, triggers, included files and others to the main toolbar  </li><br>
+    <li>Added a new option for picking the default room settings when creating rooms                </li><br>
+    <li>Added the ability to select more fonts for the code editor                                  </li><br>
+    <li>Improved test run times: we measured 600% faster testing in some projects                   </li><br>
+    <li>Improved compression of game exes and gm81 files (around 5-10%)                             </li><br>
+    <li>Improved layout and wording in almost all editor windows                                    </li><br>
+    <li>Improved initial sizes and resize constraints of several editor windows and panels          </li><br>
+    <li>Improved default transparency checkerboard                                                  </li><br>
+    <li>Removed some dead links and unnecessary ui buttons                                          </li><br>
+</ul>                                                                                           
+
+
+<h1>Fixes</h1>
+<ul>
+    <li>Fixed one frame of input lag</li><br>
+    <li>Fixed slowdowns when joysticks are not present in the system</li><br>
+    <li>Fixed slowdowns and stuttering by increasing the thread scheduler resolution</li><br>
+    <li>Fixed access violation when renaming objects                                               </li><br>
+    <li>Fixed access violation when deleting a background that has tiles                            </li><br>
+    <li>Fixed unpredictable corruption of rundata file                                              </li><br>
+    <li>Fixed foreign text turning into mojibake when loading a gmk                                  </li><br>
+    <li>Fixed a click drag offset when panning in the image editor                                    </li><br>
+    <li>Fixed graphical glitching in the object code editor target box                              </li><br>
+    <li>Fixed games crashing when the computer is locked</li><br>
+    <li>Fixed the editor and games running out of memory</li><br>
+    <li>Fixed unnecessary DirectPlay installation prompt in Windows 10</li><br>
+</ul>
 
 <h1>What is New in 8.1</h1>
 
 <p>
-    Version 8.1 of <i>GameMaker</i> has a few improvements and bug fixes over 8.0.
+    Version 8.1 of <i>Game Maker</i> has a few improvements and bug fixes over 8.0.
 
 <h3>Changes</h3>
 <ul>
@@ -40,7 +77,7 @@
     <li>Resource renaming changed back to windows default; F2 (was changed from F2 to CTRL-R in GM 8.0) </li><br>
     <li>Code window now has a "toggle" icon for Code Completion on/off </li><br>
     <li>You can now press ESCAPE inside the code editor to get rid of the code completion box. </li><br>
-    <li>GameMaker now saves .gm81 files (instead of .gmk) </li><br>
+    <li>Game Maker now saves .gm81 files (instead of .gmk) </li><br>
     <li>New .EXE encryption </li><br>
     <li>New News feed system added </li><br>
     <li>draw_self() added </li><br>
@@ -81,7 +118,7 @@
 <h1>What is New in Version 8.0</h1>
 
 <p>
-    Version 8.0 of <i>GameMaker</i></i> has a large number of improvements over version 7.0.
+    Version 8.0 of <i>Game Maker</i></i> has a large number of improvements over version 7.0.
 Below the most important changes are described.
 
 
@@ -93,7 +130,7 @@ show full html documents with images, etc.
 
 <p>
 A number of changes have been made to the functions related to sprite and background resources. This
-is due to the fact that <i>GameMaker</i> uses a completely new mechanism for these resources. If your game
+is due to the fact that <i>Game Maker</i> uses a completely new mechanism for these resources. If your game
 uses a lot of calls to functions that load or save image resources on the fly you are strongly recommended
 to keep using the old version 7.0 for that game.
 
@@ -115,19 +152,19 @@ and, hence, might no longer function correctly.
 <h3>News</h3>
 
 <p>
-<i>GameMaker</i> now default shows a News page when it is started. Here new versions will be announced, 
+<i>Game Maker</i> now default shows a News page when it is started. Here new versions will be announced, 
 new resources will be indicated, there
 is information about competition, and game design tips and tricks. News is shown only once a day. In the Standard
 Edition this can be switched off. You can always access the news through the Help menu and you are encouraged
-to regularly check the news for important information about <i>GameMaker</i>.
+to regularly check the news for important information about <i>Game Maker</i>.
 
 
 <h3>Tutorial</h3>
 
 <p>
-<i>GameMaker</i> now has a standard built-in tutorial for beginners. It is shown in a panel at the right of the
+<i>Game Maker</i> now has a standard built-in tutorial for beginners. It is shown in a panel at the right of the
 screen. Experienced users can indicate that they do not want to see the tutorial anymore. To accommodate for the
-tutorial panel, <i>GameMaker</i> is now default started in full screen mode. It does however remember its settings
+tutorial panel, <i>Game Maker</i> is now default started in full screen mode. It does however remember its settings
 so changing it once to windowed mode will from that moment on start it in that mode.
 </p>
 
@@ -135,11 +172,11 @@ so changing it once to windowed mode will from that moment on start it in that m
 <h3>Alpha-blended backgrounds and sprites</h3>
 
 <p>
-The new version <i>GameMaker</i> uses backgrounds and sprites with alpha (transparency) channels. This makes it
+The new version <i>Game Maker</i> uses backgrounds and sprites with alpha (transparency) channels. This makes it
 possible to create and use much nicer sprites. PNG files with such information are now correctly loaded. The sprite
 and image editor have been completely rewritten, including many new drawing options and effects. A new
 sprite file selector was added that shows the animations in the sprites. Also we bundle
-a large number of high-quality sprites with <i>GameMaker</i> that you can use for free in your games.
+a large number of high-quality sprites with <i>Game Maker</i> that you can use for free in your games.
 </p>
 
 
@@ -167,7 +204,7 @@ been removes as the new actions include them. They will though still work in old
 <p>
 A new type of event has been introduced: Trigger events. Trigger events you can specify yourself. You give them
 a name and a condition, written in GML. After this they can be used in all objects, just like other events. With
-this you can easily extend the functionality of <i>GameMaker</i>.
+this you can easily extend the functionality of <i>Game Maker</i>.
 </p>
 
 <h3>Time lines</h3>
