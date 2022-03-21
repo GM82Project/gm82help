@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Strips</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/202_02_strips.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F202_02_strips.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F202_02_strips.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Strips</h3>
+
+<p>As indicated above, sprites are normally either stored as
+animated gif files or as strips in PNG files, in which all
+subimages are placed next to each other. In the second case the
+file name should end with _stripXX where XX indicates the number of
+subimages.</p>
+
+<p>However, sometimes sprites are part of a larger bitmap in which
+the sub images can be stored next to each other or below each other
+and maybe there are separating lines between them. Such a strip
+cannot be read automatically as <i>Game Maker</i> will not know the
+size and position of the subimage. For example, the following piece
+of a strip file contains four different animations.</p>
+
+<p><img src="images/sprites2.gif">
+</p>
+
+<p>If you want to pick a certain animation out of such a file you
+must indicate where the images are. To this end you can choose
+<b>Create from Strip</b> or <b>Add from Strip</b> from the
+<b>File</b> menu in the sprite editor. After indicating the
+appropriate strip image file, the following form will show:</p>
+
+<p><img src="images/form_strip.jpg">
+</p>
+
+<p>At the right you see (part of) the strip image you selected. At
+the left you can specify a number of parameters that specify which
+subimages you are interested in. Note that one or more rectangles
+in the image indicate the images you are selecting. The following
+parameters can be specified:</p>
+
+<ul>
+<li><b>Number of images.</b> This is the number of sub images you
+want to take from the strip.</li>
+
+<li><b>Images per row.</b> How many images of the ones you want are
+there per row. For example, by setting this to 1 you will select a
+vertical sequence of images.</li>
+
+<li><b>Image width.</b> Width of the individual images.</li>
+
+<li><b>Image height.</b> Height of the individual images.</li>
+
+<li><b>Horizontal cell offset.</b> If you don't want to select the
+top-left images, you can set here how many images should be skipped
+horizontally.</li>
+
+<li><b>Vertical cell offset.</b> Here you indicate how many images
+to skip vertically.</li>
+
+<li><b>Horizontal pixel offset.</b> Sometimes there is some
+additional space at the left top. Here you indicate this amount (in
+pixels). You can also use the mouse to indicate the place where the
+first image should start</li>
+
+<li><b>Vertical pixel offset.</b> Vertical amount of extra
+space.</li>
+
+<li><b>Horizontal separation.</b> In some strips there are lines or
+empty space between the images. Here you can indicate the
+horizontal amount to skip between the images (in pixels).</li>
+
+<li><b>Vertical separation.</b> Vertical amount to skip between the
+images.</li>
+</ul>
+
+<p>Once you selected the correct set of images, press <b>OK</b> to
+create your sprite. Please remember that you are only allowed to
+use images created by others when you have their permission or when
+they are freeware.</p>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

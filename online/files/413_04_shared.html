@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Shared data</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/413_04_shared.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F413_04_shared.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F413_04_shared.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Shared data</h3>
+Shared data communication is probably the easiest way to
+synchronize the game. All communication is shielded from you. There
+is a set of 1000000 values that are common to all entities of the
+game (preferably only use the first few to save memory). Each
+entity can set values and read values. <i>Game Maker</i> makes sure
+that each entity sees the same values. A value can either be a real
+or a string. There are just two routines:
+
+<blockquote><tt><b>mplay_data_write(ind,val)</b></tt> write value
+val (string or real) into location ind (ind between 0 and
+1000000).<br>
+<tt><b>mplay_data_read(ind)</b></tt> returns the value in location
+ind (ind between 0 and 1000000). Initially all values are
+0.<br></blockquote>
+
+<p>To synchronize the data on the different machines you can either
+use a guaranteed mode that makes sure that the change arrives on
+the other machine (but which is slow) or non-guaranteed. To change
+this use the following routine:</p>
+
+<blockquote><tt><b>mplay_data_mode(guar)</b></tt> sets whether or
+not to use guaranteed transmission for shared data. guar should
+either be true (the default) or false.<br></blockquote>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

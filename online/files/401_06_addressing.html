@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Addressing variables in other instances</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/401_06_addressing.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F401_06_addressing.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F401_06_addressing.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Addressing variables in other instances</h3>
+As described earlier, you can set variables in the current instance
+using statements like
+
+<blockquote>
+<pre>
+x = 3;
+</pre>
+</blockquote>
+
+<p>But in a number of cases you want to address variables in
+another instance. For example, you might want to stop the motion of
+all balls, or you might want to move the main character to a
+particular position, or, in the case of a collision, you might want
+to set the sprite for the other instance involved. This can be
+achieved by preceding the variable name with the name of an object
+and a dot. So for example, you can write</p>
+
+<blockquote>
+<pre>
+<tt>ball</tt>.speed = 0;
+</pre>
+</blockquote>
+
+<p>This will change the speed of all instances of object ball.
+There are a number of special "objects".</p>
+
+<ul>
+<li><tt>self</tt>: The current instance for which we are executing
+the action</li>
+
+<li><tt>other</tt>: The other instance involved in a collision
+event</li>
+
+<li><tt>all</tt>: All instances</li>
+
+<li><tt>noone</tt>: No instance at all (sounds weird probably but
+it does come in handy as we will see later on)</li>
+
+<li><tt>global</tt>: Not an instance at all, but a container that
+stores global variables</li>
+</ul>
+So, for example, you can use the following kind of statements:
+
+<blockquote>
+<pre>
+other.sprite_index = sprite5;
+all.speed = 0;
+global.message = 'A good result';
+global.x = ball.x;
+</pre>
+</blockquote>
+
+<p>Now you might wonder what the last assignment does when there
+are multiple balls. Well, the first one is taken and its x value is
+assigned to the global value.</p>
+
+<p>But what if you want to set the speed of one particular ball,
+rather than all balls? This is slightly more difficult. Each
+instance has a unique id. When you put instances in a room in the
+designer, this instance id is shown when you rest the mouse on the
+instance. These are numbers larger than or equal to 100000. Such a
+number you can also use as the left-hand side of the dot. But be
+careful. The dot will get interpreted as the decimal dot in the
+number. To avoid this, put brackets around it. So for example,
+assuming the id of the ball is 100032, you can write:</p>
+
+<blockquote>
+<pre>
+(100032).speed = 0;
+</pre>
+</blockquote>
+
+<p>When you create an instance in the program, the call returns the
+id. So a valid piece of program is</p>
+
+<blockquote>
+<pre>
+{
+  nnn = instance_create(100,100,ball);
+  nnn.speed = 8;
+}
+</pre>
+</blockquote>
+
+<p>This creates a ball and sets its speed. Note that we assigned
+the instance id to a variable and used this variable as indication
+in front of the dot. This is completely valid. Let us try to make
+this more precise. A dot is actually an operator. It takes a value
+as left operand and a variable (address) as right operand, and
+returns the address of this particular variable in the indicated
+object or instance. All the object names, and the special objects
+indicated above simply represent values and these can be dealt with
+like any value. For example, the following program is valid:</p>
+
+<blockquote>
+<pre>
+{
+  obj[0] = ball;
+  obj[1] = flag;
+  obj[0].alarm[4] = 12;
+  obj[1].id.x = 12;
+}
+</pre>
+</blockquote>
+
+<p>The last statement should be read as follows. We take the id of
+the first flag. For the instance with that id we set the x
+coordinate to 12.</p>
+
+<p>Object names, the special objects, and the instance id's can
+also be used in a number of functions. They are actually treated as
+constants in the programs.</p>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

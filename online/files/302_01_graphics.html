@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Graphics options</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/302_01_graphics.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F302_01_graphics.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F302_01_graphics.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Graphics options</h3>
+In this tab you can set a number of options that are related to the
+graphical appearance of your game. It is normally useful to check
+out the effects of these options because they can have a
+significant effect on the way the game looks. Remember though that
+different users have different machines. So better make sure that
+the settings also work on other peoples machines.
+
+<p><b>Start in fullscreen mode</b><br>
+When checked the game runs in the full screen; otherwise it runs in
+a window.</p>
+
+<p><b>Scaling</b><br>
+Here you can indicate what happens when the window is larger than
+the room or when the game is run in full-screen mode. There are
+three choices. You can indicate a fixed scaling. The room is drawn
+scaled with the given amount in the center of the window or the
+center of the screen. 100 indicates no scaling. You typically use
+fixed scaling when your sprites and rooms are very small. The
+second option is scale the room such that it fills the window or
+screen but keep the aspect ratio (ratio between width and height)
+the same. The third option is to scale such that the window or
+screen is completely filled. This can lead to distortions in the
+image (in particular in windowed mode when the user can resize the
+window).</p>
+
+<p><b>Interpolate colors between pixels</b><br>
+When checked, colors of pixels in sprites, backgrounds, and tiles
+that are not aligned with pixels on the screen will be
+interpolated. This in particular is the case when they are scaled,
+rotated, or placed at non-integer positions. Interpolation makes
+movement smoother but can also give a blurred effect. (Also for
+tiles it can lead to cracks between them, if not carefully
+designed.)</p>
+
+<p><b>Color outside the room region</b><br>
+When the room does not completely fill the window or screen there
+is some area unused around it. Here you can specify the color of
+the area.</p>
+
+<p><b>Allow the player to resize the game window</b><br>
+When checked in windowed mode the user can change the size of the
+game window by dragging with the mouse at its corners.</p>
+
+<p><b>Let the game window always stay on top</b><br>
+When checked in windowed mode the game window always stays on top
+of other windows.</p>
+
+<p><b>Don't draw a border in windowed mode</b><br>
+When checked in windowed mode the game window will not have a
+border or a caption bar.</p>
+
+<p><b>Don't show the buttons in the window caption</b><br>
+When checked in windowed mode the window caption will not show the
+buttons to close the window or to minimize or maximize it.</p>
+
+<p><b>Display the cursor</b><br>
+Indicates whether you want the mouse pointer to be visible. Turning
+it off is normally faster and nicer. (You can easily make you own
+cursor object in <i>Game Maker</i>.)</p>
+
+<p><b>Freeze the game when the form loses focus</b><br>
+When checked, whenever the player brings some other form to the top
+(e.g. another application) the game freezes until the game window
+again gets the focus.</p>
+
+<p><b>Disable screensavers and power saving actions</b><br>
+When checked (default) screensavers or power saving actions (sleep,
+hibernate) will not activate while the game is running. This is
+important as these might destroy certain graphics aspects of the
+game (like surfaces).</p>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

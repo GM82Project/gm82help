@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Miscellaneous variables and functions</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/403_11_misc.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F403_11_misc.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F403_11_misc.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Miscellaneous variables and functions</h3>
+Here are some variables and functions that deal with errors.
+
+<blockquote><tt><b>error_occurred</b></tt> Indicates whether an
+error has occurred.<br>
+<tt><b>error_last</b></tt> String indicating the last error
+message.<br>
+<tt><b>show_debug_message(str)</b></tt> Shows the string in debug
+mode.<br>
+<tt><b>debug_mode</b></tt> This read-only variable indicates
+whether the game is running in debug mode.<br></blockquote>
+The following variables can be used to make sure your code will
+work for the appropriate version and edition of <i>Game Maker</i>.
+
+<blockquote><tt><b>gamemaker_pro</b></tt> Indicates whether the
+game is created with the Standard Edition.<br>
+<tt><b>gamemaker_registered</b></tt> Same as
+<tt>gamemaker_pro</tt><br>
+<tt><b>gamemaker_version</b></tt> The version of <i>Game Maker</i>.
+This is an integer. For version 8.0 this can be anything between
+800 and 809. For version 8.1 this will be something between 810 and
+819, etc. So never check a particular version but better check for
+a range. This variable is not available in version before
+800.<br></blockquote>
+
+<p>The following functions exist that allow you to check whether
+certain variables exist and with which you can set variables and
+get their values. In all these functions the variable name is
+passed as a string!</p>
+
+<blockquote><tt><b>variable_global_exists(name)</b></tt> Returns
+whether a global variable with the given name (a string)
+exists.<br>
+<tt><b>variable_local_exists(name)</b></tt> Returns whether a local
+variable with the given name (a string) exists for the current
+instance.<br>
+<tt><b>variable_global_get(name)</b></tt> Returns the value of the
+global variable with the given name (a string).<br>
+<tt><b>variable_global_array_get(name,ind)</b></tt> Returns the
+value of index ind of the global array variable with the given name
+(a string).<br>
+<tt><b>variable_global_array2_get(name,ind1,ind2)</b></tt> Returns
+the value of index ind1,ind2 of the global 2-dimensional array
+variable with the given name (a string).<br>
+<tt><b>variable_local_get(name)</b></tt> Returns the value of the
+local variable with the given name (a string).<br>
+<tt><b>variable_local_array_get(name,ind)</b></tt> Returns the
+value of index ind of the local array variable with the given name
+(a string).<br>
+<tt><b>variable_local_array2_get(name,ind1,ind2)</b></tt> Returns
+the value of index ind1,ind2 of the local 2-dimensional array
+variable with the given name (a string).<br>
+<tt><b>variable_global_set(name,value)</b></tt> Sets the global
+variable with the given name (a string) to the given value.<br>
+<tt><b>variable_global_array_set(name,ind,value)</b></tt> Sets the
+index ind in the global array variable with the given name (a
+string) to the given value.<br>
+<tt><b>variable_global_array2_set(name,ind1,ind2,value)</b></tt>
+Sets the index ind1,ind2 in the global 2-dimensional array variable
+with the given name (a string) to the given value.<br>
+<tt><b>variable_local_set(name,value)</b></tt> Sets the local
+variable with the given name (a string) to the given value.<br>
+<tt><b>variable_local_array_set(name,ind,value)</b></tt> Sets the
+index ind in the local array variable with the given name (a
+string) to the given value.<br>
+<tt><b>variable_local_array2_set(name,ind1,ind2,value)</b></tt>
+Sets the index ind1,ind2 in the local 2-dimensional array variable
+with the given name (a string) to the given value.<br></blockquote>
+
+<p>For example, you can write:</p>
+
+<blockquote>
+<pre>
+{
+  <b>if</b> variable_global_exists('ammunition')
+    <b>global</b>.ammunition += 1
+  <b>else</b>
+    <b>global</b>.ammunition = 0
+}
+</pre>
+</blockquote>
+
+<p>You can also use these functions to pass variables to a script
+in a sort of by-reference way, by passing their names as strings
+and using the functions to change them.</p>
+
+<p>You can change the program priority using the following
+function:</p>
+
+<blockquote><tt><b>set_program_priority(priority)</b></tt> Sets the
+priority for the program. You can indicate a value between -3 and
++3. A value of -3 means that the program will only run if no other
+process on the computer requires processing time, or stated
+differently, when all other processes are idle. Values of -2 and -1
+are below normal, so other processes will get priority. 0 is the
+normal value. +1 and +2 give a higher priority, resulting possibly
+in higher speed and smoother game flow. But other processes will
+get much less processing time. +3 indicates real-time mode. In
+real-time mode basically all time is allotted to the game. This can
+lead to serious problems with any other applications running on the
+computer. Also keyboard events and e.g. the pressing of the close
+box might no longer be recorded by Windows. So only use this if you
+want all the processor time. Also better check carefully before
+using it and save the game before running.<br></blockquote>
+
+<p>Finally, you can use the following function to set the title of
+the application:</p>
+
+<blockquote><tt><b>set_application_title(title)</b></tt> Sets the
+title of the application to the given string. The title is for
+example shown in the task bar.<br></blockquote>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

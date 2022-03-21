@@ -1,0 +1,76 @@
+body {
+	background-color: #404040;
+    color: #cccccc;
+	font: 13px courier;
+    font-weight: bold;
+    background-attachment: fixed;
+}
+
+table {
+	font: 13px courier;
+	background-attachment: fixed;
+}
+
+A {color: #aaaaff; text-decoration: none}
+A:link {color: #aaaaff; TEXT-DECORATION: none}
+A:visited {color: #aaaaff; TEXT-DECORATION: none}
+A:hover {color: #ffffff; TEXT-DECORATION: underline}
+
+h1 {
+	background-color: #793B9C;
+	color: #fff;
+	font-size: 24px;
+   line-height: 1.5em;
+   padding: 2px 24px 2px 24px;
+   border: 1px solid #000;
+}
+
+h2 {
+	background-color: #793B9C;
+	color: #fff;
+	font-size: 20px;
+   line-height: 1.5em;
+   padding: 2px 24px 2px 24px;
+   border: 1px solid #000;
+}
+
+h3 {
+	background-color: #793B9C;
+   color: #fff;
+   font-size: 18px;
+   line-height: 1.5em;
+   padding: 2px 24px 2px 24px;
+   border: 1px solid #000;
+}
+
+h1 a, h1 a:link, h1 a:visited, h1 a:hover,
+h2 a, h2 a:link, h2 a:visited, h2 a:hover,
+h3 a, h3 a:link, h3 a:visited, h3 a:hover {
+  color: #fff;
+}
+
+pre {
+	background-color: #ddd;
+   padding: 5px 24px;
+   border: 1px dotted #000;
+}
+
+table,td,tr {
+	font: 12px/1.5em courier;
+	color: black;
+    background-attachment: fixed;
+	background-color:silver;
+	border: 1px solid black;
+	font-weight: bold;
+}
+
+tt {
+	font-weight: bold;
+}
+
+pre {
+	background-color: #ddd;
+    color: black;
+	padding: 5px 24px;
+	border: 1px dotted #000;
+}

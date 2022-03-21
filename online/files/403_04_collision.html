@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Collision checking</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/403_04_collision.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F403_04_collision.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F403_04_collision.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Collision checking</h3>
+When planning motions or deciding on certain actions, it is often
+important to see whether there are collisions with other objects at
+certain places. The following routines can be used for this. All
+these have three arguments in common: The argument <tt>obj</tt> can
+be an object, the keyword <tt><b>all</b></tt>, or the id of an
+instance. The argument <tt>prec</tt> indicates whether the check
+should be precise or only based on the bounding box of the
+instance. Precise checking is only done when the sprite for the
+instance has the precise collision checking set. The argument
+<tt>notme</tt> can be set to true to indicate that the calling
+instance should not be checked. All these functions return either
+the id of one of the instances that collide, or they return a
+negative value when there is no collision.
+
+<blockquote><tt><b>collision_point(x,y,obj,prec,notme)</b></tt>
+This function tests whether at point (x,y) there is a collision
+with entities of object obj.<br>
+<tt><b>collision_rectangle(x1,y1,x2,y2,obj,prec,notme)</b></tt>
+This function tests whether there is a collision between the
+(filled) rectangle with the indicated opposite corners and entities
+of object obj. For example, you can use this to test whether an
+area is free of obstacles.<br>
+<tt><b>collision_circle(xc,yc,radius,obj,prec,notme)</b></tt> This
+function tests whether there is a collision between the (filled)
+circle centered at position (xc,yc) with the given radius and
+entities of object obj. For example, you can use this to test
+whether there is an object close to a particular location.<br>
+<tt><b>collision_ellipse(x1,y1,x2,y2,obj,prec,notme)</b></tt> This
+function tests whether there is a collision between the (filled)
+ellipse with the indicated opposite corners and entities of object
+obj.<br>
+<tt><b>collision_line(x1,y1,x2,y2,obj,prec,notme)</b></tt> This
+function tests whether there is a collision between the line
+segment from (x1,y1) to (x2,y2) and entities of object obj. This is
+a powerful function. You can e.g. use it to test whether an
+instance can see another instance by checking whether the line
+segment between them intersects a wall.<br></blockquote>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

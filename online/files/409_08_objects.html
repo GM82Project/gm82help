@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Objects</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/409_08_objects.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F409_08_objects.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F409_08_objects.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Objects</h3>
+Also objects can be manipulated and created during the game play.
+NEVER change or delete an object for which there are instances.
+This can lead to unexpected effects as certain object properties
+are stored with the instance and, hence, changing them in the
+object will not have the desired effect.
+
+<blockquote><tt><b>object_set_sprite(ind,spr)</b></tt> Sets the
+sprite of the object with the given index. Use -1 to remove the
+current sprite from the object.<br>
+<tt><b>object_set_solid(ind,solid)</b></tt> Sets whether instances
+created of the object must default be solid (true or false).<br>
+<tt><b>object_set_visible(ind,vis)</b></tt> Sets whether instances
+created of the object must default be visible (true or false).<br>
+<tt><b>object_set_depth(ind,depth)</b></tt> Sets the default depth
+of instances created of the object.<br>
+<tt><b>object_set_persistent(ind,pers)</b></tt> Sets whether
+instances created of the object must default be persistent (true or
+false).<br>
+<tt><b>object_set_mask(ind,spr)</b></tt> Sets the sprite mask of
+the object with the given index. Use -1 to set the mask to be the
+sprite of the object.<br>
+<tt><b>object_set_parent(ind,obj)</b></tt> Sets the parent of the
+object. Use -1 to not have a parent. Changing the parent changes
+the behavior of instances of the object.<br></blockquote>
+
+<p>The following routines are useful for creating objects on the
+fly. As with all resource changing routines, be very careful that
+you don't create new objects all the time.</p>
+
+<blockquote><tt><b>object_add()</b></tt> Adds a new object. It
+returns the index of the object. You can now use this index in the
+routines above to set certain properties of the object and then you
+can use the index to create instances of the object.<br>
+<tt><b>object_delete(ind)</b></tt> Deletes the object with the
+given index. Make sure no instances of the object exist in any of
+the rooms.<br>
+<tt><b>object_event_add(ind,evtype,evnumb,codestr)</b></tt> To give
+the object a behavior we must define events for the object. You can
+only add code actions to events. You need to specify the object,
+the event type, the event number (use the constants that have been
+specified before for the event_perform() function). Finally you
+provide the code string that must be executed. You can add multiple
+code actions to each event.<br>
+<tt><b>object_event_clear(ind,evtype,evnumb)</b></tt> You can use
+this function to clear all the actions for a particular
+event.<br></blockquote>
+
+<p>Creating objects is in particular useful when you are designing
+scripts or action libraries. For example, an initialization script
+can create an object to display a text and another script can add
+such an object with a particular text. In this way you have a
+simple mechanism to display texts without the need to create
+objects using the standard interface.</p>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

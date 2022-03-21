@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Repainting the Screen</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/405_12_repaint.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F405_12_repaint.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F405_12_repaint.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Repainting the screen</h3>
+Normally at the end of each step the room is repainted on the
+screen. But in rare circumstances you need to repaint the room at
+other moments. This happens when your program takes over the
+control. For example, before sleeping a long time a repaint might
+be wanted. Also, when your code displays a message and wants to
+wait for the player to press a key, you need a repaint in between.
+There are two different routines to do this.
+
+<blockquote><tt><b>screen_redraw()</b></tt> Redraws the room by
+calling all draw events.<br>
+<tt><b>screen_refresh()</b></tt> Refreshes the screen using the
+current room image (not performing drawing
+events).<br></blockquote>
+
+<p>To understand the second function, you will need to understand
+more fully how drawing works internally. There is internally an
+image on which all drawing happens. This image is not visible on
+the screen. Only at the end of a step, after all drawing has taken
+place, is the screen image replaced by this internal image. (This
+is called double buffering.) The first function redraws the
+internal image and then refreshes the screen image. The second
+function only refreshes the image on the screen.</p>
+
+<p>Now you should also realize why you cannot use drawing actions
+or functions in other events than drawing events. They will draw
+things on the internal image but these won't be visible on the
+screen. And when the drawing events are performed, first the room
+background is drawn, erasing all you drew on the internal image.
+But when you use <tt>screen_refresh()</tt> after your drawing, the
+updated image will become visible on the screen. So, for example, a
+script can draw some text on the screen, call the refresh function
+and then wait for the player to press a key, like in the following
+piece of code.</p>
+
+<blockquote>
+<pre>
+{
+  draw_text(room_width/2,100,'Press any key to continue.');
+  screen_refresh();
+  keyboard_wait();
+}
+</pre>
+</blockquote>
+
+<p>Please realize that, when you draw in another event than the
+drawing event, you draw simply on the image, not in a view! So the
+coordinates you use are the same as if there are no views. Be
+careful when using this technique. Make sure you understand it
+first and realize that refreshing the screen takes some time.</p>
+
+<p>When you are drawing the room yourself it can be useful to NOT
+let it be drawn automatic at all. For example, you might want to
+draw the room only every 5 steps. You can use the following
+functions for this:</p>
+
+<blockquote><tt><b>set_automatic_draw(value)</b></tt> Indicates
+whether to automatically redraw the room (true, default) or not
+(false).<br></blockquote>
+
+<p>Finally there is a function with which you can set whether to
+synchronize the drawing with the refresh frequency of the
+monitor:</p>
+
+<blockquote><tt><b>set_synchronization(value)</b></tt> Indicates
+whether to synchronize the drawing with the refresh frequency of
+the monitor.<br></blockquote>
+
+<p>You can also force a wait for the next vertical synchronization
+using the following function:</p>
+
+<blockquote><tt><b>screen_wait_vsync()</b></tt> Waits for the next
+vertical synchronization of the monitor.<br></blockquote>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

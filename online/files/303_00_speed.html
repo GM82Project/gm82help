@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Speed considerations</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/303_00_speed.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F303_00_speed.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F303_00_speed.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1>Speed considerations</h1>
+If you are making complicated games you probably want to make them
+run as fast as possible. Even though <i>Game Maker</i> does its
+best to make games run fast, a lot depends on how you design your
+game. Also, it is rather easy to make games that use large amounts
+of memory. In this page we give some hints on how to make your
+games faster and smaller.
+
+<p>First of all, look carefully at the sprites and backgrounds you
+use. Animated sprites take a lot of memory and drawing lots of
+sprites takes a lot of time. So make your sprites as small as
+possible. Remove any invisible area around it (the command
+<b>Crop</b> in the sprite editor does that automatically). The same
+applies to background images. If you have a covering background,
+make sure you switch off the use of a background color.</p>
+
+<p>If you use full screen mode, make sure the size of the room (or
+window) is never larger than the screen size. Most graphics cards
+can efficiently scale images up but they are more slow in scaling
+images down! Whenever possible, switch off the cursor. It slows
+down the graphics.</p>
+
+<p>Also be careful with the use of many views. For each view the
+room is redrawn.</p>
+
+<p>Besides the graphics, there are also other aspects that
+influence the speed. Make sure you have as few instances as
+possible. In particular, destroy instances once they are no longer
+required (e.g. when they leave the room). Avoid lots of work in the
+step event or drawing event of instances. Often things do not need
+to be checked in each step. Interpretation of code is reasonably
+fast, but it is interpreted. Also, some functions and actions take
+a lot of time; in particular those that have to check all instances
+(like for example the bounce action).</p>
+
+<p>When you need complicated processing (for example for advanced
+AI), you better write a DLL for this in a different language and
+create an extension package out of this to import the DLL using the
+functions described in the page on <a href="414_00_dlls.html">Using
+DLL's</a>.</p>
+
+<p>Think about where to treat the collision events. You normally
+have two options. Objects that have no collision events are treated
+much faster, so preferably treat collisions in those objects of
+which there are just a few instances.</p>
+
+<p>Be careful with using large sound files. They take a lot of
+memory and also compress badly. You might want to check your sounds
+and see whether you can sample them down.</p>
+
+<p>Finally, if you want to make a game that many people can play,
+make sure you test it on a number of different machines, in
+particular also older machines.</p>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

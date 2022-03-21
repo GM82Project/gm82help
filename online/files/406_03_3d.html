@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>3D Sound</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/406_03_3d.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F406_03_3d.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F406_03_3d.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>3D sound</h3>
+<i><b>This functionality is only available in the Standard Edition
+of Game Maker.</b></i>
+<p>3D sounds refers to sound that has a position (and velocity)
+with respect to the listener. Although its most prominent use is in
+3D games you can also effectively use it in 2D games. The idea is
+that a sound has a position in space. In all functions the listener
+is assumed to be at position (0,0,0). The system calculates how the
+listener would hear the sound and adapt it accordingly. The effect
+is especially good when you have a good speaker system but is
+already works on small speakers.</p>
+
+<p>Besides a position, the sound can also has a velocity. This
+leads to well-known doppler effects which are correctly modelled.
+Finally the sound can have an orientation and, again, the sound is
+adapted accordingly.</p>
+
+<p><i>Game Maker</i> supports 3D sound options through the
+functions below. They only work for sound resources that were
+indicated to be 3D. (The disadvantage is that 3D sounds will be
+mono, not stereo.)</p>
+
+<blockquote><tt><b>sound_3d_set_sound_position(snd,x,y,z)</b></tt>
+Sets the position of the indicated sound with respect to the
+listener to the indicated position in space. Values on the x-axis
+increase from left to right, on the y-axis from down to up, and on
+the z-axis from near to far. The values are measured in meters. The
+volume with which the sound is heard depends on this measure in the
+same way as in the real world.<br>
+<tt><b>sound_3d_set_sound_velocity(snd,x,y,z)</b></tt> Sets the
+velocity of the indicated sound to the indicated vector in space.
+Please note that setting the velocity does not mean that the
+position changes. The velocity is only used for calculating doppler
+effects. So if you want to move the sound you must yourself change
+the position of the sound.<br>
+<tt><b>sound_3d_set_sound_distance(snd,mindist,maxdist)</b></tt>
+Sets the minimum distance at which the sound does no longer
+increase in loudness and the maximum distance at which the sound
+can no longer be heard. So when the distance lies between 0 and the
+minimum distance the sound is at maximal amplitude. When between
+the minimal distance and the maximal distance the amplitude slowly
+decreases until either the maximal distance is reached or the sound
+is anyway no longer audible. Default the minimum distance is 1
+meter and the maximal distance is 1 billion meters.<br>
+<tt><b>sound_3d_set_sound_cone(snd,x,y,z,anglein,angleout,voloutside)</b></tt>
+Normally sound has the same amplitude at a given distance in all
+directions. You can set the sound cone to change this and make
+sound directional. x,y,z specify the direction of the sound cone.
+<tt>anglein</tt> specifies the inside angle. If the listener is
+inside this angle it hears the sound at its normal volume.
+<tt>angleout</tt> specifies the outside angle. When the listener is
+outside this the volume is indicated with <tt>voloutside</tt>. To
+be precise, <tt>voloutside</tt> is a negative number that indicates
+the number of hundreds of decibel that must be subtracted from the
+inside volume. Between the inside and outside angle the volume
+gradually decreases.<br></blockquote>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

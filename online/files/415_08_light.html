@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Lighting</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/415_08_light.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F415_08_light.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F415_08_light.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Lighting</h3>
+Scenes you draw with the functions above look rather flat because
+there is no light. The color if the faces is equal, independent of
+their orientation. To create more realistically looking scenes you
+must enable lighting and place lights at the correct places.
+Creating correctly lit scenes is not easy but the effect is very
+good.
+
+<p>To enable lighting you can use the following function;</p>
+
+<blockquote><tt><b>d3d_set_lighting(enable)</b></tt> Enables or
+disables the use of lighting.<br></blockquote>
+
+<p>When using lighting, for each vertex of a polygon the color is
+determined. Next, the color of internal pixels is based on the
+color of these vertices. There are two ways this can be done:
+Either the whole polygon gets the same color, or the color is
+smoothly interpolated over the polygon. Default smooth shading is
+used. This can be changed using the following function:</p>
+
+<blockquote><tt><b>d3d_set_shading(smooth)</b></tt> Set whether to
+use smooth shading or not.<br></blockquote>
+
+<p>To use lighting you obviously need to define lights. Two
+different lights exist: directional lights (like the sun), and
+positional lights. Lights have a color. (We only support diffuse
+light, not specular reflection.) There are usually only <b>8</b>
+hardware lights available, so you should use the functions below to
+define and manage "active" lights, not just all lights in the
+scene. The following functions exist to define and use lights:</p>
+
+<blockquote>
+<tt><b>d3d_light_define_direction(ind,dx,dy,dz,col)</b></tt>
+Defines a directed light. <tt>ind</tt> is the index of the light
+(use a small positive number). (dx,dy,dz) is the direction of the
+light. <tt>col</tt> is the color of the light (often you want to
+use <tt>c_white</tt>. This function does not turn the light on.<br>
+<tt><b>d3d_light_define_point(ind,x,y,z,range,col)</b></tt> Defines
+a point light. <tt>ind</tt> is the index of the light use a small
+positive number). (x,y,z) is the position of the light.
+<tt>range</tt> indicates till how far the light shines. The
+intensity of the light will decrease over this range. <tt>col</tt>
+is the color of the light. This function does not turn the light
+on.<br>
+<tt><b>d3d_light_enable(ind,enable)</b></tt> Enables (true) or
+disables (false) light number <tt>ind</tt>.<br></blockquote>
+
+<p><br>
+The last function, is for controlling what is called <i>ambient</i>
+light. Ambient light is the light that you get when there is no
+light. It's effectively the colour and brightness of the darknes of
+a scene. To control this light you use the command below:</p>
+
+<blockquote><tt>d3d_light_define_ambient( colour )</tt> The default
+colour is $000000&nbsp; (black)</blockquote>
+
+<p>The way an object reflects light depends on the angle between
+the light direction and the normal of the surface, that is, the
+vector pointing away from the surface. Hence, to create lighted
+objects you need not only provide the position of the vertices but
+also their normals. For this four additional functions are
+avaliable to define the vertices of primitives:</p>
+
+<blockquote><tt><b>d3d_vertex_normal(x,y,z,nx,ny,nz)</b></tt> Add
+vertex (x,y,z) to the primitive, with normal vector (nx,ny,nz).<br>
+<tt><b>d3d_vertex_normal_color(x,y,z,nx,ny,nz,col,alpha)</b></tt>
+Add vertex (x,y,z) to the primitive, with normal vector (nx,ny,nz),
+and with its own color and alpha value.<br>
+<tt><b>d3d_vertex_normal_texture(x,y,z,nx,ny,nz,xtex,ytex)</b></tt>
+Add vertex (x,y,z) to the primitive, with normal vector (nx,ny,nz),
+and with position (xtex,ytex) in the texture, blending with the
+color and alpha value set before.<br>
+<tt><b>d3d_vertex_normal_texture_color(x,y,z,nx,ny,nz,xtex,ytex,col,alpha)</b></tt>
+Add vertex (x,y,z) to the primitive, with normal vector (nx,ny,nz),
+and with position (xtex,ytex) in the texture, blending with its own
+color and alpha value.<br></blockquote>
+
+<p>Note that for the basic shapes that you can draw the normals are
+automatically set correctly.</p>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

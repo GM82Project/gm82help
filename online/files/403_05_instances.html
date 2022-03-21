@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Instances</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/403_05_instances.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F403_05_instances.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F403_05_instances.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Instances</h3>
+In the game, the basic units are the instances of the different
+objects. During game play you can change a number of aspects of
+these instances. Also you can create new instances and destroy
+instances. Besides the movement related variables discussed above
+and the drawing related variables discussed below, each instance
+has the following variables:
+
+<blockquote><tt><b>object_index*</b></tt> Index of the object this
+is an instance of. This variable cannot be changed.<br>
+<tt><b>id*</b></tt> The unique identifier for the instance (&gt;=
+100000). (Note that when defining rooms the id of the instance
+under the mouse is always indicated.)<br>
+<tt><b>mask_index</b></tt> Index of the sprite used as mask for
+collisions. Give this a value of -1 to make it the same as the
+sprite_index.<br>
+<tt><b>solid</b></tt> Whether the instance is solid. This can be
+changed during the game.<br>
+<tt><b>persistent</b></tt> Whether the instance is persistent and
+will reappear when moving to another room. You often want to switch
+persistence off at certain moments. (For example if you go back to
+the first room.)<br></blockquote>
+
+<p>There is one problem when dealing with instances. It is not so
+easy to identify individual instances. They don't have a name. When
+there is only one instance of a particular object you can use the
+object name but otherwise you need to get the id of the instance.
+This is a unique identifier for the instance. you can use it in
+<b>with</b> statements and as object identifier. Fortunately there
+are a number of variables and routines that help you locate
+instance id's.</p>
+
+<blockquote><tt><b>instance_count*</b></tt> Number of instances
+that currently exist in the room.<br>
+<tt><b>instance_id[0..n-1]*</b></tt> The id of the particular
+instance. Here n is the number of instance.</blockquote>
+
+<p>Note that the assignment of the instances to the instance id's
+changes every step so you cannot use values from previous steps.
+Also please note that instances that are deleted will remain in the
+list until the end of the step. So if you are also deleting
+instances you need to check whether the instance still exists. Let
+me give an example. Assume each unit in your game has a particular
+power and you want to locate the strongest one, you could use the
+following code:</p>
+
+<blockquote>
+<pre>
+{
+  maxid = -1;
+  maxpower = 0;
+  <b>for</b> (i=0; i&lt;instance_count; i+=1)
+  {
+    iii = instance_id[i];
+    <b>if</b> (instance_exists(iii))
+      <b>if</b> (iii.object_index == unit)
+      {
+        <b>if</b> (iii.power &gt; maxpower)
+          {maxid = iii; maxpower = iii.power;}
+      }
+  }
+}
+</pre>
+</blockquote>
+
+<p>After the loop maxid will contain the id of the unit with
+largest power. Of course, for this particular situation the
+following code would be better:</p>
+
+<blockquote>
+<pre>
+{
+  maxid = -1;
+  maxpower = 0;
+  <b>with</b> (unit) <b>do</b>
+  {
+    <b>if</b> (power &gt; maxpower)
+      {maxid = self; maxpower = power;}
+  }
+}
+</pre>
+</blockquote>
+
+<blockquote><tt><b>instance_find(obj,n)</b></tt> Returns the id of
+the (n+1)'th instance of type obj. obj can be an object or the
+keyword all. If it does not exist, the special object noone is
+returned. Note that the assignment of the instances to the instance
+id's changes every step so you cannot use values from previous
+steps.<br>
+<tt><b>instance_exists(obj)</b></tt> Returns whether an instance of
+type obj exists. obj can be an object, an instance id, or the
+keyword all.<br>
+<tt><b>instance_number(obj)</b></tt> Returns the number of
+instances of type obj. obj can be an object or the keyword all.<br>
+<tt><b>instance_position(x,y,obj)</b></tt> Returns the id of the
+instance of type obj at position (x,y). When multiple instances are
+at that position the first is returned. obj can be an object or the
+keyword all. If it does not exist, the special object noone is
+returned.<br>
+<tt><b>instance_nearest(x,y,obj)</b></tt> Returns the id of the
+instance of type obj nearest to (x,y). obj can be an object or the
+keyword all.<br>
+<tt><b>instance_furthest(x,y,obj)</b></tt> Returns the id of the
+instance of type obj furthest away from (x,y). obj can be an object
+or the keyword all.<br>
+<tt><b>instance_place(x,y,obj)</b></tt> Returns the id of the
+instance of type obj met when the current instance is placed at
+position (x,y). obj can be an object or the keyword all. If it does
+not exist, the special object noone is returned.<br></blockquote>
+
+<p>The following functions can be used for creating and destroying
+instances.</p>
+
+<blockquote><tt><b>instance_create(x,y,obj)</b></tt> Creates an
+instance of obj at position (x,y). The function returns the id of
+the new instance.<br>
+<tt><b>instance_copy(performevent)</b></tt> Creates a copy of the
+current instance. The argument indicates whether the creation event
+must be executed for the copy. The function returns the id of the
+new copy.<br>
+<tt><b>instance_destroy()</b></tt> Destroys the current
+instance.<br>
+<tt><b>instance_change(obj,perf)</b></tt> Changes the instance into
+obj. perf indicates whether to perform the destroy and creation
+events.<br>
+<tt><b>position_destroy(x,y)</b></tt> Destroys all instances whose
+sprite contains position (x,y).<br>
+<tt><b>position_change(x,y,obj,perf)</b></tt> Changes all instances
+at (x,y) into obj. perf indicates whether to perform the destroy
+and creation events.<br></blockquote>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Deactivating instances</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/403_06_deactive.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F403_06_deactive.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F403_06_deactive.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Deactivating instances</h3>
+<b><i>Please be aware that deactivating and activating instances
+can sometimes lead to unexpected problems. So you are strongly
+advised not to use this feature except for very simple situation
+like the ones described below. The feature is mainly left in for
+backward compatibility.</i></b>
+<p>When you create large room, for example in platform games, with
+a small view, many instances lie outside the view. Such instances
+though are still active and will execute their events. Also when
+performing collision checks these instances are taken into account.
+This can cost a lot of time, which is often not necessary. (For
+example, often it is not important whether instances outside the
+view move.) To solve this problem <i>Game Maker</i> contains some
+functions to deactivate and activate instances. Before using them
+you must though clearly understand how they work.</p>
+
+<p>When you deactivate instances they are in some sense removed
+from the game. They are not visible anymore nor are any events
+executed for them. So for all actions and functions they don't
+exist anymore. This saves a lot of time but you have to be careful.
+For example, when you delete all instances of a particular type,
+deactivated instances are not deleted (because they don't exist).
+So don't think that a key a player picks up can unlock a
+deactivated door. Also persistent deactivated instances are
+<b>not</b> moved over to the next room (even though they are
+persistent). Also make sure that after you deactivate an instance
+that you no longer execute code for it. This can in particular
+happen when an instance deactivates itself. In general you better
+never have an instance deactivate itself.</p>
+
+<p>The most crucial mistake you can make is to deactivate the
+instance that is responsible for the activation. To avoid this some
+of the routines below allow you to insist that the calling instance
+should not be deactivated itself.</p>
+
+<p>Here are the available routines:</p>
+
+<blockquote><tt><b>instance_deactivate_all(notme)</b></tt>
+Deactivates all instances in the room. If notme is true the calling
+instance is not deactivated (which is normally what you want).<br>
+<tt><b>instance_deactivate_object(obj)</b></tt> Deactivates all
+instances in the room of the given object. You can also use all to
+indicate that all instances must be deactivated or the id of an
+instance to deactivate an individual instance.<br>
+<tt><b>instance_deactivate_region(left,top,width,height,inside,notme)</b></tt>
+Deactivates all instances in the indicated region (that is, those
+whose bounding box lies partially inside the region). If inside is
+false the instances completely outside the region are deactivated.
+If notme is true the calling instance is not deactivated (which is
+normally what you want).<br>
+<tt><b>instance_activate_all()</b></tt> Activates all instances in
+the room.<br>
+<tt><b>instance_activate_object(obj)</b></tt> Activates all
+instances in the room of the given object. You can also use all to
+indicate that all instances must be activated or the id of an
+instance to activate an individual instance.<br>
+<tt><b>instance_activate_region(left,top,width,height,inside)</b></tt>
+Activates all instances in the indicated region. If inside is false
+the instances completely outside the region are
+activated.<br></blockquote>
+
+<p>For example, to deactivate all instances outside the view and
+activate the ones inside the view, you could place the following
+code in the step event of the moving character:</p>
+
+<blockquote>
+<pre>
+{
+  instance_activate_all();
+  instance_deactivate_region(view_xview[0],view_yview[0],
+                        view_wview[0],view_hview[0],false,true);
+}
+</pre>
+</blockquote>
+
+<p>In practice you might want to use a region slightly larger than
+the view.</p>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

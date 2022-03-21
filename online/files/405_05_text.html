@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Fonts and Text</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/405_05_text.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F405_05_text.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F405_05_text.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Fonts and text</h3>
+In games you sometimes need to draw texts. To draw a text you have
+to specify the font to use. Fonts can be defined by creating font
+resources (either in the <i>Game Maker</i> program or using the
+functions to create resources). There are different functions to
+draw texts in different way. In each function you specify the
+position of the text on the screen. There are two functions to set
+the horizontal and vertical alignment of the text with respect to
+that position.
+
+<p>For text drawing the following functions exist:</p>
+
+<blockquote><tt><b>draw_set_font(font)</b></tt> Sets the font that
+will be used when drawing text. Use -1 to set the default font
+(Arial 12).<br>
+<tt><b>draw_set_halign(halign)</b></tt> Sets the horizontal
+alignment used when drawing text. Choose one of the following
+constants as values:
+
+<blockquote><tt><b>fa_left</b></tt><br>
+<tt><b>fa_center</b></tt><br>
+<tt><b>fa_right</b></tt>
+</blockquote>
+
+<p><tt><b>draw_set_valign(valign)</b></tt> Sets the vertical
+alignment used when drawing text. Choose one of the following
+constants as values:</p>
+
+<blockquote><tt><b>fa_top</b></tt><br>
+<tt><b>fa_middle</b></tt><br>
+<tt><b>fa_bottom</b></tt>
+</blockquote>
+
+<p><tt><b>draw_text(x,y,string)</b></tt> Draws the string at
+position (x,y), using the drawing color and alpha. A # symbol or
+carriage return chr(13) or linefeed chr(10) are interpreted as
+newline characters. In this way you can draw multi-line texts. (Use
+\# to get the # symbol itself.)<br>
+<tt><b>draw_text_ext(x,y,string,sep,w)</b></tt> Similar to the
+previous routine but you can specify two more things. First of all,
+<tt>sep</tt> indicates the separation distance between the lines of
+text in a multiline text. Use -1 to get the default distance. Use
+<tt>w</tt> to indicate the width of the text in pixels. Lines that
+are longer than this width are split- up at spaces or - signs. Use
+-1 to not split up lines.<br>
+<tt><b>string_width(string)</b></tt> Width of the string in the
+current font as it would be drawn using the <tt>draw_text()</tt>
+function. Can be used for precisely positioning graphics.<br>
+<tt><b>string_height(string)</b></tt> Height of the string in the
+current font as it would be drawn using the <tt>draw_text()</tt>
+function.<br>
+<tt><b>string_width_ext(string,sep,w)</b></tt> Width of the string
+in the current font as it would be drawn using the
+<tt>draw_text_ext()</tt> function. Can be used for precisely
+positioning graphics.<br>
+<tt><b>string_height_ext(string,sep,w)</b></tt> Height of the
+string in the current font as it would be drawn using the
+<tt>draw_text_ext()</tt> function.<br></p></blockquote>
+
+<p>The following routines allow you to draw scaled and rotated text
+and also to use gradient colors on texts. <b><i>These functions are
+only available in the Standard Edition!</i></b></p>
+
+<blockquote>
+<tt><b>draw_text_transformed(x,y,string,xscale,yscale,angle)</b></tt>
+Draws the string at position (x,y) in the same way as above, but
+scale it horizontally and vertically with the indicated factors and
+rotate it counter-clockwise over <tt>angle</tt> degrees.<br>
+<tt><b>draw_text_ext_transformed(x,y,string,sep,w,xscale,yscale,angle)</b></tt>
+Combines the function <tt>draw_text_ext</tt> and
+<tt>draw_text_transformed</tt>. It makes it possible to draw a
+multi-line text rotated and scaled.<br>
+<tt><b>draw_text_color(x,y,string,c1,c2,c3,c4,alpha)</b></tt> Draws
+the string at position (x,y) like above. The four colors specify
+the colors of the top-left, top-right, bottom-right, and
+bottom-left corner of the text. <tt>alpha</tt> is the alpha
+transparency to be used (0-1).<br>
+<tt><b>draw_text_ext_color(x,y,string,sep,w,c1,c2,c3,c4,alpha)</b></tt>
+Similar to <tt>draw_text_ext()</tt> but with colored vertices.<br>
+<tt><b>draw_text_transformed_color(x,y,string,xscale,yscale,angle,c1,c2,c3,c4,alpha)</b></tt>
+Similar to <tt>draw_text_transformed()</tt> but with colored
+vertices.<br>
+<tt><b>draw_text_ext_transformed_color(x,y,string,sep,w,xscale,yscale,angle,c1,c2,c3,c4,alpha)</b></tt>
+Similar to <tt>draw_text_ext_transformed()</tt> but with colored
+vertices.<br></blockquote>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

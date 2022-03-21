@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Geometry</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css" />
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/gm82core_geometry.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2Fgm82core_geometry.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2Fgm82core_geometry.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1>Geometry</h1>
+
+<p>Trigonometry and angle math helpers. Can be used to great effect
+to simplify 3d engines.</p>
+
+<dl>
+<dt><tt>angle_difference(ang1,ang2)</tt>
+</dt>
+
+<dd>Returns the relative difference in degrees between the
+angles.</dd>
+
+<dt><tt>angle_difference_3d(x1,y1,z1,x2,y2,z2)</tt>
+</dt>
+
+<dd>Returns the difference in degrees between the two 3d
+vectors.</dd>
+
+<dt><tt>darccos(x)</tt>
+</dt>
+
+<dd>Arc cosine in degrees.</dd>
+
+<dt><tt>darcsin(x)</tt>
+</dt>
+
+<dd>Arc sine in degrees.</dd>
+
+<dt><tt>darctan(x)</tt>
+</dt>
+
+<dd>Arc tangent in degrees.</dd>
+
+<dt><tt>dcos(x)</tt>
+</dt>
+
+<dd>Cosine in degrees.</dd>
+
+<dt><tt>dsin(x)</tt>
+</dt>
+
+<dd>Sine in degrees.</dd>
+
+<dt><tt>dtan(x)</tt>
+</dt>
+
+<dd>Tangent in degrees.</dd>
+
+<dt><tt>direction_to_object(obj)</tt>
+</dt>
+
+<dd>Returns the direction towards the nearest instance of , or -1
+if none is found.</dd>
+
+<dt><tt>distance_to_instance(obj)</tt>
+</dt>
+
+<dd>Returns the distance to the center of the nearest instance of ,
+or -1 if none is found.</dd>
+
+<dt><tt>dot_product_normalised(x1,y1,x2,y2)</tt>
+</dt>
+
+<dd>Normalized version of dot product.</dd>
+
+<dt><tt>dot_product_3d_normalised(x1,y1,z1,x2,y2,z2)</tt>
+</dt>
+
+<dd>Normalized version of 3d dot product.</dd>
+
+<dt><tt>inch_angle(ang1,ang2,stepsize)</tt>
+</dt>
+
+<dd>Approximates angle <tt>ang1</tt> to <tt>ang2</tt> by
+<tt>stepsize</tt> until they match exactly.</dd>
+
+<dt><tt>lengthdir_zx(len,yaw,pitch)</tt>
+</dt>
+
+<dd>Returns the x component of a yaw + pitch angle system.</dd>
+
+<dt><tt>lengthdir_zy(len,yaw,pitch)</tt>
+</dt>
+
+<dd>Returns the y component of a yaw + pitch angle system.</dd>
+
+<dt><tt>lengthdir_zz(len,yaw,pitch)</tt>
+</dt>
+
+<dd>Returns the z component of a yaw + pitch angle system.</dd>
+
+<dt><tt>move_towards_gravity(xto,yto,gravity)</tt>
+</dt>
+
+<dd>Sets the instance's trajectory and gravity for an arc towards
+the point.</dd>
+
+<dt><tt>point_direction_pitch(x1,y1,z1,x2,y2,z2)</tt>
+</dt>
+
+<dd>Returns the pitch component of a 3d vector. To use with the
+above lengthdir functions, use regular point_direction from x1,y1
+to x2,y2 for the yaw. This system simplifies projections and
+pointing for simple 3d games.</dd>
+
+<dt><tt>point_in_circle(px,py,x1,y1,r)</tt>
+</dt>
+
+<dd>Returns whether the point is inside the specified circle.</dd>
+
+<dt><tt>point_in_rectangle(px,py,x1,y1,x2,y2)</tt>
+</dt>
+
+<dd>Returns whether the point is inside the specified
+rectangle.</dd>
+
+<dt><tt>point_in_triangle(px,py,x1,y1,x2,y2,x3,y3)</tt>
+</dt>
+
+<dd>Returns whether the point is inside the specified
+triangle.</dd>
+
+<dt><tt>triangle_is_clockwise(x1,y1,x2,y2,x3,y3)</tt>
+</dt>
+
+<dd>Returns whether the sequence of points is clockwise.</dd>
+</dl>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

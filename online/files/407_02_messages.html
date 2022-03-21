@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Pop-up messages and questions</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/407_02_messages.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F407_02_messages.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F407_02_messages.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Pop-up messages and questions</h3>
+A number of other functions exist to pop up messages, questions, a
+menu with choices, or a dialog in which the player can enter a
+number, a string, or indicate a color or file name:
+
+<blockquote><tt><b>show_message(str)</b></tt> Displays a dialog box
+with the string as a message.<br>
+<tt><b>show_message_ext(str,but1,but2,but3)</b></tt> Displays a
+dialog box with the string as a message and up to three buttons.
+But1, but2 and but3 contain the button text. An empty string means
+that the button is not shown. In the texts you can use the &amp;
+symbol to indicate that the next character should be used as the
+keyboard shortcut for this button. The function returns the number
+of the button pressed (0 if the user presses the Esc key).<br>
+<tt><b>show_question(str)</b></tt> Displays a question; returns
+true when the user selects yes and false otherwise.<br>
+<tt><b>get_integer(str,def)</b></tt> Asks the player in a dialog
+box for a number. str is the message. def is the default number
+shown.<br>
+<tt><b>get_string(str,def)</b></tt> Asks the player in a dialog box
+for a string. str is the message. def is the default value
+shown.<br>
+<tt><b>message_background(back)</b></tt> Sets the background image
+for the pop-up box for any of the functions above. back must be one
+of the backgrounds defined in the game. Unfortunately, alpha values
+are not taken into account. However, if the left-bottom pixel has
+an alpha value of 0, all pixels with that color will be considered
+transparent.<br>
+<tt><b>message_alpha(alpha)</b></tt> Sets the alpha translucence
+for the pop-up box for any of the functions above. alpha must lie
+between 0 (completely translucent) and 1 (not translucent) (only
+for Windows 2000 or later).<br>
+<tt><b>message_button(spr)</b></tt> Sets the sprite used for the
+buttons in the pop-up box. spr must be a sprite consisting of three
+images, the first indicates the button when it is not pressed and
+the mouse is far away, the second indicates the button when the
+mouse is above it but not pressed and the third is the button when
+it is pressed. Unfortunately, alpha values are not taken into
+account. However, if the left-bottom pixel has an alpha value of 0,
+all pixels with that color will be considered transparent.<br>
+<tt><b>message_text_font(name,size,color,style)</b></tt> Sets the
+font for the text in the pop-up box. (This is a normal Windows
+font, not one of the font resources you can out in your game!)
+style indicates the font style (0=normal, 1=bold, 2=italic, and
+3=bold-italic).<br>
+<tt><b>message_button_font(name,size,color,style)</b></tt> Sets the
+font for the buttons in the pop-up box. style indicates the font
+style (0=normal, 1=bold, 2=italic, and 3=bold-italic).<br>
+<tt><b>message_input_font(name,size,color,style)</b></tt> Sets the
+font for the input field in the pop-up box. style indicates the
+font style (0=normal, 1=bold, 2=italic, and 3=bold-italic).<br>
+<tt><b>message_text_charset(type,charset)</b></tt> This function
+allows you to specify which character set the dialogs will use.
+type can be one of:
+
+<blockquote><tt>text_type<br>
+button_type<br>
+input_type<br></tt>
+</blockquote>
+charset can be one of the standard windows character set types:
+
+<blockquote><tt>ANSI_CHARSET<br>
+DEFAULT_CHARSET<br>
+EASTEUROPE_CHARSET<br>
+RUSSIAN_CHARSET<br>
+SYMBOL_CHARSET<br>
+SHIFTJIS_CHARSET<br>
+HANGEUL_CHARSET<br>
+GB2312_CHARSET<br>
+CHINESEBIG5_CHARSET<br>
+JOHAB_CHARSET<br>
+HEBREW_CHARSET<br>
+ARABIC_CHARSET<br>
+GREEK_CHARSET<br>
+TURKISH_CHARSET<br>
+VIETNAMESE_CHARSET<br>
+THAI_CHARSET<br>
+MAC_CHARSET<br>
+BALTIC_CHARSET<br>
+OEM_CHARSET<br></tt>
+</blockquote>
+<tt><b>message_mouse_color(col)</b></tt> Sets the color of the font
+for the buttons in the pop-up box when the mouse is above it.<br>
+<tt><b>message_input_color(col)</b></tt> Sets the color for the
+background of the input filed in the pop-up box.<br>
+<tt><b>message_caption(show,str)</b></tt> Sets the caption for the
+pop-up box. show indicates whether a border must b e shown (1) or
+not (0) and str indicates the caption when the border is shown.<br>
+<tt><b>message_position(x,y)</b></tt> Sets the position of the
+pop-up box on the screen. Use -1, -1 to center the box.<br>
+<tt><b>message_size(w,h)</b></tt> Fixes the size of the pop-up box
+on the screen. If you choose -1 for the width the width of the
+image is used. If you choose -1 for the height the height is
+calculated based on the number of lines in the message.<br>
+<tt><b>show_menu(str,def)</b></tt> Shows a popup menu. str
+indicates the menu text. This consists of the different menu items
+with a vertical bar between them. For example, str =
+'menu0|menu1|menu2'. When the first item is selected a 0 is
+returned, etc. When the player selects no item, the default value
+def is returned.<br>
+<tt><b>show_menu_pos(x,y,str,def)</b></tt> Shows a popup menu as in
+the previous function but at position x,y on the screen.<br>
+<tt><b>get_color(defcol)</b></tt> Asks the player for a color.
+defcol is the default color. If the user presses Cancel the value
+-1 is returned.<br>
+<tt><b>get_open_filename(filter,fname)</b></tt> Asks the player for
+a filename to open with the given filter. The filter has the form
+'name1|mask1|name2|mask2|...'. A mask contains the different
+options with a semicolon between them. * means any string. For
+example: 'bitmaps|*.bmp;*.wmf'. If the user presses Cancel an empy
+string is returned.<br>
+<tt><b>get_save_filename(filter,fname)</b></tt> Asks for a filename
+to save with the given filter. If the user presses Cancel an empy
+string is returned.<br>
+<tt><b>get_directory(dname)</b></tt> Asks for a directory. dname is
+the default name. If the user presses Cancel an empy string is
+returned.<br>
+<tt><b>get_directory_alt(capt,root)</b></tt> An alternative way to
+ask for a directory. capt is the caption to be show. root is the
+root of the directory tree to be shown. Use the empty string to
+show the whole tree. If the user presses Cancel an empy string is
+returned.<br>
+<tt><b>show_error(str,abort)</b></tt> Displays a standard error
+message (and/or writes it to the log file). abort indicates whether
+the game should abort.<br></blockquote>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

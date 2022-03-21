@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>CD Music</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/406_04_cd.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F406_04_cd.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F406_04_cd.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>CD music</h3>
+<i><b>This functionality is only available in the Standard Edition
+of Game Maker.</b></i>
+<p>There are also a number of functions dealing with playing music
+from a CD.</p>
+
+<blockquote><tt><b>cd_init()</b></tt> Must be called before using
+the other functions. Should also be called when a CD is changed (or
+simply from time to time).<br>
+<tt><b>cd_present()</b></tt> Returns whether a CD is present in the
+default CD drive.<br>
+<tt><b>cd_number()</b></tt> Returns the number of tracks on the
+CD.<br>
+<tt><b>cd_playing()</b></tt> Returns whether the CD is playing.<br>
+<tt><b>cd_paused()</b></tt> Returns whether the CD is paused or
+stopped.<br>
+<tt><b>cd_track()</b></tt> Returns the number of the current track
+(1=the first).<br>
+<tt><b>cd_length()</b></tt> Returns the length of the total CD in
+milliseconds.<br>
+<tt><b>cd_track_length(n)</b></tt> Returns the length of track n of
+the CD in milliseconds.<br>
+<tt><b>cd_position()</b></tt> Returns the current position on the
+CD in milliseconds.<br>
+<tt><b>cd_track_position()</b></tt> Returns the current position in
+the track being played in milliseconds.<br>
+<tt><b>cd_play(first,last)</b></tt> Tells the CD to play tracks
+first until last. If you want to play the full CD give 1 and 1000
+as arguments.<br>
+<tt><b>cd_stop()</b></tt> Stops playing.<br>
+<tt><b>cd_pause()</b></tt> Pauses the playing.<br>
+<tt><b>cd_resume()</b></tt> Resumes the playing.<br>
+<tt><b>cd_set_position(pos)</b></tt> Sets the position on the CD in
+milliseconds.<br>
+<tt><b>cd_set_track_position(pos)</b></tt> Sets the position in the
+current track in milliseconds.<br>
+<tt><b>cd_open_door()</b></tt> Opens the door of the CD player.<br>
+<tt><b>cd_close_door()</b></tt> Closes the door of the CD
+player.<br></blockquote>
+
+<p>There is one very general function to access the multimedia
+functionality of windows.</p>
+
+<blockquote><tt><b>MCI_command(str)</b></tt> This functions sends
+the command string to the Windows multimedia system using the Media
+Control Interface (MCI). It returns the return string. You can use
+this to control all sorts of multimedia devices. See the Windows
+documentation for information in how to use this command. For
+example <tt>MCI_command('play cdaudio from 1')</tt> plays a CD
+(after you have correctly initialized it using other commands).
+This function is only for advanced use!</blockquote>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

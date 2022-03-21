@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Files</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css" />
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/gm82core_files.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2Fgm82core_files.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2Fgm82core_files.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1>Files</h1>
+
+<p>Functions for dealing with files.</p>
+
+<dl>
+<dt><tt>ds_map_read_ini(map,filename)</tt>
+</dt>
+
+<dd>Reads ini file at <tt>filename</tt> into <tt>map</tt>. Section
+names are prepended to keys, separated by a space.</dd>
+
+<dt><tt>directory_previous(dir)</tt>
+</dt>
+
+<dd>Returns the parent directory of <tt>dir</tt>.</dd>
+
+<dt><tt>file_size(filename)</tt>
+</dt>
+
+<dd>Returns the size of file <tt>filename</tt> in bytes. If the
+file doesn't exist, -1 is returned.</dd>
+
+<dt><tt>file_text_read_all(fname,[separator])</tt>
+</dt>
+
+<dd>Reads file <tt>filename</tt> in its entirety and returns it as
+a string. If a separator string is provided, it is used inbetween
+lines, otherwise CR LF is used.</dd>
+
+<dt><tt>filename_remove_ext(fn)</tt>
+</dt>
+
+<dd>Removes everything after the dot from a string. Note: this does
+not rename the file.</dd>
+</dl>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

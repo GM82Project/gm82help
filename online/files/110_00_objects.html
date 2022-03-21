@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Defining objects</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/110_00_objects.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F110_00_objects.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F110_00_objects.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1>Defining objects</h1>
+With the resources you have seen so far you can add some nice
+images and sounds to the game, but they don't do anything. We now
+come to the most important resource of <i>Game Maker</i>, the
+objects. Objects are entities in the game that do things. Most of
+the time they have a sprite as a graphical representation so that
+you see them. They have behavior because they can react to certain
+events. All things you see in the game (except for the background)
+are objects. (Or to be more precise, they are instances of
+objects.) The characters, the monsters, the balls, the walls, etc.
+are all objects. There might also be certain objects that you don't
+see but which control certain aspects of the game play.
+
+<p>Please realize the difference between sprites and objects.
+Sprites are just (animated) images that don't have any behavior.
+Objects normally have a sprite to represent them but objects have
+behavior. Without objects there is no game!</p>
+
+<p>Also realize the difference between objects and instances. An
+object describes a certain entity, e.g. a monster. There can be
+multiple instances of this object in the game. When we talk about
+an instance we mean one particular instance of the object. When we
+talk about an object we mean all the instances of this object.</p>
+
+<p>To create an object in your game, choose <b>Create Object</b>
+from the <b>Resources</b> menu. The following form will appear:</p>
+
+<p><img src="images/form_object.jpg">
+</p>
+
+<p>This is rather complex. At the left there is some general
+information about the object. In the middle there is the list of
+events that can happen to the object. At the right there are the
+different actions the object can perform. Events and actions will
+be discussed in the coming chapters.</p>
+
+<p>As always, you can (and should) give your object a name. Next
+you can choose the sprite for the object. To this end, click with
+the left mouse button on the sprite box or the menu button next to
+it. A menu will pop-up with all the available sprites. Select the
+one you want to use for the object. If you do not have a sprite
+yet, you can click the button <b>New</b> to create a new sprite
+resource and change it. Also, when you select a resource there will
+be a button <b>Edit</b> here that you can use to change the sprite.
+This is faster than first finding the resource in the list of
+resources and then indicating you want to edit it.</p>
+
+<p>Below this there are two check boxes. <b>Visible</b> indicates
+whether instances of this object are visible. Clearly, most objects
+are visible, but sometimes it is useful to have invisible objects.
+For example, you can use them for waypoints for a moving monster.
+Invisible objects will react to events and other instances do
+collide with them. The box labeled <b>Solid</b> indicates whether
+this is a solid object (like a wall). Collisions with solid objects
+are treated differently from collisions with non-solid objects. You
+are strongly advised to use <b>Solid</b> only for object that are
+not moving.</p>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

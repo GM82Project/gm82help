@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Extra Variables</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/401_05_extra.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F401_05_extra.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F401_05_extra.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Extra variables</h3>
+You create new variables by assigning a value to them (no need to
+declare them first). If you simply use a variable name, the
+variable will be stored with the current object instance only. So
+don't expect to find it when dealing with another object (or
+another instance of the same object) later. You can also set and
+read variables in other objects by putting the object name with a
+dot before the variable name.
+
+<p>To create global variables, that are visible to all object
+instances, precede them with the word <tt>global</tt> and a dot. So
+for example you can write:</p>
+
+<blockquote>
+<pre>
+{
+  <b>if</b> (<b>global</b>.doit)
+  {
+    // do something
+    <b>global</b>.doit = false;
+  }
+}
+</pre>
+</blockquote>
+
+<p>Alternatively you can declare the variables as being global.
+This declaration looks as follows.</p>
+
+<blockquote>
+<pre>
+<b>globalvar</b> &lt;varname1&gt;,&lt;varname2&gt;,&lt;varname3&gt;, ... ;
+</pre>
+</blockquote>
+
+<p>Once this declaration has been executed, the variable is always
+treated as global without the need to put the word <tt>global</tt>
+and a dot in front of it. It only needs to be declared once in a
+piece of code that is executed. After that in all other places the
+variable is considered as being global.</p>
+
+<p>Sometimes you want variables only within the current piece of
+code or script. In this way you avoid wasting memory and you are
+sure there is no naming conflict. It is also faster than using
+global variables. To achieve this you must declare the variables at
+the beginning of the piece of code using the keyword var. This
+declaration looks as follows.</p>
+
+<blockquote>
+<pre>
+<b>var</b> &lt;varname1&gt;,&lt;varname2&gt;,&lt;varname3&gt;, ... ;
+</pre>
+</blockquote>
+
+<p>For example, you can write:</p>
+
+<blockquote>
+<pre>
+{
+  <b>var</b> xx,yy;
+  xx = x+10;
+  yy = y+10;
+  instance_create(xx,yy,ball);
+}
+</pre>
+</blockquote>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

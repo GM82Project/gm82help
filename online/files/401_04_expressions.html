@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Expressions</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/401_04_expressions.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F401_04_expressions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F401_04_expressions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Expressions</h3>
+Expressions can be real numbers (e.g. 3.4), hexadecimal numbers,
+starting with a $ sign (e.g. $00FFAA), strings between single or
+double quotes (e.g. 'hello' or “hello”) or more complicated
+expressions. (Note that strings can run over multiple lines!) For
+expressions, the following binary operators exist (in order of
+priority):
+
+<ul>
+<li>&amp;&amp; || ^^: combine Boolean values (&amp;&amp; = and, ||
+= or, ^^ = xor)</li>
+
+<li>&lt; &lt;= == != &gt; &gt;=: comparisons, result in true (1) or
+false (0)</li>
+
+<li>| &amp; ^: bitwise operators (| = bitwise or, &amp; = bitwise
+and, ^ = bitwise xor)</li>
+
+<li>&lt;&lt; &gt;&gt;: bitwise operators (&lt;&lt; = shift left,
+&gt; &gt; = shift right)</li>
+
+<li>+ -: addition, subtraction</li>
+
+<li>* / div mod: multiplication, division, integer division, and
+modulo</li>
+</ul>
+
+<p>Note that value of <tt>x div y</tt> is the value of <tt>x/y</tt>
+rounded in the direction of zero to the nearest integer. The
+<tt>mod</tt> operator returns the remainder obtained by dividing
+its operands. In other words, <tt>x mod y = x - (x div y) * y</tt>.
+Also, the following unary operators exist:</p>
+
+<ul>
+<li>!: not, turns true into false and false into true</li>
+
+<li>-: negates the next value</li>
+
+<li>~: negates the next value bitwise</li>
+</ul>
+As values you can use numbers, variables, or functions that return
+a value. Sub-expressions can be placed between brackets. All
+operators work for real values. Comparisons also work for strings
+and + concatenates strings. (Please note that, contrary to certain
+languages, both arguments to a Boolean operation are always
+computed, even when the first argument already determines the
+outcome.)
+
+<p><b>Example</b>
+</p>
+
+<p>Here is an example with some assignments.</p>
+
+<blockquote>
+<pre>
+{
+  x = 23;
+  color = $FFAA00;
+  str = 'hello world';
+  y += 5;
+  x *= y;
+  x = y &lt;&lt; 2;
+  x = 23*((2+4) / sin(y));
+  str = 'hello' + " world";
+  b = (x &lt; 5) &amp;&amp; !(x==2 || x==4);
+}
+</pre>
+</blockquote>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

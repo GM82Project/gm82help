@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>More about sounds and music</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/203_00_sounds.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F203_00_sounds.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F203_00_sounds.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1>More about sounds and music</h1>
+In advanced mode you have a lot more control over the sounds and
+pieces of music you add to your game. When you add a sound resource
+the following form will show:
+
+<p><img src="images/form_sound_advanced.jpg">
+</p>
+
+<p>Besides the buttons to load, save, and play sounds there are a
+lot of settings now that will be discussed here.</p>
+
+<p>First of all you can indicate the kind of sound. Four kinds are
+possible. Normal sounds are in general used for sound effects in
+wave files (although they can be used for midi files as well).
+Multiple normal sounds can play at the same time. You can even play
+multiple copies of the same sound simultaneously. Background music
+is similar to normal sounds but only one can play at any moment. So
+once you start a new background sound, the currently playing one
+will be stopped. Midi files are default background music. 3D sound
+is sound for which you can apply 3D settings through special
+functions. You will only need these for advanced sound effects.</p>
+
+<p>Sound files are normally played through DirectX. This gives many
+possibilities but is limited to wave and midi files. If you want to
+play other files, like mp3 files, you should select the option to
+use the media player. This is much more limited though. No volume
+changes or effects can be used and only one piece can play at once.
+Note that midi files, when played through the media player may
+sound different from playing them as background or normal sounds.
+The reason is that the media player uses the hardware synthesizer
+(which is different on each machine) while otherwise a software
+version is used (which sounds the same on all machines). Preferably
+don't use mp3 files in you games. They need to be decompressed
+which takes processing time and might slow down the game. The fact
+that the file size is smaller does not mean that they use less
+memory. Also, not all machines support them. So your game might not
+run on all machines.</p>
+
+<p>Secondly, you can indicate some sound effects, like chorus or
+echo (only in the Standard Edition of <i>Game Maker</i>!) You can
+select any combination. You can immediately listen to the results.
+(When using GML code you can even change the parameters of these
+effects.)</p>
+
+<p>Also you can indicate the default volume of the sound and
+whether to pan it to the left or the right speaker.</p>
+
+<p>For all sounds you can indicate whether they should be preloaded
+or not. When a sound is played it must be loaded into audio memory.
+If you preload the sound this is done at the start of the game,
+making it immediately available for playback. When not, it is
+loaded the first time it is used. This will save memory but might
+give a small delay the first time the sound is used.</p>
+
+<p><i>Game Maker</i> does not have a built-in sound editor. But in
+the preferences you can indicate external editors that you want to
+use for editing sounds. If you selected these you can press the
+button labeled <b>Edit Sound</b> to edit the current sound. (The
+<i>Game Maker</i> window will be hidden while you edit the sound
+and returns when you close the sound editor.)</p>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

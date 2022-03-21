@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Simple Effects</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "files/412_01_1explosions.html";
+</script>
+
+</head>
+<body background="images/back.gif"><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../index.html?page=files%2F412_01_1explosions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../index.html?page=files%2F412_01_1explosions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3>Simple Effects</h3>
+The easiest way of creating particles is to use the effects
+mechanism. Effects are created using the particle system but you do
+not have to worry about all the details. You simply specify the
+type of effect, the position where it must be created, its size,
+and its color. That is all.
+
+<p>There are a number of different kinds of effects:</p>
+
+<ul>
+<li><tt>ef_explosion</tt>
+</li>
+
+<li><tt>ef_ring</tt>
+</li>
+
+<li><tt>ef_ellipse</tt>
+</li>
+
+<li><tt>ef_firework</tt>
+</li>
+
+<li><tt>ef_smoke</tt>
+</li>
+
+<li><tt>ef_smokeup</tt>
+</li>
+
+<li><tt>ef_star</tt>
+</li>
+
+<li><tt>ef_spark</tt>
+</li>
+
+<li><tt>ef_flare</tt>
+</li>
+
+<li><tt>ef_cloud</tt>
+</li>
+
+<li><tt>ef_rain</tt>
+</li>
+
+<li><tt>ef_snow</tt>
+</li>
+</ul>
+
+<p>Some you want to create just once (like the explosion) and some
+you want to create in every step (like the smoke or the rain). Note
+that rain and snow are always created at the top of the room so the
+position is irrelevant in this case.</p>
+
+<p>Even though this might sound limited, they can actually be used
+to create great effects. For example by creating a smal puff of red
+smoke below a moving spaceship in each step, a tail of fire is
+created. The following two functions exist to create the
+effects:</p>
+
+<blockquote>
+<tt><b>effect_create_below(kind,x,y,size,color)</b></tt> Creates an
+effect of the given kind (see above) at the indicated position.
+size give the size as follows: 0 = small, 1 = medium, 2 = large.
+color indicates the color to be used. The effect is created below
+the instances, that is, at a depth of 100000.<br>
+<tt><b>effect_create_above(kind,x,y,size,color)</b></tt> Similar to
+the previous function but this time the effect is created on top of
+the instances, that is, at a depth of -100000.<br></blockquote>
+
+<p>If you want to remove all effects, call the following
+function:</p>
+
+<blockquote><tt><b>effect_clear()</b></tt> Clears all
+effects.<br></blockquote>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>
