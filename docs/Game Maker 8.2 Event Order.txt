@@ -1,0 +1,187 @@
+
+    Game Maker 8.2 Event Order
+    ==========================
+    version 1 - June 14 2022
+    
+    Written by renex and Floogle, using new information and old research by:
+
+    viri - Adam - BlackDoomer
+    Tahnok100 - Nailog - tpvgames
+    Weird Dragon
+
+
+--------------------------------------------------------------------------------
+
+  Game started
+  ------------
+
+- Loading bar is hidden
+- Extension initialization
+    - Extensions are initialized in alphabetical order.
+- Window is created
+- Create
+- Instance Creation Code*
+- Game Start
+- Room Creation Code
+- Room Start
+- Draw
+
+* When the relevant Game Settings checkbox is enabled in 8.2, otherwise they
+  execute before Create events. This applies to all cases of this event.
+
+
+--------------------------------------------------------------------------------
+
+  Room Change
+  -----------
+
+->  Whenever room_goto*() functions are called, or the 'room' variable is set.
+
+->  The current code action will finish, but any subsequent code actions will
+    not be allowed to execute until the new room is loaded. Attempting to change
+    the room again or end the game during a room change will cause unintended
+    behavior that is not entirely understood.
+
+- If a room transition is set, Draw
+- Room End
+- New room is loaded
+    - Any persistent instances are added to the end of the instance list
+- Create
+- Instance Creation Code
+- Room Creation Code
+- Room Start
+- Draw
+- Transition script is executed 'transition_steps' times
+
+
+--------------------------------------------------------------------------------
+
+  Frame Event Order
+  -----------------
+
+- xprevious and yprevious are updated to x and y
+- Early Triggers
+- Begin Step
+- Timelines count up & run moments
+- Alarms count down & run on 0
+- Keyboard
+- Keyboard Press
+- Keyboard Release
+- Mouse
+- Global Mouse
+- Mouse Pressed
+- Global Mouse Pressed
+- Mouse Released
+- Global Mouse Released
+- Triggers
+- Step
+- Instance Update*
+    - Friction is applied
+    - Gravity is applied
+    - Instance is moved to new position
+- End Of Path*
+- Outside room
+- Intersect Boundary
+- Collision events
+- Late Triggers
+- End Step
+- Particle systems update
+- Destroyed instances are deleted
+- Draw*
+- Backgrounds are updated
+- image_speed is added to image_index*
+- Animation End*
+    - Executes when image_index wraps around to 0.
+    - Does not execute when image_speed is negative.
+    - Will execute every step with a single-image sprite or no sprite.
+- cursor animation is advanced
+- The game window is updated with the new frame and sleeps until the next frame
+   
+* These events execute by master instance list sorting order. All other events
+  are executed by object list order instead. Check the section at the end for
+  more details.
+
+
+--------------------------------------------------------------------------------
+
+  Game Ending
+  -----------
+  
+- Room End
+- Game End
+- Extension finalization
+
+
+--------------------------------------------------------------------------------
+
+  Draw Event
+  ----------
+
+->  At the start of every draw event (including the ones triggered by room
+    transitions), the master instance list is sorted. More details about that
+    in the section about instance sorting.
+
+- the window is cleared to the window color, if it's enabled
+- views are moved to follow their objects
+- for each visible view:*
+    - the view is cleared to the background_color, if it's enabled
+        - this also results in clearing the z-buffer
+    - backgrounds are drawn at 3d depth 12000**
+    - instances, tiles and particle systems are drawn in depth order
+        - within the same depth, particles are on top of tiles,
+          and tiles are on top of instances
+    - foregrounds are drawn at 3d depth -12000**
+    - the sprite cursor is drawn at 3d depth -13000**
+- the window caption is updated to the room_caption
+
+* If views are not enabled, the entire room is drawn instead.
+** 3d depth only applies when 3d mode is on. When 3d mode is off, the resulting
+   vertex z coordinate of builtin 2d drawing is always 0.
+
+
+--------------------------------------------------------------------------------
+
+  Other Events
+  ------------
+  
+->  Create, User Events, and Destroy events execute immediately when called.
+->  Out of Health & Out of Lives events execute once, the moment the variables
+    are set to zero or negative values.
+
+
+--------------------------------------------------------------------------------
+
+  Instance Sorting
+  ----------------
+  
+->  Game Maker has a master list of active instances. New instances are always
+    added at the end, and a sort is performed at the start of Draw events.
+
+->  Most of these details are not relevant if a game's code is well behaved,
+    but for edge cases and exploits, knowing the proper procedures might result
+    in easier debugging and more reliable code.
+
+->  Any events that aren't sorted by draw order will instead make use of
+    object-specific instance lists, which are completely unsorted, simply being
+    ordered by creation. When re-activated, instances are placed at the ends of
+    these lists.
+
+- Instances are sorted by depth, in descending order. Larger goes first.
+- Within the same depth, it sorts and executes by creation order.
+- Instance activation and deactivation take place immediately, removing or
+  placing instances at the end of the lists.
+- Deactivated instances are moved to a different list, and can't be accessed
+  even if you know their id.
+    
+
+->  During the brief moment before a draw event, new instances won't be sorted:
+
+- Re-activated instances will sort last, in the order they were activated in.
+- Upon entering a room, persistent instances from a previous room will sort
+  last, in the order they were in the previous room.
+- If any instances are created during the start of a room, those new instances
+  will be placed after any persistent instances from a previous room due to
+  those events running atfer the persistent instances are appended to the list.
+
+
+--------------------------------------------------------------------------------
