@@ -15,9 +15,17 @@
   Game started
   ------------
 
+- Extensions are unpacked and compiled
+- Constants are evaluated
+    - The only thing loaded by this point are triggers, so resource names
+      and other game data can't be used in constants.
+- Library initialization code is executed
+- Included files are extracted
+- Extension initialization functions
+    - Extensions are initialized in the order they display in the editor.
 - Loading bar is hidden
-- Extension initialization
-    - Extensions are initialized in alphabetical order.
+- The debugger window is opened
+- Textures are loaded to video memory
 - Window is created
 - Create
 - Instance Creation Code*
@@ -42,7 +50,7 @@
     the room again or end the game during a room change will cause unintended
     behavior that is not entirely understood.
 
-- If a room transition is set, Draw
+- If a room transition is set, Draw*
 - Room End
 - New room is loaded
     - Any persistent instances are added to the end of the instance list
@@ -50,9 +58,16 @@
 - Instance Creation Code
 - Room Creation Code
 - Room Start
-- Draw
+- Draw*
 - Transition script is executed 'transition_steps' times
 
+* If automatic draw is off, Draw is skipped.
+
+->  While the game is scheduled for a room change, most code is skipped,
+    however a few things can still execute:
+
+- solid collision pushback
+- alarms ticking (they won't execute their actions if they hit 0)
 
 --------------------------------------------------------------------------------
 
@@ -87,7 +102,7 @@
 - End Step
 - Particle systems update
 - Destroyed instances are deleted
-- Draw*
+- Draw* **
 - Backgrounds are updated
 - image_speed is added to image_index*
 - Animation End*
@@ -95,32 +110,31 @@
     - Does not execute when image_speed is negative.
     - Will execute every step with a single-image sprite or no sprite.
 - cursor animation is advanced
+- The debug form is updated
 - The game window is updated with the new frame and sleeps until the next frame
+  
+->  Automatic triggers are always executed in the order they display in the
+    editor, but manually called triggers execute immediately.
+
    
 * These events execute by master instance list sorting order. All other events
   are executed by object list order instead. Check the section at the end for
   more details.
 
-
---------------------------------------------------------------------------------
-
-  Game Ending
-  -----------
-  
-- Room End
-- Game End
-- Extension finalization
-
+** If automatic draw is off, this event is skipped.
 
 --------------------------------------------------------------------------------
 
   Draw Event
   ----------
 
+->  If automatic draw is off, this event is skipped. That includes the sorting.
+
 ->  At the start of every draw event (including the ones triggered by room
     transitions), the master instance list is sorted. More details about that
     in the section about instance sorting.
 
+- instances are sorted according to depth
 - the window is cleared to the window color, if it's enabled
 - views are moved to follow their objects
 - for each visible view:*
@@ -141,12 +155,27 @@
 
 --------------------------------------------------------------------------------
 
+  Game Ending
+  -----------
+  
+- Room End
+- Game End
+- Extension finalization functions
+    - Extensions are finalized in the order they display in the editor.
+- Active DLLs are freed
+
+
+--------------------------------------------------------------------------------
+
   Other Events
   ------------
   
 ->  Create, User Events, and Destroy events execute immediately when called.
 ->  Out of Health & Out of Lives events execute once, the moment the variables
     are set to zero or negative values.
+->  If an event is cleared from code within that same event using
+    object_event_clear(), execution is stopped and no errors are generated.
+    If this is done from within a script, the rest of the script will execute.
 
 
 --------------------------------------------------------------------------------
@@ -172,6 +201,7 @@
   placing instances at the end of the lists.
 - Deactivated instances are moved to a different list, and can't be accessed
   even if you know their id.
+- Instances are sorted even if they're not visible.
     
 
 ->  During the brief moment before a draw event, new instances won't be sorted:
