@@ -9,5 +9,5 @@ The compiled help module (.chm) is bundled with Game Maker 8.2.
 You can find research notes about event order and the new 8.2 room editor
 features in the following links:
 
-- [Event Order](docs/Game Maker 8.2 Event Order.txt)
-- [Object Fields](docs/Game Maker 8.2 Object Fields.txt)
+- [Event Order](docs/Game%20Maker%208.2%20Event%20Order.txt)
+- [Object Fields](docs/Game%20Maker%208.2%20Object%20Fields.txt)
