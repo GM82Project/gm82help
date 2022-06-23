@@ -97,7 +97,7 @@
 - End Of Path*
 - Outside room
 - Intersect Boundary
-- Collision events
+- Collision events***
 - Late Triggers
 - End Step
 - Particle systems update
@@ -122,6 +122,36 @@
   more details.
 
 ** If automatic draw is off, this event is skipped.
+
+*** Collision events are more complicated if either instance is solid.
+    More details in the next section.
+
+--------------------------------------------------------------------------------
+
+  Solid Collision
+  ---------------
+  
+->  Whenever two instances collide, Game Maker does some extra steps if
+    either of them are currently solid.
+
+- Mask intersection is detected
+- If either instance is solid, move both of them to their x/yprevious
+- Run the collision event for both of them
+- If either instance is still solid, advance both of them by their speed values
+- If they're still colliding after this, move both to x/yprevious again
+
+->  Note that you can change the x/yprevious and solid variables at any moment,
+    which alters how this sequence is processed and causes nonsensical behavior.
+
+->  Generally, the order in which the events execute is determined by:
+     - The object index for looking for collisions in the first place
+     - The unsorted per-object instance list for which instance checks first
+    This also means that persistent instances from a previous room and
+    reactivated instances will process their collisions last.
+
+->  Due to the above remarks and other issues, it is generally recommended to
+    avoid making any solid instances move with speed values.
+
 
 --------------------------------------------------------------------------------
 
