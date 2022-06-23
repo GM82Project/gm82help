@@ -2,7 +2,7 @@
     Game Maker 8.2 Event Order
     ==========================
     version 1 - June 14 2022
-    
+
     Written by renex and Floogle, using new information and old research by:
 
     viri - Adam - BlackDoomer
@@ -112,11 +112,11 @@
 - cursor animation is advanced
 - The debug form is updated
 - The game window is updated with the new frame and sleeps until the next frame
-  
+
 ->  Automatic triggers are always executed in the order they display in the
     editor, but manually called triggers execute immediately.
 
-   
+
 * These events execute by master instance list sorting order. All other events
   are executed by object list order instead. Check the section at the end for
   more details.
@@ -130,7 +130,7 @@
 
   Solid Collision
   ---------------
-  
+
 ->  Whenever two instances collide, Game Maker does some extra steps if
     either of them are currently solid.
 
@@ -187,7 +187,7 @@
 
   Game Ending
   -----------
-  
+
 - Room End
 - Game End
 - Extension finalization functions
@@ -199,7 +199,7 @@
 
   Other Events
   ------------
-  
+
 ->  Create, User Events, and Destroy events execute immediately when called.
 ->  Out of Health & Out of Lives events execute once, the moment the variables
     are set to zero or negative values.
@@ -212,7 +212,7 @@
 
   Instance Sorting
   ----------------
-  
+
 ->  Game Maker has a master list of active instances. New instances are always
     added at the end, and a sort is performed at the start of Draw events.
 
@@ -232,7 +232,6 @@
 - Deactivated instances are moved to a different list, and can't be accessed
   even if you know their id.
 - Instances are sorted even if they're not visible.
-    
 
 ->  During the brief moment before a draw event, new instances won't be sorted:
 
