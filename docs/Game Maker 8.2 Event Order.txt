@@ -17,8 +17,8 @@
 
 - Extensions are unpacked and compiled
 - Constants are evaluated
-    - The only thing loaded by this point are triggers, so resource names
-      and other game data can't be used in constants.
+    - At this point, graphics and code have not been fully prepared, so don't
+      try to use scripts. Most builtins and extensions are fine, though.
 - Library initialization code is executed
 - Included files are extracted
 - Extension initialization functions
