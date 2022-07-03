@@ -17,17 +17,19 @@
 <h3>Changes</h3>                                                                                
 <ul>                                                                                            
     <li>Added a completely new room editor, designed from the ground up</li><br>
+    <li>Added the ability to set up and use Object Fields for more convenient room editing</li><br>
+    <li>Added file watcher to prompt you to load or re-save when files are changed on disk</li><br>
+    <li>Added buttons to open the parent object, mask sprite, and list of children in the object editor</li><br>
     <li>Added the ability to swap the order of create events and instance creation code             </li><br>
-    <li>Added Draw Self drag and drop action                                                        </li><br>
+    <li>Added Draw Self and User Event drag and drop actions                                        </li><br>
     <li>Added buttons to access constants, triggers, included files and others to the main toolbar  </li><br>
     <li>Added a new option for picking the default room settings when creating rooms                </li><br>
     <li>Added the ability to select more fonts for the code editor                                  </li><br>
     <li>Added the ability to scroll in the path editor</li><br>
+    <li>Improved performance significantly when saving and loading gm82 projects</li><br>
     <li>Improved test run times: we measured 600% faster testing in some projects                   </li><br>
     <li>Improved compression of game exes and gm81 files (around 5-10%)                             </li><br>
-    <li>Improved layout and wording in almost all editor windows                                    </li><br>
-    <li>Improved initial sizes and resize constraints of several editor windows and panels          </li><br>
-    <li>Improved default transparency checkerboard                                                  </li><br>
+    <li>Improved layout, wording, initial sizes and resize constraints of almost all editor windows </li><br>
     <li>Removed some dead links and unnecessary ui buttons                                          </li><br>
 </ul>                                                                                           
 
@@ -37,13 +39,12 @@
     <li>Fixed memory leak in image editor that causes a crash after some time</li><br>
     <li>Fixed one frame of input lag ingame</li><br>
     <li>Fixed slowdowns when joysticks are not present in the system</li><br>
-    <li>Fixed slowdowns and stuttering by increasing the thread scheduler resolution</li><br>
-    <li>Fixed access violation when renaming objects                                               </li><br>
-    <li>Fixed access violation when deleting a background that has tiles                            </li><br>
-    <li>Fixed unpredictable corruption of rundata file                                              </li><br>
-    <li>Fixed foreign text turning into mojibake when loading a gmk                                  </li><br>
-    <li>Fixed a click drag offset when panning in the image editor                                    </li><br>
-    <li>Fixed graphical glitching in the object code editor target box                              </li><br>
+    <li>Fixed slowdowns and stuttering on Windows 10 by increasing the thread scheduler resolution</li><br>
+    <li>Fixed access violations when doing various things</li><br>
+    <li>Fixed unpredictable corruption of rundata file                </li><br>
+    <li>Fixed foreign text turning into mojibake when loading a gmk   </li><br>
+    <li>Fixed a click drag offset when panning in the image editor    </li><br>
+    <li>Fixed graphical glitching in the object code editor target box</li><br>
     <li>Fixed games crashing when the computer is locked</li><br>
     <li>Fixed the editor and games running out of memory</li><br>
     <li>Fixed unnecessary DirectPlay installation prompt in Windows 10</li><br>
