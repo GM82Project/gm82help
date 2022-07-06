@@ -54,20 +54,27 @@
 - Room End
 - New room is loaded
     - Any persistent instances are added to the end of the instance list
-- Create
-- Instance Creation Code
+- Create**
+- Object Fields**
+- Instance Creation Code**
 - Room Creation Code
 - Room Start
 - Draw*
-- Transition script is executed 'transition_steps' times
+- Room transition script (if any) is executed 'transition_steps' times
+    - time between script calls varies between 1x and 2x the screen refresh
+      rate, due to a bug in the implementation of vsync for this
 
 * If automatic draw is off, Draw is skipped.
+
+** You can swap the order in which Create and Fields+Creation Code execute in
+   the Game Settings. Using Fields with default GM8 order is not recommended.
 
 ->  While the game is scheduled for a room change, most code is skipped,
     however a few things can still execute:
 
 - solid collision pushback
 - alarms ticking (they won't execute their actions if they hit 0)
+
 
 --------------------------------------------------------------------------------
 
@@ -125,6 +132,7 @@
 
 *** Collision events are more complicated if either instance is solid.
     More details in the next section.
+
 
 --------------------------------------------------------------------------------
 
