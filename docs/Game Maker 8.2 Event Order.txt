@@ -8,6 +8,10 @@
     viri - Adam - BlackDoomer
     Tahnok100 - Nailog - tpvgames
     Weird Dragon
+    
+    You can find updated versions here:
+    
+    https://github.com/GM82Project/gm82help
 
 
 --------------------------------------------------------------------------------
