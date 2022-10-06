@@ -252,7 +252,7 @@
   last, in the order they were in the previous room.
 - If any instances are created during the start of a room, those new instances
   will be placed after any persistent instances from a previous room due to
-  those events running atfer the persistent instances are appended to the list.
+  those events running after the persistent instances are appended to the list.
 
 
 --------------------------------------------------------------------------------
