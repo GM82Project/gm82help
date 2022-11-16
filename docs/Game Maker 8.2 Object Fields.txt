@@ -1,10 +1,10 @@
 
-    Game Maker 8.2 Object Fields feature
+    Game Maker 8.2 Object Fields Feature
     ====================================
 
-    Initial draft April 11 2022
+    Initial draft 11 April 2022
     ---------------------------
-    Version 5 - May 28 2022
+    Version 6 - 16 Nov 2022
     
     renex & Floogle
 
@@ -35,14 +35,15 @@
     Fields can be of type:
 
     - value (gml expression)
-    - string (treated as text, quotes are escaped)
-    - number (strictly a numerical value, can have a min/max)
-    - colo[u]r ($BBGGRR)
-    - bool (true/false)
+    - string (treated as text, quotes and apostrophes are escaped automatically)
+    - number (strictly a numerical value, can optionally have a min/max)
+    - color/colour (hex value)
+    - bool/boolean (true/false)
     - instance (another instance from this room)
     - enum (list of options)
     - xy (coordinates, uses 2-position array)
     - angle (0-360)
+    - radius (length value)
     - resource (any of the resource types:)
         -- sprite
         -- sound
@@ -59,11 +60,11 @@
     Additionally, a special description field can be used to display
     instructions right in the room editor:
     -----------------------------
-    | /*desc
-    | This object is used to group a selection of Yoku Blocks.
-    | Placing it in a room will activate any blocks inside of it,
-    | when the Player object of the engine enters it.
-    | */
+    /*desc
+    This object is used to group a selection of Yoku Blocks.
+    Placing it in a room will activate any blocks inside of it,
+    when the Player object of the engine enters it.
+    */
     -----------------------------
     
 
@@ -73,59 +74,60 @@
 
     Fields can only be used in room start events, in a format like this:
     -----------------------------
-    | //field name: type - description
+    //field name: type - description
     -----------------------------
     
     - Initialize the fields in the create event to prevent errors.
     - You can then use the variable named after the field in this event.
+    - Fields can be inherited from a parent object, much the same way as code.
     
     If the type is not specified, it's assumed to be 'value':
     -----------------------------
-    | //field timer
+    //field timer
     -----------------------------
     
     More examples:    
     -----------------------------
-    | //field target: xy
-    | //field trigger: instance
-    | //field tex: background
-    | //field col: color
+    //field target: xy
+    //field trigger: instance
+    //field tex: background
+    //field col: color
     -----------------------------
     
     Indentation and whitespace is ignored, except for in "//field".
     -----------------------------
-    | //field   one:  value
-    | //field three:  value
-    | 
-    | // field broken: string <-- this doesn't work because of the space
+    //field   one:  value
+    //field three:  value
+    
+    // field broken: string <-- this doesn't work because of the space
     -----------------------------
     
     Enums require a list of options:
     -----------------------------
-    | //field option: enum(true,false)
-    | //field halign: enum(fa_left,fa_center,fa_right)
-    | //field type: enum("type 1","type 2")
-    | //field size: enum("global.size","global.size + 5")
-    | 
-    | //field broken: enum <-- this doesn't work because it doesn't have options
+    //field option: enum(true,false)
+    //field halign: enum(fa_left,fa_center,fa_right)
+    //field type: enum("type 1","type 2")
+    //field size: enum(global.size,global.size + 5)
+    
+    //field broken: enum <-- this doesn't work because it doesn't have options
     -----------------------------
     Each option is an expression, so you can use constants, resources etc.
     
     The xy type creates an array with two positions. Example:
     -----------------------------
-    | //field target: xy
-    | 
-    | warpX = target[0]
-    | warpY = target[1]
+    //field target: xy
+    
+    warpX = target[0]
+    warpY = target[1]
     -----------------------------
 
     The number type is strictly a number and can have a min and max:
     -----------------------------
-    | //field count: number(1,3)
-    | //field fric: number
-    | //field range: number(-10,10)
-    |
-    | //field broken: number(2) <-- this doesn't work
+    //field count: number(1,3)
+    //field fric: number
+    //field range: number(-10,10)
+    
+    //field broken: number(2) <-- this doesn't work
     -----------------------------
 
 
@@ -141,15 +143,15 @@
     
     - In order to select a position for the xy type, drag with the cursor.
     - In order to select an instance type, drag the cursor onto an instance.
-    - Holding C will highlight instances that may hold field data.
+    - Holding C will highlight instances that may hold field data in red.
     
     Example compiled TextDraw creation code from renex engine:
     -----------------------------
-    | //gm82 fields begin
-    | text="RENEX ENGINE"
-    | font=fntFileBig
-    | halign=fa_center
-    | //gm82 fields end
+    //gm82 fields begin
+    text="RENEX ENGINE"
+    font=fntFileBig
+    halign=fa_center
+    //gm82 fields end
     -----------------------------
 
 
