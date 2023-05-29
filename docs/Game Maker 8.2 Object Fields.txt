@@ -67,6 +67,27 @@
     */
     -----------------------------
     
+    For better room editor integration, it's possible to define a preview field:
+    -----------------------------
+    /*preview
+        draw_text(x,y,"Hello world!")
+    */
+    -----------------------------
+    Any code inside of the preview field will be executed on the instance's draw
+    event in the room editor. Keep the code self-contained, don't modify any
+    variables, and try to prevent errors as the whole system is rather delicate.
+    
+    You can use the following functions inside of a preview field:
+    
+    - FieldDefined(name): returns whether the field has a value set
+    - Field(name,index): returns the value of a field
+    - Font(name): loads a font from the game
+    - Sprite(name,image): loads a sprite frame from the game
+    - Background(name): loads a background from the game
+    - Shader(filename): loads a shader from disk (relative to source path)
+    - ShaderFromBase64(string): loads a shader from a base64 packed string
+    - ShaderFromPack(script name): loads a shader from an Anvil packed shader
+    
 
 --------------------------------------------------------------------------------
 
