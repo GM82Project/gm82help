@@ -1,0 +1,3580 @@
+///abs(x)
+//Returns the absolute value of x.
+
+
+///arccos(x)
+//Returns the inverse cosine of x.
+
+
+///arcsin(x)
+//Returns the inverse sine of x.
+
+
+///arctan(x)
+//Returns the inverse tangent of x.
+
+
+///ceil(x)
+//Returns the ceiling of x, that is, x rounded up to an integer.
+
+
+///cos(x)
+//Returns the cosine of x (x in radians).
+
+
+///degtorad(x)
+//Converts degrees to radians.
+
+
+///exp(x)
+//Returns e to the power x.
+
+
+///floor(x)
+//Returns the floor of x, that is, x rounded down to an integer.
+
+
+///frac(x)
+//Returns the fractional part of x, that is, the part behind the decimal dot.
+
+
+///irandom(x)
+//Returns a random integer number between 0 and x (inclusive when x is an integer).
+
+
+///is_real(x)
+//Returns whether x is a real value (as opposed to a string).
+
+
+///is_string(x)
+//Returns whether x is a string (as opposed to a real value).
+
+
+///lengthdir_x(len,dir)
+//Returns the horizontal x-component of the vector determined by the indicated length and direction.
+
+
+///lengthdir_y(len,dir)
+//Returns the vertical y-component of the vector determined by the indicated length and direction.
+
+
+///ln(x)
+//Returns the natural logarithm of x.
+
+
+///logn(n,x)
+//Returns the log base n of x.
+
+
+///power(x,n)
+//Returns x to the power n.
+
+
+///radtodeg(x)
+//Converts radians to degrees.
+
+
+///random(x)
+//Returns a random real number between 0 and x. The number is always smaller than x.
+
+
+///random_get_seed()
+//Returns the current seed.
+
+
+///random_set_seed(seed)
+//Sets the seed (an integer) that is used for the random number generation. Can be used to repeat the same random sequence. (Note though that also some actions and the system itself uses random numbers.)
+
+
+///randomize()
+//Sets the seed to a random number.
+
+
+///round(x)
+//Returns x rounded to the nearest integer.
+
+
+///sign(x)
+//Returns the sign of x (-1, 0 or 1).
+
+
+///sin(x)
+//Returns the sine of x (x in radians).
+
+
+///sqr(x)
+//Returns x*x.
+
+
+///sqrt(x)
+//Returns the square root of x. x must be non-negative.
+
+
+///tan(x)
+//Returns the tangent of x (x in radians).
+
+
+///ansi_char(val)
+//Returns a string containing the character with raw BYTE value set.
+
+
+///chr(val)
+//Returns a string containing the character with code val for printing/displaying based on the current drawing font's character set codepage.
+
+
+///clipboard_get_text()
+//Returns the current text on the clipboard.
+
+
+///clipboard_has_text()
+//Returns whether there is any text on the clipboard.
+
+
+///clipboard_set_text(str)
+//Sets the string str on the clipboard.
+
+
+///ord(str)
+//Returns the asci code of the first character in str.
+
+
+///real(str)
+//Turns str into a real number. str can contain a minus sign, a decimal dot and even an exponential part.
+
+
+///string(val)
+//Turns the real value into a string using a standard format (no decimal places when it is an integer, and two decimal places otherwise).
+
+
+///string_byte_at(str,index)
+//Returns the raw byte value as a REAL at BYTE position <i>index.</i>
+
+
+///string_byte_length(str)
+//Returns the number of BYTES in the string. As strings are now held as UTF8, this means the length of the string is no longer it's BYTE size.
+
+
+///string_char_at(str,index)
+//Returns the character in str at position index.
+
+
+///string_copy(str,index,count)
+//Returns a substring of str, starting at position index, and of length count.
+
+
+///string_count(substr,str)
+//Returns the number of occurrences of substr in str.
+
+
+///string_delete(str,index,count)
+//Returns a copy of str with the part removed that starts at position index and has length count.
+
+
+///string_digits(str)
+//Returns a string that only contains the digits in str.
+
+
+///string_format(val,tot,dec)
+//Turns val into a string using your own format: tot indicates the total number of places and dec indicates the number of decimal places.
+
+
+///string_insert(substr,str,index)
+//Returns a copy of str with substr added at position index.
+
+
+///string_length(str)
+//Returns the number of characters in the string.
+
+
+///string_letters(str)
+//Returns a string that only contains the letters in str.
+
+
+///string_lettersdigits(str)
+//Returns a string that contains the letters and digits in str.
+
+
+///string_lower(str)
+//Returns a lowercase copy of str.
+
+
+///string_pos(substr,str)
+//Returns the position of substr in str (0=no occurrence).
+
+
+///string_repeat(str,count)
+//Returns a string consisting of count copies of str.
+
+
+///string_replace(str,substr,newstr)
+//Returns a copy of str with the first occurrence of substr replaced by newstr.
+
+
+///string_replace_all(str,substr,newstr)
+//Returns a copy of str with all occurrences of substr replaced by newstr.
+
+
+///string_upper(str)
+//Returns an uppercase copy of str.
+
+
+///date_create_date(year,month,day)
+//Creates a date-time value corresponding to the indicated date.
+
+
+///date_create_datetime(year,month,day,hour,minute,second)
+//Creates a date-time value corresponding to the indicated date and time.
+
+
+///date_create_time(hour,minute,second)
+//Creates a date-time value corresponding to the indicated time.
+
+
+///date_current_date()
+//Returns the date-time value that corresponds to the current date only (ignoring the time).
+
+
+///date_current_datetime()
+//Returns the date-time value that corresponds to the current moment.
+
+
+///date_current_time()
+//Returns the date-time value that corresponds to the current time only (ignoring the date).
+
+
+///date_date_of(date)
+//Returns the date part of the indicated date-time value, setting the time part to 0.
+
+
+///date_date_string(date)
+//Returns a string indicating the given date in the default format for the system.
+
+
+///date_datetime_string(date)
+//Returns a string indicating the given date and time in the default format for the system.
+
+
+///date_days_in_month(date)
+//Returns the number of days in the month indicated by the date-time value.
+
+
+///date_days_in_year(date)
+//Returns the number of days in the year indicated by the date-time value.
+
+
+///date_get_day(date)
+//Returns the day of the month corresponding to the date.
+
+
+///date_get_day_of_year(date)
+//Returns the day of the year corresponding to the date.
+
+
+///date_get_hour(date)
+//Returns the hour corresponding to the date.
+
+
+///date_get_hour_of_year(date)
+//Returns the hour of the year corresponding to the date.
+
+
+///date_get_minute(date)
+//Returns the minute corresponding to the date.
+
+
+///date_get_minute_of_year(date)
+//Returns the minute of the year corresponding to the date.
+
+
+///date_get_month(date)
+//Returns the month corresponding to the date.
+
+
+///date_get_second(date)
+//Returns the second corresponding to the date.
+
+
+///date_get_second_of_year(date)
+//Returns the second of the year corresponding to the date.
+
+
+///date_get_week(date)
+//Returns the week of the year corresponding to the date.
+
+
+///date_get_weekday(date)
+//Returns the day of the week corresponding to the date.
+
+
+///date_get_year(date)
+//Returns the year corresponding to the date.
+
+
+///date_inc_day(date,amount)
+//Returns a new date that is amount days after the indicated date. amount must be an integer number.
+
+
+///date_inc_hour(date,amount)
+//Returns a new date that is amount hours after the indicated date. amount must be an integer number.
+
+
+///date_inc_minute(date,amount)
+//Returns a new date that is amount minutes after the indicated date. amount must be an integer number.
+
+
+///date_inc_month(date,amount)
+//Returns a new date that is amount months after the indicated date. amount must be an integer number.
+
+
+///date_inc_second(date,amount)
+//Returns a new date that is amount seconds after the indicated date. amount must be an integer number.
+
+
+///date_inc_week(date,amount)
+//Returns a new date that is amount weeks after the indicated date. amount must be an integer number.
+
+
+///date_inc_year(date,amount)
+//Returns a new date that is amount years after the indicated date. amount must be an integer number.
+
+
+///date_is_today(date)
+//Returns whether the indicated date-time value is on today.
+
+
+///date_leap_year(date)
+//Returns whether the year indicated by the date-time value is a leap year.
+
+
+///date_time_of(date)
+//Returns the time part of the indicated date-time value, setting the date part to 0.
+
+
+///date_time_string(date)
+//Returns a string indicating the given time in the default format for the system.
+
+
+///date_valid_date(year,month,day)
+//Returns whether the indicated date is valid.
+
+
+///date_valid_datetime(year,month,day,hour,minute,second)
+//Returns whether the indicated date and time are valid.
+
+
+///date_valid_time(hour,minute,second)
+//Returns whether the indicated time is valid.
+
+
+///distance_to_object(obj)
+//Returns the distance of the instance to the nearest instance of object obj. (If the instance or object does not have a sprite or mask, the result of the function is undefined.)
+
+
+///distance_to_point(x,y)
+//Returns the distance of the bounding box of the current instance to (x,y). (If the instance does not have a sprite or mask, the result of the function is undefined.)
+
+
+///motion_add(dir,speed)
+//Adds the motion to the current motion (as a vector addition).
+
+
+///motion_set(dir,speed)
+//Sets the motion with the given speed in direction dir.
+
+
+///move_bounce_all(adv)
+//Bounces against all instances, instead of just the solid ones.
+
+
+///move_bounce_solid(adv)
+//Bounces against solid instances, like the corresponding action. adv indicates whether to use advance bounce, that also takes slanted walls into account.
+
+
+///move_contact_all(dir,maxdist)
+//Same as the previous function but this time you stop at a contact with any object, not just solid objects.
+
+
+///move_contact_solid(dir,maxdist)
+//Moves the instance in the direction until a contact position with a solid object is reached. If there is no collision at the current position, the instance is placed just before a collision occurs. If there already is a collision the instance is not moved. You can specify the maximal distance to move (use a negative number for an arbitrary distance).
+
+
+///move_outside_all(dir,maxdist)
+//Same as the previous function but this time you move until outside any object, not just solid objects.
+
+
+///move_outside_solid(dir,maxdist)
+//Moves the instance in the direction until it no longer lies within a solid object. If there is no collision at the current position the instance is not moved. You can specify the maximal distance to move (use a negative number for an arbitrary distance).
+
+
+///move_random(hsnap,vsnap)
+//Moves the instance to a free random, snapped position, like the corresponding action.
+
+
+///move_snap(hsnap,vsnap)
+//Snaps the instance, like the corresponding action.
+
+
+///move_towards_point(x,y,sp)
+//Moves the instances with speed sp toward position (x,y).
+
+
+///move_wrap(hor,vert,margin)
+//Wraps the instance when it has left the room to the other side. <tt>hor</tt> indicates whether to wrap horizontaly and <tt>vert</tt> indicates whether to wrap vertically. <tt>margin</tt> indicates how far the origin of the instance must be outside the room before the wrap happens. So it is a margin around the room. You typically use this function in the Outside event.
+
+
+///place_empty(x,y)
+//Returns whether the instance placed at position (x,y) meets nobody. So this function takes also non-solid instances into account.
+
+
+///place_free(x,y)
+//Returns whether the instance placed at position(x,y) is collision-free. This is typically used as a check before actually moving to the new position.
+
+
+///place_meeting(x,y,obj)
+//Returns whether the instance placed at position (x,y) meets obj. obj can be an object in which case the function returns true is some instance of that object is met. It can also be an instance id, the special word all meaning an instance of any object, or the special word other.
+
+
+///place_snapped(hsnap,vsnap)
+//Returns whether the instance is aligned with the snapping values.
+
+
+///position_empty(x,y)
+//Returns whether there is nothing at position (x,y).
+
+
+///position_meeting(x,y,obj)
+//Returns whether at position (x,y) there is an instance obj. obj can be an object, an instance id, or the keywords <tt>self</tt>, <tt>other</tt>, or <tt>all</tt>.
+
+
+///path_end()
+//Ends the following of a path for the current instance.
+
+
+///path_start(path,speed,endaction,absolute)
+//Starts a path for the current instance. The <TT>path</TT> is the name of the path you want to start. The <TT>speed</TT> is the speed with which the path must be followed. A negative speed means that the instance moves backwards along the path. The <TT>endaction</TT> indicates what should happen when the end of the path is reached. The following values can be used: <p> <blockquote> 0 : stop the path
+
+
+///mp_grid_add_cell(id,h,v)
+//Marks the indicated cell as being forbidden. Cell 0,0 is the top left cell.
+
+
+///mp_grid_add_instances(id,obj,prec)
+//Marks all cells that intersect an instance of the indicated object as being forbidden. You can also use an individual instance by making obj the id of the instance. Also you can use the keyword <TT><B>all</b></tt> to indicate all instances of all objects. prec indicates whether precise collision checking must be used (will only work if precise checking is enabled for the sprite used by the instance).
+
+
+///mp_grid_add_rectangle(id,left,top,right,bottom)
+//Marks all cells that intersect the indicated rectangle as being forbidden.
+
+
+///mp_grid_clear_all(id)
+//Mark all cells in the grid to be free.
+
+
+///mp_grid_clear_cell(id,h,v)
+//Clears the indicated cell. Cell 0,0 is the top left cell.
+
+
+///mp_grid_clear_rectangle(id,left,top,right,bottom)
+//Clears all cells that intersect the indicated rectangle (in room coordinates).
+
+
+///mp_grid_create(left,top,hcells,vcells,cellwidth,cellheight)
+//This function creates the grid. It returns an index that must be used in all other calls. You can create and maintain multiple grid structures at the same moment. left and top indicate the position of the top-left corner of the grid. hcells and vcells indicate the number of horizontal and vertical cells. Finally cellwidth and cellheight indicate the size of the cells.
+
+
+///mp_grid_destroy(id)
+//Destroys the indicated grid structure and frees its memory. Don't forget to call this if you don't need the structure anymore.
+
+
+///mp_grid_draw(id)
+//This function draws the grid with green cells being free and red cells being forbidden. This function is slow and only provided as a debug tool.
+
+
+///mp_grid_path(id,path,xstart,ystart,xgoal,ygoal,allowdiag)
+//Computes a path through the grid. path must indicate an existing path that will be replaced by the computer path. xstart and ystart indicate the start of the path and xgoal and ygoal the goal. allowdiag indicates whether diagonal moves are allowed instead of just horizontal or vertical. The function returns whether it succeeded in finding a path. (Note that the path is independent of the current instance; It is a path through the g rid, not a path for a specific instance.)
+
+
+///mp_linear_path(path,xg,yg,stepsize,checkall)
+//This function computes a straight-line path for the instance from its current position to the position (xg,yg) using the indicated step size. It uses steps as in the function <TT>mp_linear_step()</TT>. The indicated path must already exist and will be overwritten by the new path. (See a later chapter on how to create and destroy paths.) The function will return whether a path was found. The function will stop and report failure if no straight path exists between start and goal. If it fails a path is still created that runs till the position where the instance was blocked.
+
+
+///mp_linear_path_object(path,xg,yg,stepsize,obj)
+//Same as the function above but this time only instances of <tt>obj</tt> are considered as obstacles. <tt>obj</tt> can be an object or an instance id.
+
+
+///mp_linear_step(x,y,stepsize,checkall)
+//This function lets the instance take a step straight towards the indicated position (x,y). The size of the step is indicated by the <TT>stepsize</TT>. If the instance is already at the position it will not move any further. If <TT>checkall</TT> is true the instance will stop when it hits an instance of any object. If it is false it only stops when hitting a solid instance. Note that this function does not try to make detours if it meets an obstacle. It simply fails in that case. The function returns whether or not the goal position was reached.
+
+
+///mp_linear_step_object(x,y,stepsize,obj)
+//Same as the function above but this time only instances of <tt>obj</tt> are considered as obstacles. <tt>obj</tt> can be an object or an instance id.
+
+
+///mp_potential_path(path,xg,yg,stepsize,factor,checkall)
+//This function computes a path for the instance from its current position and orientation to the position (xg,yg) using the indicated step size trying to avoid collision with obstacles. It uses potential field steps, like in the function <TT>mp_potential_step()</TT> and also the parameters that can be set with <TT>mp_potential_settings()</TT>. The indicated path must already exist and will be overwritten by the new path. (See a later chapter on how to create and destroy paths.) The function will return whether a path was found. To avoid the function continuing to compute forever you need to provide a length factor larger than 1. The function will stop and report failure if it cannot find a path shorter than this factor times the distance between start and goal. A factor of 4 is normally good enough but if you expect long detours you might make it longer. If it fails a path is still created that runs in the direction of the goal but it will not reach it.
+
+
+///mp_potential_path_object(path,xg,yg,stepsize,factor,obj)
+//Same as the function above but this time only instances of <tt>obj</tt> are considered as obstacles. <tt>obj</tt> can be an object or an instance id.
+
+
+///mp_potential_settings(maxrot,rotstep,ahead,onspot)
+//The previous function does its work using a number of parameters that can be changed using this function. Globally the method works as follows. It first tries to move straight towards the goal. It looks a number of steps ahead which can be set with the parameter <TT>ahead</TT> (default 3). Reducing this value means that the instance will start changing direction later. Increasing it means it will start changing direction earlier. If this check leads to a collision it starts looking at directions more to the left and to the right of the best direction. It does this in steps of size <TT>rotstep</TT> (default 10). Reducing this gives the instance more movement possibilities but will be slower. The parameter <TT>maxrot</TT> is a bit more difficult to explain. The instance has a current direction. <TT>maxrot</TT> (default 30) indicates how much it is allowed to change its current direction in a step. So even if it can move e.g. straight to the goal it will only do so if it does not violate this maximal change of direction. If you make <TT>maxrot</TT> large the instance can change a lot in each step. This will make it easier to find a short path but the path will be uglier. If you make the value smaller the path will be smoother but it might take longer detours (and sometimes even fail to find the goal). When no step can be made the behavior depends on the value of the parameter <TT>onspot</TT>. If <TT>onspot</TT> is true (the default value), the instance will rotate on its spot by the amount indicated with <TT>maxrot</TT>. If it is false it will not move at all. Setting it to false is useful for e.g. cars but reduces the chance of finding a path.
+
+
+///mp_potential_step(x,y,stepsize,checkall)
+//Like the previous function, this function lets the instance take a step towards a particular position. But in this case it tries to avoid obstacles. When the instance would run into a solid instance (or any instance when checkall is true) it will change the direction of motion to try to avoid the instance and move around it. The approach is not guaranteed to work but in most easy cases it will effectively move the instance towards the goal. The function returns whether or not the goal was reached.
+
+
+///mp_potential_step_object(x,y,stepsize,obj)
+//Same as the function above but this time only instances of <tt>obj</tt> are considered as obstacles. <tt>obj</tt> can be an object or an instance id.
+
+
+///collision_circle(xc,yc,radius,obj,prec,notme)
+//This function tests whether there is a collision between the (filled) circle centered at position (xc,yc) with the given radius and entities of object obj. For example, you can use this to test whether there is an object close to a particular location.
+
+
+///collision_point(x,y,obj,prec,notme)
+//This function tests whether at point (x,y) there is a collision with entities of object obj.
+
+
+///instance_change(obj,perf)
+//Changes the instance into obj. perf indicates whether to perform the destroy and creation events.
+
+
+///instance_copy(performevent)
+//Creates a copy of the current instance. The argument indicates whether the creation event must be executed for the copy. The function returns the id of the new copy.
+
+
+///instance_create(x,y,obj)
+//Creates an instance of obj at position (x,y). The function returns the id of the new instance.
+
+
+///instance_destroy()
+//Destroys the current instance.
+
+
+///instance_exists(obj)
+//Returns whether an instance of type obj exists. obj can be an object, an instance id, or the keyword all.
+
+
+///instance_find(obj,n)
+//Returns the id of the (n+1)'th instance of type obj. obj can be an object or the keyword all. If it does not exist, the special object noone is returned. Note that the assignment of the instances to the instance id's changes every step so you cannot use values from previous steps.
+
+
+///instance_furthest(x,y,obj)
+//Returns the id of the instance of type obj furthest away from (x,y). obj can be an object or the keyword all.
+
+
+///instance_nearest(x,y,obj)
+//Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all.
+
+
+///instance_number(obj)
+//Returns the number of instances of type obj. obj can be an object or the keyword all.
+
+
+///instance_place(x,y,obj)
+//Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.
+
+
+///instance_position(x,y,obj)
+//Returns the id of the instance of type obj at position (x,y). When multiple instances are at that position the first is returned. obj can be an object or the keyword all. If it does not exist, the special object noone is returned.
+
+
+///position_change(x,y,obj,perf)
+//Changes all instances at (x,y) into obj. perf indicates whether to perform the destroy and creation events.
+
+
+///position_destroy(x,y)
+//Destroys all instances whose sprite contains position (x,y).
+
+
+///instance_activate_all()
+//Activates all instances in the room.
+
+
+///instance_activate_object(obj)
+//Activates all instances in the room of the given object. You can also use all to indicate that all instances must be activated or the id of an instance to activate an individual instance.
+
+
+///instance_activate_region(left,top,width,height,inside)
+//Activates all instances in the indicated region. If inside is false the instances completely outside the region are activated.
+
+
+///instance_deactivate_all(notme)
+//Deactivates all instances in the room. If notme is true the calling instance is not deactivated (which is normally what you want).
+
+
+///instance_deactivate_object(obj)
+//Deactivates all instances in the room of the given object. You can also use all to indicate that all instances must be deactivated or the id of an instance to deactivate an individual instance.
+
+
+///instance_deactivate_region(left,top,width,height,inside,notme)
+//Deactivates all instances in the indicated region (that is, those whose bounding box lies partially inside the region). If inside is false the instances completely outside the region are deactivated. If notme is true the calling instance is not deactivated (which is normally what you want).
+
+
+///sleep(numb)
+//Sleeps numb milliseconds.
+
+
+///game_end()
+//End the game.
+
+
+///game_load(string)
+//Loads the game from the file with name string.
+
+
+///game_restart()
+//Restart the game.
+
+
+///game_save(string)
+//Saves the game to the file with name string.
+
+
+///room_goto(numb)
+//Goto the room with index numb.
+
+
+///room_goto_next()
+//Go to the next room.
+
+
+///room_goto_previous()
+//Go to the previous room.
+
+
+///room_next(numb)
+//Return the index of the room after numb (-1 = none).
+
+
+///room_previous(numb)
+//Return the index of the room before numb (-1 = none) but don't go there.
+
+
+///room_restart()
+//Restart the current room.
+
+
+///transition_define(kind,name)
+//You can actually create your own transitions. To this end you must define a script (possibly in an extension package) to do the transition. With this function you can then add the transition to the system. <tt>kind</tt> is the index of the transition (either a new one or an existing transitions). <tt>name</tt> is the name of the script. Note that the name of the script is a string! So there must be quotes around it. Note that this is really advanced stuff. The script must take five arguments: a surface with the image of the previous room, a surface with the image of the next room, the width of the surfaces, the height of the surfaces, and the fraction of the transition (between 0 and 1). It must then draw the image using the two surfaces.
+
+
+///event_inherited()
+//Performs the inherited event. This only works if the instance has a parent object.
+
+
+///event_perform(type,numb)
+//Performs event numb of the indicated type to the current instance. The following event types can be indicated: <p> <blockquote> <tt><b>ev_create</b></tt>
+
+
+///event_perform_object(obj,type,numb)
+//This functions works the same as the function above except that this time you can specify events in another object. Note that the actions in these events are applied to the current instance, not to instances of the given object!
+
+
+///event_user(numb)
+//In the other events you can also define 16 user events. These are only performed if you call this function. numb must lie in the range 0 to 15.
+
+
+///set_application_title(title)
+//Sets the title of the application to the given string. The title is for example shown in the task bar.
+
+
+///set_program_priority(priority)
+//Sets the priority for the program. You can indicate a value between -3 and +3. A value of -3 means that the program will only run if no other process on the computer requires processing time, or stated differently, when all other processes are idle. Values of -2 and -1 are below normal, so other processes will get priority. 0 is the normal value. +1 and +2 give a higher priority, resulting possibly in higher speed and smoother game flow. But other processes will get much less processing time. +3 indicates real-time mode. In real-time mode basically all time is allotted to the game. This can lead to serious problems with any other applications running on the computer. Also keyboard events and e.g. the pressing of the close box might no longer be recorded by Windows. So only use this if you want all the processor time. Also better check carefully before using it and save the game before running.
+
+
+///show_debug_message(str)
+//Shows the string in debug mode.
+
+
+///variable_global_array_get(name,ind)
+//Returns the value of index ind of the global array variable with the given name (a string).
+
+
+///variable_global_array_set(name,ind,value)
+//Sets the index ind in the global array variable with the given name (a string) to the given value.
+
+
+///variable_global_exists(name)
+//Returns whether a global variable with the given name (a string) exists.
+
+
+///variable_global_get(name)
+//Returns the value of the global variable with the given name (a string).
+
+
+///variable_global_set(name,value)
+//Sets the global variable with the given name (a string) to the given value.
+
+
+///variable_local_array_get(name,ind)
+//Returns the value of index ind of the local array variable with the given name (a string).
+
+
+///variable_local_array_set(name,ind,value)
+//Sets the index ind in the local array variable with the given name (a string) to the given value.
+
+
+///variable_local_exists(name)
+//Returns whether a local variable with the given name (a string) exists for the current instance.
+
+
+///variable_local_get(name)
+//Returns the value of the local variable with the given name (a string).
+
+
+///variable_local_set(name,value)
+//Sets the local variable with the given name (a string) to the given value.
+
+
+///io_clear()
+//Clears all keyboard and mouse states.
+
+
+///io_handle()
+//Handle user io, updating keyboard and mouse status.
+
+
+///keyboard_check(key)
+//Returns whether the key with the particular keycode is currently down.
+
+
+///keyboard_check_direct(key)
+//Returns whether the key with the particular keycode is pressed by checking the hardware directly. The result is independent of which application has focus. It allows for a few more checks. In particular you can use keycodes vk_lshift, vk_lcontrol, vk_lalt, vk_rshift, vk_rcontrol and vk_ralt to check whether the left or right shift, control or alt key is pressed.
+
+
+///keyboard_check_pressed(key)
+//Returns whether the key with the particular keycode was pressed since the last step.
+
+
+///keyboard_check_released(key)
+//Returns whether the key with the particular keycode was released since the last step.
+
+
+///keyboard_clear(key)
+//Clears the state of the key. This means that it will no longer generate keyboard events until it starts repeating.
+
+
+///keyboard_get_map(key)
+//Returns the current mapping for key.
+
+
+///keyboard_get_numlock()
+//Returns whether the numlock is set.
+
+
+///keyboard_key_press(key)
+//Simulates a press of the key with the indicated keycode.
+
+
+///keyboard_key_release(key)
+//Simulates a release of the key with the indicated keycode.
+
+
+///keyboard_set_numlock(on)
+//Sets (true) or unsets (false) the numlock.
+
+
+///keyboard_unset_map()
+//Resets all keys to map to themselves.
+
+
+///keyboard_wait()
+//Waits till the user presses a key on the keyboard.
+
+
+///io_clear()
+//Clears all keyboard and mouse states.
+
+
+///io_handle()
+//Handle user io, updating keyboard and mouse status.
+
+
+///mouse_check_button(numb)
+//Returns whether the mouse button is currently down (use as values <tt>mb_none</tt>, <tt>mb_left</tt>, <tt>mb_middle</tt>, or <tt>mb_right</tt>).
+
+
+///mouse_check_button_pressed(numb)
+//Returns whether the mouse button was pressed since the last step.
+
+
+///mouse_check_button_released(numb)
+//Returns whether the mouse button was released since the last step.
+
+
+///mouse_clear(button)
+//Clears the state of the mouse button. This means that it will no longer generate mouse events until the player releases it and presses it again.
+
+
+///mouse_wait()
+//Waits till the user presses a mouse button
+
+
+///mouse_wheel_down()
+//Returns whether the mouse wheel was moved down since the last step.
+
+
+///mouse_wheel_up()
+//Returns whether the mouse wheel was moved up since the last step.
+
+
+///joystick_axes(id)
+//Returns the number of axes of the joystick.
+
+
+///joystick_buttons(id)
+//Returns the number of buttons of the joystick.
+
+
+///joystick_check_button(id,numb)
+//Returns whether the joystick button is pressed (numb in the range 1-32).
+
+
+///joystick_direction(id)
+//Returns the keycode (vk_numpad1 to vk_numpad9) corresponding to the direction of joystick id (1 or 2).
+
+
+///joystick_exists(id)
+//Returns whether joystick id (1 or 2) exists.
+
+
+///joystick_has_pov(id)
+//Returns whether the joystick has point-of-view capabilities.
+
+
+///joystick_name(id)
+//Returns the name of the joystick
+
+
+///joystick_pov(id)
+//Returns the joysticks point-of view position. This is an angle between 0 and 360 degrees. 0 is forwards, 90 to the right, 180 backwards and 270 to the left. When no point-of-view direction is pressed by the user -1 is returned.
+
+
+///joystick_rpos(id)
+//Returns the joysticks rudder position (or fourth axis).
+
+
+///joystick_upos(id)
+//Returns the joysticks u-position (or fifth axis).
+
+
+///joystick_vpos(id)
+//Returns the joysticks v-position (or sixth axis).
+
+
+///joystick_xpos(id)
+//Returns the position (-1 to 1) of the x-axis of joystick id.
+
+
+///joystick_ypos(id)
+//Returns the joysticks y-position.
+
+
+///joystick_zpos(id)
+//Returns the joysticks z-position (if it has a z-axis).
+
+
+///draw_background(back,x,y)
+//Draws the background at position (x,y). (Without color blending and no alpha transparency.)
+
+
+///draw_background_ext(back,x,y,xscale,yscale,rot,color,alpha)
+//Draws the background scaled and rotated with blending color (use c_white for no blending) and transparency alpha (0-1).
+
+
+///draw_background_part(back,left,top,width,height,x,y)
+//Draws the indicated part of the background with the top-left corner of the part at position (x,y).
+
+
+///draw_background_part_ext(back,left,top,width,height,x,y,xscale,yscale,color,alpha)
+//Draws the indicated part of the background with the top-left corner of the part at position (x,y) but now with scale factors and a color and transparency setting.
+
+
+///draw_background_stretched(back,x,y,w,h)
+//Draws the background stretched to the indicated region.
+
+
+///draw_background_stretched_ext(back,x,y,w,h,color,alpha)
+//Draws the background stretched to the indicated region. color is the blending color and alpha indicates the transparency setting.
+
+
+///draw_background_tiled(back,x,y)
+//Draws the background tiled so that it fills the entire room.
+
+
+///draw_background_tiled_ext(back,x,y,xscale,yscale,color,alpha)
+//Draws the background tiled so that it fills the entire room but now with scale factors and a color and transparency setting.
+
+
+///draw_self()
+//This command is exactly the same as <tt><b>draw_sprite_ext()</b></tt> except it will use the instances own variables to draw itself (x,y, scale, angle etc.) This provides the same action as if the instance was draw without a script.
+
+
+///draw_sprite(sprite,subimg,x,y)
+//Draws subimage subimg (-1 = current) of the sprite with its origin at position (x,y). (Without color blending and no alpha transparency.)
+
+
+///draw_sprite_ext(sprite,subimg,x,y,xscale,yscale,rot,color,alpha)
+//Draws the sprite scaled with factors xscale and yscale and rotated counterclockwise over rot degrees. color is the blending color (use c_white for no blending) and alpha indicates the transparency factor with which the images is merged with its background. A value of 0 makes the sprite completely transparent. A value of 1 makes it completely solid. This function can create great effect (for example partially transparent explosions).
+
+
+///draw_sprite_part(sprite,subimg,left,top,width,height,x,y)
+//Draws the indicated part of subimage subimg (-1 = current) of the sprite with the top-left corner of the part at position (x,y).
+
+
+///draw_sprite_part_ext(sprite,subimg,left,top,width,height,x,y,xscale,yscale,color,alpha)
+//Draws the indicated part of subimage subimg (-1 = current) of the sprite with the top-left corner of the part at position (x,y) but now with scale factors and a color and transparency setting.
+
+
+///draw_sprite_stretched(sprite,subimg,x,y,w,h)
+//Draws the sprite stretched so that it fills the region with top-left corner (x,y) and width w and height h.
+
+
+///draw_sprite_stretched_ext(sprite,subimg,x,y,w,h,color,alpha)
+//Draws the sprite stretched so that it fills the region with top-left corner (x,y) and width w and height h. color is the blending color and alpha indicates the transparency setting.
+
+
+///draw_sprite_tiled(sprite,subimg,x,y)
+//Draws the sprite tiled so that it fills the entire room. (x,y) is the place where one of the sprites is drawn.
+
+
+///draw_sprite_tiled_ext(sprite,subimg,x,y,xscale,yscale,color,alpha)
+//Draws the sprite tiled so that it fills the entire room but now with scale factors and a color and transparency setting.
+
+
+///color_get_blue(col)
+//Returns the blue component of the color.
+
+
+///color_get_green(col)
+//Returns the green component of the color.
+
+
+///color_get_hue(col)
+//Returns the hue component of the color.
+
+
+///color_get_red(col)
+//Returns the red component of the color.
+
+
+///color_get_saturation(col)
+//Returns the saturation component of the color.
+
+
+///color_get_value(col)
+//Returns the value component of the color.
+
+
+///draw_circle(x,y,r,outline)
+//Draws a circle at (x,y) with radius r. <tt>outline</tt> indicates whether only the outline must be drawn (true) or it should be filled (false).
+
+
+///draw_clear(col)
+//Clears the entire room in the given color (no alpha blending).
+
+
+///draw_clear_alpha(col,alpha)
+//Clears the entire room in the given color and alpha value (in particular useful for surfaces).
+
+
+///draw_get_alpha()
+//Returns the alpha value used for drawing primitives.
+
+
+///draw_get_color()
+//Returns the drawing color used for drawing primitives.
+
+
+///draw_getpixel(x,y)
+//Returns the color of the pixel corresponding to position (x,y) in the room. This is not very fast, so use with care.
+
+
+///draw_path(path,x,y,absolute)
+//With this function you can draw the indicated path in the room with its start at position (x,y). If absolute is true the path is drawn at the position where it was defined and the values of x and y are ignored.
+
+
+///draw_point(x,y)
+//Draws a point at (x,y) in the current color.
+
+
+///draw_set_alpha(alpha)
+//Sets the alpha transparency value to be used from now on for drawing primitives. Should lie in the range 0-1. 0 is fully transparent, 1 is fully opaque.
+
+
+///draw_set_circle_precision(precision)
+//Sets the precision with which circles are drawn, that is, the number of segments they consist of. The precision must lie between 4 and 64 and must be dividable by 4. This is also used for drawing ellipses and rounded rectangles.
+
+
+///draw_set_color(col)
+//Sets the drawing color to be used from now on for drawing primitives.
+
+
+///make_color_hsv(hue,saturation,value)
+//Returns a color with the indicated hue, saturation and value components (each between 0 and 255).
+
+
+///make_color_rgb(red,green,blue)
+//Returns a color with the indicated red, green, and blue components, where red, green and blue must be values between 0 and 255.
+
+
+///screen_save(fname)
+//Saves a png image of the screen in the given filename. Useful for making screenshots.
+
+
+///screen_save_part(fname,x,y,w,h)
+//Saves part of the screen in the given png filename.
+
+
+///draw_set_font(font)
+//Sets the font that will be used when drawing text. Use -1 to set the default font (Arial 12).
+
+
+///draw_set_halign(halign)
+//Sets the horizontal alignment used when drawing text. Choose one of the following constants as values: <p> <blockquote> <tt><b>fa_left</b></tt>
+
+
+///draw_set_valign(valign)
+//Sets the vertical alignment used when drawing text. Choose one of the following constants as values: <p> <blockquote> <tt><b>fa_top</b></tt>
+
+
+///draw_text(x,y,string)
+//Draws the string at position (x,y), using the drawing color and alpha. A # symbol or carriage return chr(13) or linefeed chr(10) are interpreted as newline characters. In this way you can draw multi-line texts. (Use \# to get the # symbol itself.)
+
+
+///draw_text_ext(x,y,string,sep,w)
+//Similar to the previous routine but you can specify two more things. First of all, <tt>sep</tt> indicates the separation distance between the lines of text in a multiline text. Use -1 to get the default distance. Use <tt>w</tt> to indicate the width of the text in pixels. Lines that are longer than this width are split- up at spaces or - signs. Use -1 to not split up lines.
+
+
+///draw_text_ext_transformed(x,y,string,sep,w,xscale,yscale,angle)
+//Combines the function <tt>draw_text_ext</tt> and <tt>draw_text_transformed</tt>. It makes it possible to draw a multi-line text rotated and scaled.
+
+
+///draw_text_transformed(x,y,string,xscale,yscale,angle)
+//Draws the string at position (x,y) in the same way as above, but scale it horizontally and vertically with the indicated factors and rotate it counter-clockwise over <tt>angle</tt> degrees.
+
+
+///string_height(string)
+//Height of the string in the current font as it would be drawn using the <tt>draw_text()</tt> function.
+
+
+///string_height_ext(string,sep,w)
+//Height of the string in the current font as it would be drawn using the <tt>draw_text_ext()</tt> function.
+
+
+///string_width(string)
+//Width of the string in the current font as it would be drawn using the <tt>draw_text()</tt> function. Can be used for precisely positioning graphics.
+
+
+///string_width_ext(string,sep,w)
+//Width of the string in the current font as it would be drawn using the <tt>draw_text_ext()</tt> function. Can be used for precisely positioning graphics.
+
+
+///background_get_texture(back)
+//Returns the id of the texture corresponding to the indicated background.
+
+
+///draw_primitive_begin(kind)
+//Start a primitive of the indicated kind.
+
+
+///draw_primitive_begin_texture(kind,texid)
+//Start a primitive of the indicated kind with the given texture.
+
+
+///draw_primitive_end()
+//End the description of the primitive. This function actually draws it.
+
+
+///draw_primitive_end()
+//End the description of the primitive. This function actually draws it.
+
+
+///draw_set_blend_mode(mode)
+//Indicates what blend mode to use. The following values are possible: <tt>bm_normal</tt>, <tt>bm_add</tt>, <tt>bm_subtract</tt>, and <tt>bm_max</tt>. Don't forget to reset the mode to normal after use because otherwise also other sprites and even the backgrounds are drawn with the new blend mode.
+
+
+///draw_set_blend_mode_ext(src,dest)
+//Indicates what blend mode to use for both the source and destination color. The new color is some factor times the source and another factor times the destination. These factors are set with this function. To understand this, the source and destination both have a red, green, blue, and alpha component. So the source is (Rs, Gs, Bs, As) and the destination is (Rd, Gd, Bd, Ad). All are considered to lie between 0 and 1. The blend factors you can choose for source and destination are: <ul> <li>bm_zero: Blend factor is (0, 0, 0, 0). <li>bm_one: Blend factor is (1, 1, 1, 1). <li>bm_src_color: Blend factor is (Rs, Gs, Bs, As). <li>bm_inv_src_color: Blend factor is (1–Rs, 1–Gs, 1–Bs, 1–As). <li>bm_src_alpha: Blend factor is (As, As, As, As). <li>bm_inv_src_alpha: Blend factor is (1–As, 1–As, 1–As, 1–As). <li>bm_dest_alpha: Blend factor is (Ad, Ad, Ad, Ad). <li>bm_inv_dest_alpha: Blend factor is (1–Ad, 1–Ad, 1–Ad, 1–Ad). <li>bm_dest_color: Blend factor is (Rd, Gd, Bd, Ad). <li>bm_inv_dest_color: Blend factor is (1–Rd, 1–Gd, 1–Bd, 1–Ad). <li>bm_src_alpha_sat: Blend factor is (f, f, f, 1); f = min(As, 1–Ad). </ul> For example, the normal blending mode sets the source blending to bm_src_alpha and the destination blending to bm_inv_src_alpha. Don't forget to reset the mode to normal after use because otherwise also other sprites and even the backgrounds are drawn with the new blend mode.
+
+
+///draw_vertex(x,y)
+//Add vertex (x,y) to the primitive, using the color and alpha value set before.
+
+
+///draw_vertex_color(x,y,col,alpha)
+//Add vertex (x,y) to the primitive, with its own color and alpha value. This allows you to create primitives with smoothly changing color and alpha values.
+
+
+///draw_vertex_texture(x,y,xtex,ytex)
+//Add vertex (x,y) to the primitive with position (xtex,ytex) in the texture, blending with the color and alpha value set before. xtex and ytex should normally lie between 0 and 1 but also larger values can be used, leading to a repetition of the texture (see below).
+
+
+///draw_vertex_texture_color(x,y,xtex,ytex,col,alpha)
+//Add vertex (x,y) to the primitive with position (xtex,ytex) in the texture, blending with its own color and alpha value.
+
+
+///sprite_get_texture(spr,subimg)
+//Returns the id of the texture corresponding to subimage subimg of the indicated sprite.
+
+
+///texture_get_height(texid)
+//Returns the height of the texture with the given id. The height lies in the range 0-1.
+
+
+///texture_get_width(texid)
+//Returns the width of the texture with the given id. The width lies in the range 0-1.
+
+
+///texture_preload(texid)
+//Puts the texture immediately into video memory.
+
+
+///texture_set_blending(blend)
+//Indicates whether to use blending with colors and alpha values. Switching this off might be faster on old hardware. This setting also influence the drawing of sprites and background. Default is true.
+
+
+///texture_set_interpolation(linear)
+//Indicates whether to use linear interpolation (true) or pick the nearest pixel (false). Linear interpolation gives smoother textures but can also be a bit blurry and sometimes costs extra time. This setting also influence the drawing of sprites and background. Default is false. (This can also be changed in the global game settings.)
+
+
+///texture_set_priority(texid,prio)
+//When there is too little video memory some will be removed temporarily to make room for others that are needed. The ones with lowest priority are removed first. Default, all have priority 0 but you can change the priority here. (Use positive values!)
+
+
+///texture_set_repeat(repeat)
+//Indicates whether to use repeat the texture. This works as follows. As indicated above texture coordinates lie in the range 0-1. If you specify a value larger than 1, default the rest is not drawn. By setting repeat to true the texture is repeated. Note that sprites and backgrounds are always drawn without repeating. So once you draw a sprite of background this value is reset to false. Default is false.
+
+
+///draw_surface(id,x,y)
+//Draws the surface at position (x,y). (Without color blending and no alpha transparency.)
+
+
+///draw_surface_ext(id,x,y,xscale,yscale,rot,color,alpha)
+//Draws the surface scaled and rotated with blending color (use c_white for no blending) and transparency alpha (0-1).
+
+
+///draw_surface_part(id,left,top,width,height,x,y)
+//Draws the indicated part of the surface with its origin at position (x,y).
+
+
+///draw_surface_part_ext(id,left,top,width,height,x,y,xscale,yscale,color,alpha)
+//Draws the indicated part of the surface with its origin at position (x,y) but now with scale factors and a color and transparency setting.
+
+
+///draw_surface_stretched(id,x,y,w,h)
+//Draws the surface stretched to the indicated region.
+
+
+///draw_surface_stretched_ext(id,x,y,w,h,color,alpha)
+//Draws the surface stretched to the indicated region. color is the blending color and alpha indicates the transparency setting.
+
+
+///draw_surface_tiled(id,x,y)
+//Draws the surface tiled so that it fills the entire room.
+
+
+///draw_surface_tiled_ext(id,x,y,xscale,yscale,color,alpha)
+//Draws the surface tiled so that it fills the entire room but now with scale factors and a color and transparency setting.
+
+
+///surface_copy(destination,x,y,source)
+//Copies the source surface at position (x,y) in the destination surface. (Without any form of blending.)
+
+
+///surface_copy_part(destination,x,y,source,xs,ys,ws,hs)
+//Copies the indicated part of the source surface at position (x,y) in the destination surface. (Without any form of blending.)
+
+
+///surface_create(w,h)
+//Creates a surface of the indicated width and height. Returns the id of the surface, which must be used in all further calls. Note that the surface will not be cleared. This is the responsibility of the user. (Set it as a target and call the appropriate clear function.)
+
+
+///surface_exists(id)
+//Returns whether the surface with the indicated id exists.
+
+
+///surface_free(id)
+//Frees the memory used by the surface.
+
+
+///surface_get_height(id)
+//Returns the height of the surface.
+
+
+///surface_get_texture(id)
+//Returns the texture corresponding to the surface. This can be used to draw textured objects with the image of the surface.
+
+
+///surface_get_width(id)
+//Returns the width of the surface.
+
+
+///surface_getpixel(id,x,y)
+//Returns the color of the pixel corresponding to position (x,y) in the surface. This is not very fast, so use with care.
+
+
+///surface_reset_target()
+//Resets the drawing target to the normal screen.
+
+
+///surface_save(id,fname)
+//Saves a png image of the surface in the given filename. Useful for making screenshots.
+
+
+///surface_save_part(id,fname,x,y,w,h)
+//Saves part of the surface in the given png filename.
+
+
+///surface_set_target(id)
+//Sets the indicated surface as the drawing target. All subsequent drawing happens on this surface. It resets the projection to simply cover the surface.
+
+
+///tile_add(background,left,top,width,height,x,y,depth)
+//Adds a new tile to the room with the indicated values (see above for their meaning). The function returns the id of the tile that can be used later on.
+
+
+///tile_delete(id)
+//Deletes the tile with the given id.
+
+
+///tile_exists(id)
+//Returns whether a tile with the given id exists.
+
+
+///tile_get_alpha(id)
+//Returns the alpha value of the tile with the given id.
+
+
+///tile_get_background(id)
+//Returns the background of the tile with the given id.
+
+
+///tile_get_blend(id)
+//Returns the blending color of the tile with the given id.
+
+
+///tile_get_depth(id)
+//Returns the depth of the tile with the given id.
+
+
+///tile_get_height(id)
+//Returns the height of the tile with the given id.
+
+
+///tile_get_left(id)
+//Returns the left value of the tile with the given id.
+
+
+///tile_get_top(id)
+//Returns the top value of the tile with the given id.
+
+
+///tile_get_visible(id)
+//Returns whether the tile with the given id is visible.
+
+
+///tile_get_width(id)
+//Returns the width of the tile with the given id.
+
+
+///tile_get_x(id)
+//Returns the x-position of the tile with the given id.
+
+
+///tile_get_xscale(id)
+//Returns the xscale of the tile with the given id.
+
+
+///tile_get_y(id)
+//Returns the y-position of the tile with the given id.
+
+
+///tile_get_yscale(id)
+//Returns the yscale of the tile with the given id.
+
+
+///tile_layer_delete(depth)
+//Deletes all tiles at the indicated depth layer.
+
+
+///tile_layer_delete_at(depth,x,y)
+//Deletes the tile with the given depth at position (x,y). When multiple tiles with the given depth exist at the position they are all deleted.
+
+
+///tile_layer_depth(depth,newdepth)
+//Changes the depth of all tiles at the indicated depth to the new depth. With this function you can move whole tile layers to a new depth.
+
+
+///tile_layer_find(depth,x,y)
+//Returns the id of the tile with the given depth at position (x,y). When no tile exists at the position -1 is returned. When multiple tiles with the given depth exist at the position the first one is returned.
+
+
+///tile_layer_hide(depth)
+//Hides all tiles at the indicated depth layer.
+
+
+///tile_layer_shift(depth,x,y)
+//Shifts all tiles at the indicated depth layer over the vector x,y. Can be used to create scrolling layers of tiles.
+
+
+///tile_layer_show(depth)
+//Shows all tiles at the indicated depth layer.
+
+
+///tile_set_alpha(id,alpha)
+//Sets the alpha value of the tile with the given id.
+
+
+///tile_set_background(id,background)
+//Sets the background for the tile with the given id.
+
+
+///tile_set_blend(id,color)
+//Sets the blending color of the tile with the given id. <b><i>Only available in the Standard Edition!</i></b>
+
+
+///tile_set_depth(id,depth)
+//Sets the depth of the tile with the given id.
+
+
+///tile_set_position(id,x,y)
+//Sets the position of the tile with the given id.
+
+
+///tile_set_region(id,left,top,width,height)
+//Sets the region of the tile with the given id in its background.
+
+
+///tile_set_scale(id,xscale,yscale)
+//Sets the scaling of the tile with the given id.
+
+
+///tile_set_visible(id,visible)
+//Sets whether the tile with the given id is visible.
+
+
+///display_get_colordepth()
+//Returns the color depth in bits.
+
+
+///display_get_frequency()
+//Returns the refresh frequency of the display.
+
+
+///display_get_height()
+//Returns the height of the display in pixels.
+
+
+///display_get_width()
+//Returns the width of the display in pixels.
+
+
+///display_mouse_get_x()
+//Returns the x-coordinate of the mouse on the display.
+
+
+///display_mouse_get_y()
+//Returns the y-coordinate of the mouse on the display.
+
+
+///display_mouse_set(x,y)
+//Sets the position of the mouse on the display to the indicated values.
+
+
+///display_set_all(w,h,frequency,coldepth)
+//Sets all at once. Use -1 for values you do not want to change. Returns whether successful.
+
+
+///display_set_colordepth(coldepth)
+//Sets the color depth. In general only 16 and 32 are allowed values. Returns whether successful.
+
+
+///display_set_frequency(frequency)
+//Sets the refresh frequency for the display. Only few frequencies are allowed. Typically you could set this to 60 with a same room speed to get smooth 60 frames per second motion. Returns whether successful.
+
+
+///display_set_size(w,h)
+//Sets the width and height of the display in pixels. Returns whether this was successful. (Realize that only certain combinations are allowed.)
+
+
+///display_test_all(w,h,frequency,coldepth)
+//Tests whether the indicated settings are allowed. It does not change the settings. Use -1 for values you do not want to change. Returns whether the settings are allowed.
+
+
+///window_center()
+//Centers the window on the screen.
+
+
+///window_default()
+//Gives the window the default size and position (centered) on the screen.
+
+
+///window_get_caption()
+//Returns the window caption.
+
+
+///window_get_color()
+//Returns the window color.
+
+
+///window_get_cursor()
+//Returns the cursor used in the window.
+
+
+///window_get_fullscreen()
+//Returns whether the window is shown in full screen mode.
+
+
+///window_get_height()
+//Returns the current height of the window.
+
+
+///window_get_region_scale()
+//Returns the scale factor for the drawing region.
+
+
+///window_get_showborder()
+//Returns whether the border around the window is shown in windowed mode.
+
+
+///window_get_showicons()
+//Returns whether the border icons are shown in windowed mode.
+
+
+///window_get_sizeable()
+//Returns whether the window is sizeable by the player.
+
+
+///window_get_stayontop()
+//Returns whether the window always stays on top of other windows.
+
+
+///window_get_visible()
+//Returns whether the game window is visible.
+
+
+///window_get_width()
+//Returns the current width of the window.
+
+
+///window_get_x()
+//Returns the current x-coordinate of the window.
+
+
+///window_get_y()
+//Returns the current y-coordinate of the window.
+
+
+///window_mouse_get_x()
+//Returns the x-coordinate of the mouse in the window.
+
+
+///window_mouse_get_y()
+//Returns the y-coordinate of the mouse in the window.
+
+
+///window_mouse_set(x,y)
+//Sets the position of the mouse in the window to the indicated values.
+
+
+///window_set_caption(caption)
+//Sets the caption string for the window. Normally you specify this when defining the room and it can be changed using the variable room_caption. So this function is normally not useful, unless you draw the room yourself rather than letting <i>Game Maker</i> do it. The caption is only visible when the window has a border and when it is not in full screen mode.
+
+
+///window_set_color(color)
+//Sets the color of the part of the window that is not used for displaying the room.
+
+
+///window_set_cursor(curs)
+//Sets the mouse cursor used in the window. You can use the following constant: <p> <blockquote> <tt><b>cr_default</b></tt>
+
+
+///window_set_fullscreen(full)
+//Sets whether the window is shown in full screen mode.
+
+
+///window_set_position(x,y)
+//Sets the position of the (client part of the) window to the indicated position.
+
+
+///window_set_rectangle(x,y,w,h)
+//Sets the position and size of the window rectangle. (Does both previous routines in one step.)
+
+
+///window_set_region_scale(scale,adaptwindow)
+//If the window is larger than the actual room normally the room is displayed in a region centered in the window. It is though possible to indicate that it must be scaled to fill the whole or part of the window. A value of 1 is no scaling. If you use a value of 0 the region will be scaled to fill the whole window. If you set it to a negative value it will be scaled to the maximal size inside the window while maintaining the aspect ratio (this is often what you want). <tt>adaptwindow</tt> indicates whether the window size must be adapted if the scaled room does not fit in. Adapting the window is only effective when the scale factor is positive.
+
+
+///window_set_showborder(show)
+//Sets whether the border around the window is shown. (In full screen mode it is never shown.)
+
+
+///window_set_showicons(show)
+//Sets whether the border icons (iconize, maximize, close) are shown. (In full screen mode these are never shown.)
+
+
+///window_set_size(w,h)
+//Sets the size of the (client part of the) window to the indicated size. Note that is the indicated size is too small to fit the drawing region it is kept large enough for the region to fit it.
+
+
+///window_set_sizeable(sizeable)
+//Sets whether the window is sizeable by the player. (The player can only size it when the border is shown and the window is not in full screen mode.)
+
+
+///window_set_stayontop(stay)
+//Sets whether the window must always stay on top of other windows.
+
+
+///window_set_visible(visible)
+//Sets whether the game window is visible. Clearly you normally want the window to remain visible during the whole game. The program will not receive keyboard events when the window is invisible.
+
+
+///window_get_region_height()
+//Returns the current height of the drawing region.
+
+
+///window_get_region_width()
+//Returns the current width of the drawing region.
+
+
+///window_set_region_size(w,h,adaptwindow)
+//Set the width and height of the drawing region in the window. <tt>adaptwindow</tt> indicates whether the window size must be adapted if the region does not fit in. The window size will always be adapted if you use fixed scaling. (See the function <tt>window_set_region_scale()</tt>.)
+
+
+///window_view_mouse_get_x(id)
+//Returns the x-coordinate of the mouse with respect to the view with index id.
+
+
+///window_view_mouse_get_y(id)
+//Returns the y-coordinate of the mouse with respect to the view with index id.
+
+
+///window_view_mouse_set(id,x,y)
+//Sets the position of the mouse with respect to the view with index id.
+
+
+///window_views_mouse_get_x()
+//Returns the x-coordinate of the mouse with respect to the view it is in (same as <tt>mouse_x</tt>).
+
+
+///window_views_mouse_get_y()
+//Returns the y-coordinate of the mouse with respect to the view it is in (same as <tt>mouse_y</tt>).
+
+
+///screen_redraw()
+//Redraws the room by calling all draw events.
+
+
+///screen_refresh()
+//Refreshes the screen using the current room image (not performing drawing events).
+
+
+///screen_wait_vsync()
+//Waits for the next vertical synchronization of the monitor.
+
+
+///set_automatic_draw(value)
+//Indicates whether to automatically redraw the room (true, default) or not (false).
+
+
+///set_synchronization(value)
+//Indicates whether to synchronize the drawing with the refresh frequency of the monitor.
+
+
+///sound_background_tempo(factor)
+//Changes the tempo of the background music (if it is a midi file). <tt>factor</tt> indicates the factor with which to multiply the tempo. So a value of 1 corresponds to the normal tempo. Larger values correspond to a faster tempo, smaller values to a slower tempo. Must lie between 0.01 and 100.
+
+
+///sound_fade(index,value,time)
+//Changes the volume for the indicated sound to the new value(0 = low, 1 = high) during the indicated time (in milliseconds). This can be used to fade out or fade in music.
+
+
+///sound_global_volume(value)
+//Changes the global volume for all sounds (0 = low, 1 = high).
+
+
+///sound_isplaying(index)
+//Returns whether (a copy of) the indicated sound is playing. Note that this functions returns true when the sound actually plays through the speakers. After you call the function to play a sound it does not immediately reach the speakers so the function might still return false for a while. Similar, when the sound is stopped you still hear it for a while (e.g. because of echo) and the function will still return true.
+
+
+///sound_loop(index)
+//Plays the indicates sound, looping continuously. If the sound is background music the current background music is stopped.
+
+
+///sound_pan(index,value)
+//Changes the pan for the indicated sound (-1 = left, 0 = center, 1 = right).
+
+
+///sound_play(index)
+//Plays the indicates sound once. If the sound is background music the current background music is stopped.
+
+
+///sound_set_search_directory(dir)
+//Sets the directory in which direct music files are to be found. The dir string should not incluce the final backslash.
+
+
+///sound_stop(index)
+//Stops the indicates sound. If there are multiple sounds with this index playing simultaneously, all will be stopped.
+
+
+///sound_stop_all()
+//Stops all sounds.
+
+
+///sound_volume(index,value)
+//Changes the volume for the indicated sound (0 = low, 1 = high).
+
+
+///sound_effect_chorus(snd,wetdry,depth,feedback,frequency,wave,delay,phase)
+//Sets the parameters for the chorus effect for the indicated sound. The following parameters can be set: <blockquote> <tt>wetdry</tt> Ratio of wet (processed) signal to dry (unprocessed) signal. (range: 0 to 100, default 50)
+
+
+///sound_effect_compressor(snd,gain,attack,release,threshold,ratio,delay)
+//Sets the parameters for the compressor effect for the indicated sound. The following parameters can be set: <blockquote> <tt>gain</tt> Output gain of signal after compression. (range: -60 to 60, default 0)
+
+
+///sound_effect_echo(snd,wetdry,feedback,leftdelay,rightdelay,pandelay)
+//Sets the parameters for the echo effect for the indicated sound. The following parameters can be set: <blockquote> <tt>wetdry</tt> Ratio of wet (processed) signal to dry (unprocessed) signal. (range: 0 to 100, default 50)
+
+
+///sound_effect_equalizer(snd,center,bandwidth,gain)
+//Sets the parameters for the equalizer effect for the indicated sound. The following parameters can be set: <blockquote> <tt>center</tt> Center frequency, in hertz. (range: 80 to 16000)
+
+
+///sound_effect_flanger(snd,wetdry,depth,feedback,frequency,wave,delay,phase)
+//Sets the parameters for the flanger effect for the indicated sound. The following parameters can be set: <blockquote> <tt>wetdry</tt> Ratio of wet (processed) signal to dry (unprocessed) signal. (range: 0 to 100, default 50)
+
+
+///sound_effect_gargle(snd,rate,wave)
+//Sets the parameters for the gargle effect for the indicated sound. The following parameters can be set: <blockquote> <tt>rate</tt> Rate of modulation, in Hertz. (range: 1 to 1000, default 1)
+
+
+///sound_effect_reverb(snd,gain,mix,time,ratio)
+//Sets the parameters for the reverb effect for the indicated sound. The following parameters can be set: <blockquote> <tt>gain</tt> Input gain of signal, in decibels (dB). (range: -96 to 0, default 0)
+
+
+///sound_effect_set(snd,effect)
+//Sets a (combination of) sound effect(s) for the indicated sound. <tt>effect</tt> can be any of the following values: <blockquote> <tt><b>se_none</b></tt>
+
+
+///cd_close_door()
+//Closes the door of the CD player.
+
+
+///cd_init()
+//Must be called before using the other functions. Should also be called when a CD is changed (or simply from time to time).
+
+
+///cd_length()
+//Returns the length of the total CD in milliseconds.
+
+
+///cd_number()
+//Returns the number of tracks on the CD.
+
+
+///cd_open_door()
+//Opens the door of the CD player.
+
+
+///cd_pause()
+//Pauses the playing.
+
+
+///cd_paused()
+//Returns whether the CD is paused or stopped.
+
+
+///cd_play(first,last)
+//Tells the CD to play tracks first until last. If you want to play the full CD give 1 and 1000 as arguments.
+
+
+///cd_playing()
+//Returns whether the CD is playing.
+
+
+///cd_position()
+//Returns the current position on the CD in milliseconds.
+
+
+///cd_present()
+//Returns whether a CD is present in the default CD drive.
+
+
+///cd_resume()
+//Resumes the playing.
+
+
+///cd_set_position(pos)
+//Sets the position on the CD in milliseconds.
+
+
+///cd_set_track_position(pos)
+//Sets the position in the current track in milliseconds.
+
+
+///cd_stop()
+//Stops playing.
+
+
+///cd_track()
+//Returns the number of the current track (1=the first).
+
+
+///cd_track_length(n)
+//Returns the length of track n of the CD in milliseconds.
+
+
+///cd_track_position()
+//Returns the current position in the track being played in milliseconds.
+
+
+///show_info()
+//Displays the game information window.
+
+
+///splash_set_adapt(adapt)
+//Indicated whether the size of the window must be adapted to the scaled size of the video or image. This only has effect when is a separate splash window is used. Default adapt is true.
+
+
+///splash_set_border(border)
+//Indicates whether the window should have a border. This only has effect when is a separate normal splash window is used. Default a border is used.
+
+
+///splash_set_caption(cap)
+//Sets the caption for the splash window. This only has effect when is a separate splash window is used. Default the empty string is used.
+
+
+///splash_set_close_button(show)
+//Indicates whether to show a close button in the top right corner of the splash screen. This is useful when running games in full screen mode or without a border. Default the value is true.
+
+
+///splash_set_color(col)
+//Sets the color of the area surrounding the image or video.
+
+
+///splash_set_cursor(vis)
+//Sets whether the cursor should be visible in the splash screen. Default it is visible. For movies the cursor cannot be switched off.
+
+
+///splash_set_fullscreen(full)
+//Indicates whether to use a full screen window or not. This only has effect when is a separate splash window is used. Default a normal window is used.
+
+
+///splash_set_interrupt(interrupt)
+//Indicates whether the game play should be interrupted while showing the splash window. This only has effect when is a separate splash window is used. Default the value is true.
+
+
+///splash_set_main(main)
+//Indicated whether the splash screen must be shown in the main game window (true, default) or in a separate window (false).
+
+
+///splash_set_position(x,y)
+//Sets the position of the splash window. This only has effect when is a separate normal splash window is used. Default Windows determines the position.
+
+
+///splash_set_scale(scale)
+//Sets the scale factor to be used when displaying a splash video or image. When using a value of 0 the scale factor is chosen such that the window is filled (default).
+
+
+///splash_set_size(w,h)
+//Sets the size of the splash window. This only has effect when is a separate normal splash window is used. Default size is 640x480.
+
+
+///splash_set_stop_key(stop)
+//Indicates whether to stop the display of the splash screen when the player pressed the Escape key. Default the value is true.
+
+
+///splash_set_stop_mouse(stop)
+//Indicates whether to stop the display of the splash screen when the player pressed the mouse inside the splash screen. Default the value is true.
+
+
+///splash_set_top(top)
+//Indicates whether the window should stay on top of other windows. This only has effect when is a separate splash window is used. Default the value is true.
+
+
+///splash_show_image(fname,delay)
+//Shows an image splash screen. fname is the name of the image file. Many image types are supported (for example .bmp, .jpg, .tif, and .wmf) but no animated images. delay is the delay in milli seconds before returning to the game.
+
+
+///splash_show_text(fname,delay)
+//Shows a text splash screen. fname is the name of the text file. You can either display standard text files (.txt) or rich text files (.rtf). Only part of the rich text features are taken into account. E.g. images and other embedded objects are not shown. delay indicates the delay in milliseconds before returning to the game. use 0 or a negative value to wait until the player presses the escape key or clicks with the mouse in the window. (Note that no scrollbar will be shown nor is there another way to scroll the text. So the text must fit the window.)
+
+
+///splash_show_video(fname,loop)
+//Shows a video splash screen. fname is the name of the video file. Whether a particular movie file is supported depends on the drivers on the machine. Typically you can use .avi, .mpg, and .wmv files but avoid special codecs. You best put this file in the folder of the game yourself or in a subfolder. loop indicates whether to loop the video.
+
+
+///splash_show_web(url,delay)
+//Shows a web page splash screen. url is the url of the webpage (starting with <tt>http://</tt>) or it is the file name for a local html file. Note however that you must provide the full path for this to work. So you best e.g. use as url something like <tt>working_directory + "\index.html"</tt>. delay is the delay in milli seconds before returning to the game.
+
+
+///get_color(defcol)
+//Asks the player for a color. defcol is the default color. If the user presses Cancel the value -1 is returned.
+
+
+///get_directory(dname)
+//Asks for a directory. dname is the default name. If the user presses Cancel an empy string is returned.
+
+
+///get_directory_alt(capt,root)
+//An alternative way to ask for a directory. capt is the caption to be show. root is the root of the directory tree to be shown. Use the empty string to show the whole tree. If the user presses Cancel an empy string is returned.
+
+
+///get_integer(str,def)
+//Asks the player in a dialog box for a number. str is the message. def is the default number shown.
+
+
+///get_open_filename(filter,fname)
+//Asks the player for a filename to open with the given filter. The filter has the form 'name1|mask1|name2|mask2|...'. A mask contains the different options with a semicolon between them. * means any string. For example: 'bitmaps|*.bmp;*.wmf'. If the user presses Cancel an empy string is returned.
+
+
+///get_save_filename(filter,fname)
+//Asks for a filename to save with the given filter. If the user presses Cancel an empy string is returned.
+
+
+///get_string(str,def)
+//Asks the player in a dialog box for a string. str is the message. def is the default value shown.
+
+
+///message_alpha(alpha)
+//Sets the alpha translucence for the pop-up box for any of the functions above. alpha must lie between 0 (completely translucent) and 1 (not translucent) (only for Windows 2000 or later).
+
+
+///message_background(back)
+//Sets the background image for the pop-up box for any of the functions above. back must be one of the backgrounds defined in the game. Unfortunately, alpha values are not taken into account. However, if the left-bottom pixel has an alpha value of 0, all pixels with that color will be considered transparent.
+
+
+///message_button(spr)
+//Sets the sprite used for the buttons in the pop-up box. spr must be a sprite consisting of three images, the first indicates the button when it is not pressed and the mouse is far away, the second indicates the button when the mouse is above it but not pressed and the third is the button when it is pressed. Unfortunately, alpha values are not taken into account. However, if the left-bottom pixel has an alpha value of 0, all pixels with that color will be considered transparent.
+
+
+///message_button_font(name,size,color,style)
+//Sets the font for the buttons in the pop-up box. style indicates the font style (0=normal, 1=bold, 2=italic, and 3=bold-italic).
+
+
+///message_caption(show,str)
+//Sets the caption for the pop-up box. show indicates whether a border must b e shown (1) or not (0) and str indicates the caption when the border is shown.
+
+
+///message_input_color(col)
+//Sets the color for the background of the input filed in the pop-up box.
+
+
+///message_input_font(name,size,color,style)
+//Sets the font for the input field in the pop-up box. style indicates the font style (0=normal, 1=bold, 2=italic, and 3=bold-italic).
+
+
+///message_position(x,y)
+//Sets the position of the pop-up box on the screen. Use -1, -1 to center the box.
+
+
+///message_size(w,h)
+//Fixes the size of the pop-up box on the screen. If you choose -1 for the width the width of the image is used. If you choose -1 for the height the height is calculated based on the number of lines in the message.
+
+
+///message_text_charset(type,charset)
+//This function allows you to specify which character set the dialogs will use. type can be one of: <blockquote><tt> text_type<br /> button_type<br /> input_type<br /> </tt></blockquote> charset can be one of the standard windows character set types: <blockquote><tt> ANSI_CHARSET<br/> DEFAULT_CHARSET<br /> EASTEUROPE_CHARSET<br /> RUSSIAN_CHARSET<br /> SYMBOL_CHARSET<br /> SHIFTJIS_CHARSET<br /> HANGEUL_CHARSET<br /> GB2312_CHARSET<br /> CHINESEBIG5_CHARSET<br /> JOHAB_CHARSET<br /> HEBREW_CHARSET<br /> ARABIC_CHARSET<br /> GREEK_CHARSET<br /> TURKISH_CHARSET<br /> VIETNAMESE_CHARSET<br /> THAI_CHARSET<br /> MAC_CHARSET<br /> BALTIC_CHARSET<br /> OEM_CHARSET<br /></tt> </blockquote> <tt><b>message_mouse_color(col)</b></tt> Sets the color of the font for the buttons in the pop-up box when the mouse is above it.
+
+
+///message_text_font(name,size,color,style)
+//Sets the font for the text in the pop-up box. (This is a normal Windows font, not one of the font resources you can out in your game!) style indicates the font style (0=normal, 1=bold, 2=italic, and 3=bold-italic).
+
+
+///show_error(str,abort)
+//Displays a standard error message (and/or writes it to the log file). abort indicates whether the game should abort.
+
+
+///show_menu(str,def)
+//Shows a popup menu. str indicates the menu text. This consists of the different menu items with a vertical bar between them. For example, str = 'menu0|menu1|menu2'. When the first item is selected a 0 is returned, etc. When the player selects no item, the default value def is returned.
+
+
+///show_menu_pos(x,y,str,def)
+//Shows a popup menu as in the previous function but at position x,y on the screen.
+
+
+///show_message(str)
+//Displays a dialog box with the string as a message.
+
+
+///show_question(str)
+//Displays a question; returns true when the user selects yes and false otherwise.
+
+
+///highscore_add(str,numb)
+//Adds a player with name str and score numb to the list.
+
+
+///highscore_add_current()
+//Adds the current score to the highscore list. The player is asked to provide a name.
+
+
+///highscore_clear()
+//Clears the highscore list.
+
+
+///highscore_name(place)
+//Returns the name of the person on the given place (1-10).
+
+
+///highscore_set_background(back)
+//Sets the background image to use. <tt>back</tt> must be the index of one of the background resources.
+
+
+///highscore_set_border(show)
+//Sets whether the highscore form must have a border or not.
+
+
+///highscore_set_colors(back,new,other)
+//Sets the colors used for the background, the new entry in the table, and the other entries.
+
+
+///highscore_set_font(name,size,style)
+//Sets the font used for the text in the table. (This is a normal Windows font, not one of the font resources.) You specify the name, size and style (0=normal, 1= bold, 2=italic, 3=bold-italic).
+
+
+///highscore_set_strings(caption,nobody,escape)
+//Changes the different default strings used when showing the highscore table. <tt>caption</tt> is the caption of the form. <tt>nobody</tt> is the string used when there is nobody at the particular rank. <tt>escape</tt> is the string at the bottom indicating to press the escape key. You can in particular use this when your game should use a different language.
+
+
+///highscore_show(numb)
+//Shows the highscore table. numb is the new score. If this score is good enough to be added to the list, the player can input a name. Use -1 to simple display the current list.
+
+
+///highscore_value(place)
+//Returns the score of the person on the given place (1-10). This can be used to draw your own highscore list.
+
+
+///sprite_exists(ind)
+//Returns whether a sprite with the given index exists.
+
+
+///sprite_get_bbox_bottom(ind)
+//Returns the bottom side of the bounding box of the sprite with the given index.
+
+
+///sprite_get_bbox_left(ind)
+//Returns the left side of the bounding box of the sprite with the given index.
+
+
+///sprite_get_bbox_right(ind)
+//Returns the right side of the bounding box of the sprite with the given index.
+
+
+///sprite_get_bbox_top(ind)
+//Returns the top side of the bounding box of the sprite with the given index.
+
+
+///sprite_get_height(ind)
+//Returns the height of the sprite with the given index.
+
+
+///sprite_get_name(ind)
+//Returns the name of the sprite with the given index.
+
+
+///sprite_get_number(ind)
+//Returns the number of subimages of the sprite with the given index.
+
+
+///sprite_get_width(ind)
+//Returns the width of the sprite with the given index.
+
+
+///sprite_get_xoffset(ind)
+//Returns the x-offset of the sprite with the given index.
+
+
+///sprite_get_yoffset(ind)
+//Returns the y-offset of the sprite with the given index.
+
+
+///sprite_save(ind,subimg,fname)
+//Saves subimage subimg of sprite ind to the file with the name fname. This must be a .png file. <b><i>Only available in the Standard Edition.</i></b>
+
+
+///sprite_save_strip(ind,fname)
+//Saves all subimages of sprite ind as a strip to the file with the name fname. This must be a .png file. <b><i>Only available in the Standard Edition.</i></b>
+
+
+///sound_exists(ind)
+//Returns whether a sound with the given index exists.
+
+
+///sound_get_kind(ind)
+//Returns the kind of the sound with the given index (0=normal, 1=background, 2=3d, 3=mmplayer).
+
+
+///sound_get_name(ind)
+//Returns the name of the sound with the given index.
+
+
+///sound_get_preload(ind)
+//Returns whether the sound with the given index has preload set. </blockquote> <p> Sounds use many resources and most systems can store and play only a limited number of sounds. If you make a large game you would like to have more control over which sounds are loaded in audio memory at what times. You can use the switch off the preload option for sounds to make sure sounds are only loaded when used. This though has the problem that you might get a small hiccup when the sound is used first. Also, sounds are not automatically unloaded when you don't need them anymore. For more control you can use the following functions. <p> <blockquote> <tt><b>sound_discard(index)</b></tt> Frees the audio memory used for the indicated sound.
+
+
+///sound_restore(index)
+//Restores the indicated sound in audio memory for immediate playing.
+
+
+///background_exists(ind)
+//Returns whether a background with the given index exists.
+
+
+///background_get_height(ind)
+//Returns the height of the background with the given index.
+
+
+///background_get_name(ind)
+//Returns the name of the background with the given index.
+
+
+///background_get_width(ind)
+//Returns the width of the background with the given index.
+
+
+///background_save(ind,fname)
+//Saves the background ind to the file with the name fname. This must be a .png file. <b><i>Only available in the Standard Edition.</i></b>
+
+
+///font_exists(ind)
+//Returns whether a font with the given index exists.
+
+
+///font_get_bold(ind)
+//Returns whether the font with the given index is bold.
+
+
+///font_get_first(ind)
+//Returns the index of the first character in the font with the given index.
+
+
+///font_get_fontname(ind)
+//Returns the fontname of the font with the given index.
+
+
+///font_get_italic(ind)
+//Returns whether the font with the given index is italic.
+
+
+///font_get_last(ind)
+//Returns the index of the last character in the font with the given index.
+
+
+///font_get_name(ind)
+//Returns the name of the font with the given index.
+
+
+///path_exists(ind)
+//Returns whether a path with the given index exists.
+
+
+///path_get_closed(ind)
+//Returns whether the path is closed or not.
+
+
+///path_get_kind(ind)
+//Returns the kind of connections of the path with the given index (0=straight, 1=smooth).
+
+
+///path_get_length(ind)
+//Returns the length of the path with the given index.
+
+
+///path_get_name(ind)
+//Returns the name of the path with the given index.
+
+
+///path_get_number(ind)
+//Returns the number of defining points for the path.
+
+
+///path_get_point_speed(ind,n)
+//Returns the speed factor at the n'th defining point for the path. 0 is the first point.
+
+
+///path_get_point_x(ind,n)
+//Returns the x-coordinate of the n'th defining point for the path. 0 is the first point.
+
+
+///path_get_point_y(ind,n)
+//Returns the y-coordinate of the n'th defining point for the path. 0 is the first point.
+
+
+///path_get_precision(ind)
+//Returns the precision used for creating smoothed paths.
+
+
+///path_get_speed(ind,pos)
+//Returns the speed factor at position pos for the path. pos must lie between 0 and 1.
+
+
+///path_get_x(ind,pos)
+//Returns the x-coordinate at position pos for the path. pos must lie between 0 and 1.
+
+
+///path_get_y(ind,pos)
+//Returns the y-coordinate at position pos for the path. pos must lie between 0 and 1.
+
+
+///script_exists(ind)
+//Returns whether a script with the given index exists.
+
+
+///script_get_name(ind)
+//Returns the name of the script with the given index.
+
+
+///script_get_text(ind)
+//Returns the text string of the script with the given index.
+
+
+///timeline_exists(ind)
+//Returns whether a time line with the given index exists.
+
+
+///timeline_get_name(ind)
+//Returns the name of the time line with the given index.
+
+
+///object_exists(ind)
+//Returns whether an object with the given index exists.
+
+
+///object_get_depth(ind)
+//Returns the depth of the object with the given index.
+
+
+///object_get_mask(ind)
+//Returns the index of the mask of the object with the given index (-1 if is has no special mask).
+
+
+///object_get_name(ind)
+//Returns the name of the object with the given index.
+
+
+///object_get_parent(ind)
+//Returns index of the parent object of object ind (a negative value is returned if it has no parent).
+
+
+///object_get_persistent(ind)
+//Returns whether the object with the given index is persistent.
+
+
+///object_get_solid(ind)
+//Returns whether the object with the given index is default solid.
+
+
+///object_get_sprite(ind)
+//Returns the index of the default sprite of the object with the given index.
+
+
+///object_get_visible(ind)
+//Returns whether the object with the given index is default visible.
+
+
+///room_exists(ind)
+//Returns whether a room with the given index exists.
+
+
+///room_get_name(ind)
+//Returns the name of the room with the given index.
+
+
+///sprite_add(fname,imgnumb,removeback,smooth,xorig,yorig)
+//Adds the image stored in the file fname to the set of sprite resources. Many different image file types can be dealt with. When the image is not a gif image it can be a strip containing a number of subimages for the sprite next to each other. Use imgnumb to indicate their number (1 for a single image). For gif images, this argument is not used; the number of images in the gif file is used instead. <tt>removeback</tt> indicates whether to make all pixels with the background color (left-bottom pixel) transparent. <tt>smooth</tt> indicates whether to smooth the edges. <tt>xorig</tt> and <tt>yorig</tt> indicate the position of the origin in the sprite. The function returns the index of the new sprite that you can then use to draw it or to assign it to the variable sprite_index of an instance. When an error occurs -1 is returned.
+
+
+///sprite_add_from_screen(ind,x,y,w,h,removeback,smooth)
+//Adds an area of the screen as a next subimage to the sprite with index ind.
+
+
+///sprite_add_from_surface(ind,id,x,y,w,h,removeback,smooth)
+//Adds an area of the surface id as a next subimage to the sprite with index ind.
+
+
+///sprite_add_sprite(fname)
+//Adds the sprite stored the file fname to the set of sprite resources. The file must be a .gmspr file that is saved in the sprite property form in <i>Game Maker</i>. As this file contains all sprite settings, no further arguments are required. The function returns the index of the new sprite that you can then use to draw it or to assign it to the variable sprite_index of an instance. When an error occurs -1 is returned.
+
+
+///sprite_assign(ind,spr)
+//Assigns the indicated sprite to sprite ind. So this makes a copy of the sprite. In this way you can easily set an existing sprite to a different, e.g. new sprite.
+
+
+///sprite_collision_mask(ind,sepmasks,bboxmode,bbleft,bbtop,bbright,bbbottom,kind,tolerance)
+//Changes the collision mask for the sprite with index <tt>ind</tt>. <tt>sepmasks</tt> indicates whether there must be separate collision masks for all subimages. <tt>bboxmode</tt> is the bounding box mode (0=automatic, 1=full image, 2=user defined). <tt>bbleft, bbright, bbtop, bbbottom</tt> indicate the bounding box in case of user defined bounding box. You can use 0 for all these values in the other cases. <tt>kind</tt> is the kind of mask (0=precise, 1=bounding box, 2=disk, 3=diamond). <tt>tolerance</tt> indicates the tolerance in the transparency value (0=no tolerance, 255=full tolerance).
+
+
+///sprite_create_from_screen(x,y,w,h,removeback,smooth,xorig,yorig)
+//Creates a sprite by copying the given area from the screen. <tt>removeback</tt> indicates whether to make all pixels with the background color (left-bottom pixel) transparent. <tt>smooth</tt> indicates whether to smooth the boundaries. This makes it possible to create any sprite you want. Draw the image on the screen using the drawing functions and next create a sprite from it. (If you don't do this in the drawing event you can even do it in such a way that it is not visible on the screen by not refreshing the screen.) The other parameters are as above. The function returns the index of the new sprite. A work of caution is required here. Even though we speak about the screen, it is actually the drawing region that matters. The fact that there is a window on the screen and that the image might be scaled in this window does not matter.
+
+
+///sprite_create_from_surface(id,x,y,w,h,removeback,smooth,xorig,yorig)
+//Creates a sprite by copying the given area from the surface with the given id. <tt>removeback</tt> indicates whether to make all pixels with the background color (left-bottom pixel) transparent. <tt>smooth</tt> indicates whether to smooth the boundaries. This makes it possible to create any sprite you want. Draw the image on the surface using the drawing functions and next create a sprite from it. The function returns the index of the new sprite. Note that alpha values are maintained in the sprite.
+
+
+///sprite_delete(ind)
+//Deletes the sprite from memory, freeing the memory used.
+
+
+///sprite_duplicate(ind)
+//Creates a duplicate of the sprite with the given index. It returns the index of the new sprite. When an error occurs -1 is returned.
+
+
+///sprite_replace(ind,fname,imgnumb,removeback,smooth,xorig,yorig)
+//Same as above but in this case the sprite with index ind is replaced. The function returns whether it is successful.
+
+
+///sprite_replace_sprite(ind,fname)
+//Same as above but in this case the sprite with index ind is replaced. The function returns whether it is successful.
+
+
+///sprite_set_alpha_from_sprite(ind,spr)
+//Changes the alpha (transparancy) values in the sprite with index <tt>ind</tt> using the intensity values in the sprite <tt>spr</tt>. This cannot be undone.
+
+
+///sprite_set_offset(ind,xoff,yoff)
+//Sets the offset of the sprite with the given index.
+
+
+///sound_add(fname,kind,preload)
+//Adds a sound resource to the game. fname is the name of the sound file. kind indicates the kind of sound (0=normal, 1=background, 2=3d, 3=mmplayer) preload indicates whether the sound should immediately be stored in audio memory (true or false). The function returns the index of the new sound, which can be used to play the sound. (-1 if an error occurred, e.g. the file does not exist).
+
+
+///sound_delete(index)
+//Deletes the indicated sound, freeing all memory associated with it. It can no longer be restored.
+
+
+///sound_replace(index,fname,kind,preload)
+//Same as the previous function but this time a new sound is not created but the existing sound index is replaced, freeing the old sound. Returns whether correct.
+
+
+///background_add(fname,removeback,smooth)
+//Adds the image stored in the file fname to the set of background resources. Many different types of images can be dealt with. When the image has an alpha channel, this is used for transparency. <tt>removeback</tt> indicates whether to make all pixels with the background color (left-bottom pixel) transparent. <tt>smooth</tt> indicates whether to smooth the boundaries. The function returns the index of the new background that you can then use to draw it or to assign it to the variable background_index[0] to make it visible in the current room. When an error occurs -1 is returned.
+
+
+///background_add_background(fname)
+//Adds the background stored the file fname to the set of background resources. The file must be a .gmbck file that is saved in the background property form in <i>Game Maker</i>. As this file contains all background settings, no further arguments are required. The function returns the index of the new background that you can then use to draw it or to assign it to the variable background_index[0] to make it visible in the current room. When an error occurs -1 is returned.
+
+
+///background_assign(ind,back)
+//Assigns the indicated background to background ind. So this makes a copy of the background.
+
+
+///background_create_color(w,h,col)
+//Creates a background of the given size and with the given color. It returns the index of the new background. When an error occurs -1 is returned.
+
+
+///background_create_from_screen(x,y,w,h,removeback,smooth)
+//Creates a background by copying the given area from the screen. <tt>removeback</tt> indicates whether to make all pixels with the background color (left-bottom pixel) transparent. <tt>smooth</tt> indicates whether to smooth the boundaries. This function makes it possible to create any background you want. Draw the image on the screen using the drawing functions and next create a background from it. (If you don't do this in the drawing event you can even do it in such a way that it is not visible on the screen by not refreshing the screen.) The function returns the index of the new background. A work of caution is required here. Even though we speak about the screen, it is actually the drawing region that matters. The fact that there is a window on the screen and that the image might be scaled in this window does not matter.
+
+
+///background_create_from_surface(id,x,y,w,h,removeback,smooth)
+//Creates a background by copying the given area from the surface with the given id. <tt>removeback</tt> indicates whether to make all pixels with the background color (left-bottom pixel) transparent. <tt>smooth</tt> indicates whether to smooth the boundaries. This function makes it possible to create any background you want. Draw the image on the surface using the drawing functions and next create a background from it. Note that alpha values are maintained in the background.
+
+
+///background_delete(ind)
+//Deletes the background from memory, freeing the memory used.
+
+
+///background_duplicate(ind)
+//Creates a duplicate of the background with the given index. It returns the index of the new background. When an error occurs -1 is returned.
+
+
+///background_replace(ind,fname,removeback,smooth)
+//Same as above but in this case the background with index ind is replaced. The function returns whether it is successful. When the background is currently visible in the room it wil be replaced also.
+
+
+///background_replace_background(ind,fname)
+//Same as above but in this case the background with index ind is replaced. The function returns whether it is successful. When the background is currently visible in the room it wil be replaced also.
+
+
+///background_set_alpha_from_background(ind,back)
+//Changes the alpha (transparancy) values in the background with index <tt>ind</tt> using the intensity values in the background <tt>back</tt>. This cannot be undone.
+
+
+///font_add(name,size,bold,italic,first,last)
+//Adds a new font and returns its index, indicating the name, size, whether it is bold or italic, and the first and last character that must be created.
+
+
+///font_add_sprite(spr,first,prop,sep)
+//Adds a new font and returns its index. The font is created from a sprite. The sprite should contain a subimage for each character. <tt>first</tt> indicate the index of the first character in the sprite. For example, use <tt>ord('0')</tt> if your sprite only contains the digits. <tt>prop</tt> indicates whether the font is proportional. In a proportional font, for each character the width of the bounding box is used as the character width. Finally, <tt>sep</tt> indicates the amount of white space that must separate the characters horizontally. A typical value would lie between 2 and 8 depending on the font size.<BR> <tt><b>font_replace(ind,name,size,bold,italic,first,last)</b></tt> Replaces the font <tt>ind</tt> with a new font, indicating the name, size, whether it is bold or italic, and the first and last character that must be created.
+
+
+///font_delete(ind)
+//Deletes the font with the given index, freeing the memory it uses.
+
+
+///font_replace_sprite(ind,spr,first,prop,sep)
+//Replaces the font <tt>ind</tt> with a new sprite-based font.
+
+
+///path_add()
+//Adds a new empty paths. The index of the path is returned.
+
+
+///path_add_point(ind,x,y,speed)
+//Adds a point to the path with the given index, at position (x,y) and with the given speed factor. Remember that a factor of 100 corresponds to the actual speed. Lower values mean slowing down and higher mean speeding up.
+
+
+///path_append(ind,path)
+//Appends the indicated path to path ind.
+
+
+///path_assign(ind,path)
+//Assigns the indicated path to path ind. So this makes a copy of the path. In this way you can easily set an existing path to a different, e.g. new path.
+
+
+///path_change_point(ind,n,x,y,speed)
+//Changes the point n in the path with the given index to position (x,y) and the given speed factor.
+
+
+///path_clear_points(ind)
+//Clears all the points in the path, turning it into an empty path.
+
+
+///path_delete(ind)
+//Deletes the path with the given index.
+
+
+///path_delete_point(ind,n)
+//Deletes the point n in the path with the given index.
+
+
+///path_duplicate(ind)
+//Creates a duplicate copy of the path with the given index. Returns the index of the copy.
+
+
+///path_flip(ind)
+//Flips the path vertically (with respect to its center).
+
+
+///path_insert_point(ind,n,x,y,speed)
+//Inserts a point in the path with the given index before point n, at position (x,y) and with the given speed factor.
+
+
+///path_mirror(ind)
+//Mirrors the path horizontally (with respect to its center).
+
+
+///path_reverse(ind)
+//Reverses the path.
+
+
+///path_rotate(ind,angle)
+//Rotates the path counter clockwise over angle degrees (around its center).
+
+
+///path_scale(ind,xscale,yscale)
+//Scales the path with the given factors (from its center).
+
+
+///path_set_closed(ind,closed)
+//Sets whether the path must be closed (true) or open (false).
+
+
+///path_set_kind(ind,val)
+//Sets the kind of connections of the path with the given index (0=straight, 1=smooth).
+
+
+///path_set_precision(ind,prec)
+//Sets the precision with which the smooth path is calculated (should lie between 1 and 8).
+
+
+///path_shift(ind,xshift,yshift)
+//Shifts the path over the given amount.
+
+
+///timeline_add()
+//Adds a new time line. It returns the index of the time line.
+
+
+///timeline_clear(ind)
+//Clears the time line with the given index removing all its moments. Make sure no instances uses the time line at the moment.
+
+
+///timeline_delete(ind)
+//Deletes the time line with the given index. Make sure no instances uses the time line in any room.
+
+
+///timeline_moment_add(ind,step,codestr)
+//Adds a code action to the time line at moment step. codestr contains the code for the actions. If the step does not exist it is created. So you can add multiple code actions for the same moment.
+
+
+///timeline_moment_clear(ind,step)
+//You can use this function to clear all the actions for a particular moment.
+
+
+///object_add()
+//Adds a new object. It returns the index of the object. You can now use this index in the routines above to set certain properties of the object and then you can use the index to create instances of the object.
+
+
+///object_delete(ind)
+//Deletes the object with the given index. Make sure no instances of the object exist in any of the rooms.
+
+
+///object_event_add(ind,evtype,evnumb,codestr)
+//To give the object a behavior we must define events for the object. You can only add code actions to events. You need to specify the object, the event type, the event number (use the constants that have been specified before for the event_perform() function). Finally you provide the code string that must be executed. You can add multiple code actions to each event.
+
+
+///object_event_clear(ind,evtype,evnumb)
+//You can use this function to clear all the actions for a particular event.
+
+
+///object_set_depth(ind,depth)
+//Sets the default depth of instances created of the object.
+
+
+///object_set_mask(ind,spr)
+//Sets the sprite mask of the object with the given index. Use -1 to set the mask to be the sprite of the object.
+
+
+///object_set_parent(ind,obj)
+//Sets the parent of the object. Use -1 to not have a parent. Changing the parent changes the behavior of instances of the object.
+
+
+///object_set_persistent(ind,pers)
+//Sets whether instances created of the object must default be persistent (true or false).
+
+
+///object_set_solid(ind,solid)
+//Sets whether instances created of the object must default be solid (true or false).
+
+
+///object_set_sprite(ind,spr)
+//Sets the sprite of the object with the given index. Use -1 to remove the current sprite from the object.
+
+
+///object_set_visible(ind,vis)
+//Sets whether instances created of the object must default be visible (true or false).
+
+
+///room_add()
+//Adds a new room. It returns the index of the room. Note that the room will not be part of the room order. So the new room does not have a previous or a next room. If you want to move to an added room you must provide the index of the room.
+
+
+///room_assign(ind,room)
+//Assigns the indicated room to room ind. So this makes a copy of the room.
+
+
+///room_duplicate(ind)
+//Adds a copy of the room with the given index. It returns the index of the room.
+
+
+///room_instance_add(ind,x,y,obj)
+//Adds a new instance of object obj to the room, placing it at the indicate position. It returns the index of the instance.
+
+
+///room_instance_clear(ind)
+//Removes all instances from the indicated room.
+
+
+///room_set_background(ind,bind,vis,fore,back,x,y,htiled,vtiled,hspeed,vspeed,alpha)
+//Sets background with index bind (0-7) for the room with the indicated index. vis indicates whether the background is visible and fore whether it is actually a foreground. back is the index of the background image. x,y indicate the position of the image and htiled and vtiled indicate whether the image must be tiled. hspeed and vspeed indicate the speed with which the background moves and alpha indicates an alpha translucency value (1 = solid and fastest).
+
+
+///room_set_background_color(ind,col,show)
+//Sets the color properties for the room with the indicated index if is does not have a background image. col indicates the color and show indicates whether the color must be shown or not.
+
+
+///room_set_caption(ind,str)
+//Sets the caption for the room with the indicated index.
+
+
+///room_set_code(ind,str)
+//Sets the initialization code string for the room with the indicated index.
+
+
+///room_set_height(ind,h)
+//Sets the height for the room with the indicated index.
+
+
+///room_set_persistent(ind,val)
+//Sets whether the room with the indicated index is persistent or not.
+
+
+///room_set_view(ind,vind,vis,xview,yview,wview,hview,xport,yport,wport,hport,hborder,vborder,hspeed,vspeed,obj)
+//Sets the view with index vind (0-7) for the room with the indicated index. vis indicates whether the view is visible. xview, yview, wview, and hview indicate the position of the view in the room. xport, yport, wport, and hport indicate the position on the screen. When the view must follow an object hborder and vborder indicate the minimal visible border that must be kept around the object. hspeed and vspeed indicate the maximal speed with which the view can move. obj is the index of the object or the index of the instance.
+
+
+///room_set_view_enabled(ind,val)
+//Sets whether views must be enabled for the room with the indicated index.
+
+
+///room_set_width(ind,w)
+//Sets the width for the room with the indicated index.
+
+
+///room_tile_add(ind,back,left,top,width,height,x,y,depth)
+//Adds a new tile to the room at the indicate position. It returns the index of the tile. back is the background from which the tile is taken. left, top, width and height indicate the part of the background that forms the tile. x,y is the position of the tile in the room and depth is the depth of the tile.
+
+
+///room_tile_add_ext(ind,back,left,top,width,height,x,y,depth,xscale,yscale,alpha)
+//Same as the previous routine but this time you can also specify a scaling factor in x and y direction and an alpha transparency for the tile.
+
+
+///room_tile_clear(ind)
+//Removes all tiles from the indicated room.
+
+
+///directory_create(dname)
+//Creates a directory with the given name (including the path towards it) if it does not exist. The name must include the full path, not a relative path.
+
+
+///directory_exists(dname)
+//Returns whether the indicated directory does exist. The name must include the full path, not a relative path.
+
+
+///discard_include_file(fname)
+//Discard the included file with the name fname, freeing the memory used. This must be a string variable, so don't forget the quotes.
+
+
+///disk_free(drive)
+//Returns the amount of free space on the indicated drive in bytes. <tt>drive</tt> must be a capital letter, e.g. 'C'. If you do not provide the drive, the drive of the current working directory is used.
+
+
+///environment_get_variable(name)
+//Returns the value (a string) of the environment variable with the given name. </blockquote> <p> Finally, if you are interested in the size of the disk and the free space, you can use the following functions: </p> <p> <blockquote> <tt><b>disk_size(drive)</b></tt> Returns the size of the indicated drive in bytes. <tt>drive</tt> must be a capital letter, e.g. 'C'. If you do not provide the drive, the drive of the current working directory is used.
+
+
+///export_include_file(fname)
+//Exports the included file with the name fname. This must be a string variable, so don't forget the quotes.
+
+
+///export_include_file_location(fname,location)
+//Exports the included file with the name fname to the given location. Location must contain the path and the filename.
+
+
+///file_attributes(fname,attr)
+//Returns whether the file has all the attributes given in attr. Use a combination of the constants indicated above.
+
+
+///file_bin_close(fileid)
+//Closes the file with the given file id.
+
+
+///file_bin_open(fname,mod)
+//Opens the file with the indicated name. The mode indicates what can be done with the file: 0 = reading, 1 = writing, 2 = both reading and writing). When the file does not exist it is created. The function returns the id of the file that must be used in the other functions. You can open multiple files at the same time (32 max). Don't forget to close them once you are finished with them.
+
+
+///file_bin_position(fileid)
+//Returns the current position (in bytes; 0 is the first position) of the file with the given file id.
+
+
+///file_bin_read_byte(fileid)
+//Reads a byte of data from the file and returns this.
+
+
+///file_bin_rewrite(fileid)
+//Rewrites the file with the given file id, that is, clears it and starts writing at the start.
+
+
+///file_bin_seek(fileid,pos)
+//Moves the current position of the file to the indicated position. To append to a file move the position to the size of the file before writing.
+
+
+///file_bin_size(fileid)
+//Returns the size (in bytes) of the file with the given file id.
+
+
+///file_bin_write_byte(fileid,byte)
+//Writes a byte of data to the file with the given file id.
+
+
+///file_copy(fname,newname)
+//Copies the file fname to the newname.
+
+
+///file_delete(fname)
+//Deletes the file with the given name.
+
+
+///file_exists(fname)
+//Returns whether the file with the given name exists (true) or not (false).
+
+
+///file_find_close()
+//Must be called after handling all files to free memory.
+
+
+///file_find_first(mask,attr)
+//Returns the name of the first file that satisfies the mask and the attributes. If no such file exists, the empty string is returned. The mask can contain a path and can contain wildchars, for example 'C:\temp\*.doc'. The attributes give the additional files you want to see. (So the normal files are always returned when they satisfy the mask.) You can add up the following constants to see the type of files you want:
+
+
+///file_find_next()
+//Returns the name of the next file that satisfies the previously given mask and the attributes. If no such file exists, the empty string is returned.
+
+
+///file_rename(oldname,newname)
+//Renames the file with name oldname into newname.
+
+
+///file_text_close(fileid)
+//Closes the file with the given file id.
+
+
+///file_text_eof(fileid)
+//Returns whether we reached the end of the file.
+
+
+///file_text_eoln(fileid)
+//Returns whether we reached the end of a line in the file.
+
+
+///file_text_open_append(fname)
+//Opens the indicated file for appending data at the end, creating it if it does not exist. The function returns the id of the file that must be used in the other functions.
+
+
+///file_text_open_read(fname)
+//Opens the file with the indicated name for reading. The function returns the id of the file that must be used in the other functions. You can open multiple files at the same time (32 max). Don't forget to close them once you are finished with them.
+
+
+///file_text_open_write(fname)
+//Opens the indicated file for writing, creating it if it does not exist. The function returns the id of the file that must be used in the other functions.
+
+
+///file_text_read_real(fileid)
+//Reads a real value from the file and returns this value.
+
+
+///file_text_read_string(fileid)
+//Reads a string from the file with the given file id and returns this string. A string ends at the end of line.
+
+
+///file_text_readln(fileid)
+//Skips the rest of the line in the file and starts at the start of the next line.
+
+
+///file_text_write_real(fileid,x)
+//Write the real value to the file with the given file id. (As separator between the integer and decimal part always a dot is used.
+
+
+///file_text_write_string(fileid,str)
+//Writes the string to the file with the given file id.
+
+
+///file_text_writeln(fileid)
+//Write a newline character to the file.
+
+
+///filename_change_ext(fname,newext)
+//Returns the indicated file name, with the extension (including the dot) changed to the new extension. By using an empty string as the new extension you can remove the extension.
+
+
+///filename_dir(fname)
+//Returns the directory part of the indicated file name, which normally is the same as the path except for the final backslash.
+
+
+///filename_drive(fname)
+//Returns the drive information of the filename.
+
+
+///filename_ext(fname)
+//Returns the extension part of the indicated file name, including the leading dot.
+
+
+///filename_name(fname)
+//Returns the name part of the indicated file name, with the extension but without the path.
+
+
+///filename_path(fname)
+//Returns the path part of the indicated file name, including the final backslash.
+
+
+///parameter_count()
+//Returns the number of command-line parameters. The actual parameters can be retrieved with the following function.
+
+
+///parameter_string(n)
+//Returns command-line parameters n. The first parameter has index 1. The last one has index parameter_count(). Index 0 is a special one. It is the filename of the game executable (including the path).
+
+
+///registry_exists(name)
+//Returns whether the given name exists. </blockquote> <p> Actually, values in the registry are grouped into keys. The above routines all work on values within the key that is especially created for your game. Your program can use this to obtain certain information about the system the game is running on. You can also read values in other keys. You can write them also but be very careful. YOU CAN EASILY DESTROY YOUR SYSTEM this way. (Write is not allowed in secure mode.) Note that keys are again placed in groups. The following routines default work on the group HKEY_CURRENT_USER. But you can change the root group. So, for example, if you want to find out the current temp dir, use <p> <blockquote> <pre> path = registry_read_string_ext('\Environment','TEMP'); </pre> </blockquote> <p> The following functions exist: <p> <blockquote> <tt><b>registry_write_string_ext(key,name,str)</b></tt> Creates an entry in the key in the registry with the given name and string value.
+
+
+///registry_exists_ext(key,name)
+//Returns whether the given name exists in the given key.
+
+
+///registry_read_real(name)
+//Returns the real value that the given name holds. (The name must exist. Otherwise the number 0 is returned.)
+
+
+///registry_read_real_ext(key,name)
+//Returns the real value that the given name in the indicated key holds. (The name must exist. Otherwise the number 0 is returned.)
+
+
+///registry_read_string(name)
+//Returns the string that the given name holds. (The name must exist. Otherwise an empty string is returned.)
+
+
+///registry_read_string_ext(key,name)
+//Returns the string that the given name in the indicated key holds. (The name must exist. Otherwise an empty string is returned.)
+
+
+///registry_set_root(root)
+//Sets the root for the other routines. Use the following values:
+
+
+///registry_write_real(name,x)
+//Creates an entry in the registry with the given name and real value.
+
+
+///registry_write_real_ext(key,name,x)
+//Creates an entry in the key in the registry with the given name and real value.
+
+
+///registry_write_string(name,str)
+//Creates an entry in the registry with the given name and string value.
+
+
+///ini_close()
+//Closes the currently open INI file.
+
+
+///ini_key_delete(section,key)
+//Deletes the indicated key from the indicated section.
+
+
+///ini_key_exists(section,key)
+//Returns whether the indicated key exists in the indicated section.
+
+
+///ini_open(name)
+//Opens the INI file with the given name. The ini file must be stored in the same folder as the game!
+
+
+///ini_read_real(section,key,default)
+//Reads the real value of the indicated key in the indicated section. When the key or section does not exist the default value is returned.
+
+
+///ini_read_string(section,key,default)
+//Reads the string value of the indicated key in the indicated section. When the key or section does not exist the default value is returned.
+
+
+///ini_section_delete(section)
+//Deletes the indicated section.
+
+
+///ini_section_exists(section)
+//Returns whether the indicated section exists.
+
+
+///ini_write_real(section,key,value)
+//Writes the real value for the indicated key in the indicated section.
+
+
+///ini_write_string(section,key,value)
+//Writes the string value for the indicated key in the indicated section.
+
+
+///execute_program(prog,arg,wait)
+//Executes program prog with arguments arg. wait indicates whether to wait for finishing.
+
+
+///execute_shell(prog,arg)
+//Executes the program (or file) in the shell.
+
+
+///ds_set_precision(prec)
+//Sets the precision used for comparisons.
+
+
+///ds_stack_clear(id)
+//Clears the stack with the given id, removing all data from it but not destroying it.
+
+
+///ds_stack_copy(id,source)
+//Copies the stack source into the stack with the given id.
+
+
+///ds_stack_create()
+//Creates a new stack. The function returns an integer as an id that must be used in all other functions to access the particular stack. You can create multiple stacks.
+
+
+///ds_stack_destroy(id)
+//Destroys the stack with the given id, freeing the memory used. Don't forget to call this function when you are ready with the structure.
+
+
+///ds_stack_empty(id)
+//Returns whether the stack is empty. This is the same as testing whether the size is 0.
+
+
+///ds_stack_pop(id)
+//Returns the value on the top of the stack and removes it from the stack.
+
+
+///ds_stack_push(id,val)
+//Pushes the value on the stack.
+
+
+///ds_stack_read(id,str)
+//Reads the data structure from the given string (as created by the previous call).
+
+
+///ds_stack_size(id)
+//Returns the number of values stored in the stack.
+
+
+///ds_stack_top(id)
+//Returns the value on the top of the stack but does not remove it from the stack.
+
+
+///ds_stack_write(id)
+//Turns the data structure into a string and returns this string. The string can then be used to e.g. save it to a file. This provides an easy mechanism for saving data structures.
+
+
+///ds_queue_clear(id)
+//Clears the queue with the given id, removing all data from it but not destroying it.
+
+
+///ds_queue_copy(id,source)
+//Copies the queue source into the queue with the given id.
+
+
+///ds_queue_create()
+//Creates a new queue. The function returns an integer as an id that must be used in all other functions to access the particular queue. You can create multiple queues.
+
+
+///ds_queue_dequeue(id)
+//Returns the value that is longest in the queue and removes it from the queue.
+
+
+///ds_queue_destroy(id)
+//Destroys the queue with the given id, freeing the memory used. Don't forget to call this function when you are ready with the structure.
+
+
+///ds_queue_empty(id)
+//Returns whether the queue is empty. This is the same as testing whether the size is 0.
+
+
+///ds_queue_enqueue(id,val)
+//Enters the value in the queue.
+
+
+///ds_queue_head(id)
+//Returns the value at the head of the queue, that is, the value that has been the longest in the queue. (It does not remove it from the queue.)
+
+
+///ds_queue_read(id,str)
+//Reads the data structure from the given string (as created by the previous call).
+
+
+///ds_queue_size(id)
+//Returns the number of values stored in the queue.
+
+
+///ds_queue_tail(id)
+//Returns the value at the tail of the queue, that is, the value that has most recently been added to the queue. (It does not remove it from the queue.)
+
+
+///ds_queue_write(id)
+//Turns the data structure into a string and returns this string. The string can then be used to e.g. save it to a file. This provides an easy mechanism for saving data structures.
+
+
+///ds_list_add(id,val)
+//Adds the value at the end of the list.
+
+
+///ds_list_clear(id)
+//Clears the list with the given id, removing all data from it but not destroying it.
+
+
+///ds_list_copy(id,source)
+//Copies the list source into the list with the given id.
+
+
+///ds_list_create()
+//Creates a new list. The function returns an integer as an id that must be used in all other functions to access the particular list.
+
+
+///ds_list_delete(id,pos)
+//Deletes the value at position pos in the list. (Position 0 is the first element.)
+
+
+///ds_list_destroy(id)
+//Destroys the list with the given id, freeing the memory used. Don't forget to call this function when you are ready with the structure.
+
+
+///ds_list_empty(id)
+//Returns whether the list is empty. This is the same as testing whether the size is 0.
+
+
+///ds_list_find_index(id,val)
+//Find the position storing the indicated value. If the value is not in the list -1 is returned.
+
+
+///ds_list_find_value(id,pos)
+//Returns the value stored at the indicated position in the list.
+
+
+///ds_list_insert(id,pos,val)
+//Inserts the value at position pos in the list. The first position is 0, the last position is the size of the list minus 1.
+
+
+///ds_list_read(id,str)
+//Reads the data structure from the given string (as created by the previous call).
+
+
+///ds_list_replace(id,pos,val)
+//Replaces the value at position pos in the list with the new value.
+
+
+///ds_list_shuffle(id)
+//Shuffles the values in the list such that they end up in a random order.
+
+
+///ds_list_size(id)
+//Returns the number of values stored in the list.
+
+
+///ds_list_sort(id,ascend)
+//Sorts the values in the list. When ascend is true the values are sorted in ascending order, otherwise in descending order.
+
+
+///ds_list_write(id)
+//Turns the data structure into a string and returns this string. The string can then be used to e.g. save it to a file. This provides an easy mechanism for saving data structures.
+
+
+///ds_map_add(id,key,val)
+//Adds the key-value pair to the map.
+
+
+///ds_map_clear(id)
+//Clears the map with the given id, removing all data from it but not destroying it.
+
+
+///ds_map_copy(id,source)
+//Copies the map source into the map with the given id.
+
+
+///ds_map_create()
+//Creates a new map. The function returns an integer as an id that must be used in all other functions to access the particular map.
+
+
+///ds_map_delete(id,key)
+//Deletes the key and the corresponding value from the map. (If there are multiple entries with the same key, only one is removed.)
+
+
+///ds_map_destroy(id)
+//Destroys the map with the given id, freeing the memory used. Don't forget to call this function when you are ready with the structure.
+
+
+///ds_map_empty(id)
+//Returns whether the map is empty. This is the same as testing whether the size is 0.
+
+
+///ds_map_exists(id,key)
+//Returns whether the key exists in the map.
+
+
+///ds_map_find_first(id)
+//Returns the smallest key in the map.
+
+
+///ds_map_find_last(id)
+//Returns the largest key in the map.
+
+
+///ds_map_find_next(id,key)
+//Returns the smallest key in the map larger than the indicated key.
+
+
+///ds_map_find_previous(id,key)
+//Returns the largest key in the map smaller than the indicated key. (Note that the key is returned, not the value. You can use the previous routine to find the value.)
+
+
+///ds_map_find_value(id,key)
+//Returns the value corresponding to the key.
+
+
+///ds_map_read(id,str)
+//Reads the data structure from the given string (as created by the previous call).
+
+
+///ds_map_replace(id,key,val)
+//Replaces the value corresponding with the key with a new value.
+
+
+///ds_map_size(id)
+//Returns the number of key-value pairs stored in the map.
+
+
+///ds_map_write(id)
+//Turns the data structure into a string and returns this string. The string can then be used to e.g. save it to a file. This provides an easy mechanism for saving data structures.
+
+
+///ds_priority_add(id,val,prio)
+//Adds the value with the given priority to the priority queue.
+
+
+///ds_priority_change_priority(id,val,prio)
+//Changes the priority of the given value in the priority queue.
+
+
+///ds_priority_clear(id)
+//Clears the priority queue with the given id, removing all data from it but not destroying it.
+
+
+///ds_priority_copy(id,source)
+//Copies the priority queue source into the priority queue with the given id.
+
+
+///ds_priority_create()
+//Creates a new priority queue. The function returns an integer as an id that must be used in all other functions to access the particular priority queue.
+
+
+///ds_priority_delete_max(id)
+//Returns the value with the largest priority and deletes it from the priority queue.
+
+
+///ds_priority_delete_min(id)
+//Returns the value with the smallest priority and deletes it from the priority queue.
+
+
+///ds_priority_delete_value(id,val)
+//Deletes the given value (with its priority) from the priority queue.
+
+
+///ds_priority_destroy(id)
+//Destroys the priority queue with the given id, freeing the memory used. Don't forget to call this function when you are ready with the structure.
+
+
+///ds_priority_empty(id)
+//Returns whether the priority queue is empty. This is the same as testing whether the size is 0.
+
+
+///ds_priority_find_max(id)
+//Returns the value with the largest priority but does not delete it from the priority queue.
+
+
+///ds_priority_find_min(id)
+//Returns the value with the smallest priority but does not delete it from the priority queue.
+
+
+///ds_priority_find_priority(id,val)
+//Returns the priority of the given value in the priority queue.
+
+
+///ds_priority_read(id,str)
+//Reads the data structure from the given string (as created by the previous call).
+
+
+///ds_priority_size(id)
+//Returns the number of values stored in the priority queue.
+
+
+///ds_priority_write(id)
+//Turns the data structure into a string and returns this string. The string can then be used to e.g. save it to a file. This provides an easy mechanism for saving data structures.
+
+
+///ds_grid_add(id,x,y,val)
+//Add the value to the indicated cell in the grid with the given id. For strings this corresponds to concatenation.
+
+
+///ds_grid_add_disk(id,xm,ym,r,val)
+//Add the value to all cells in the disk with center (xm,ym) and radius r.
+
+
+///ds_grid_clear(id,val)
+//Clears the grid with the given id, to the indicated value (can both be a number or a string).
+
+
+///ds_grid_copy(id,source)
+//Copies the grid source into the grid with the given id.
+
+
+///ds_grid_create(w,h)
+//Creates a new grid with the indicated width and height. The function returns an integer as an id that must be used in all other functions to access the particular grid.
+
+
+///ds_grid_destroy(id)
+//Destroys the grid with the given id, freeing the memory used. Don't forget to call this function when you are ready with the structure.
+
+
+///ds_grid_get(id,x,y)
+//Returns the value of the indicated cell in the grid with the given id.
+
+
+///ds_grid_get_disk_max(id,xm,ym,r)
+//Returns the max of the values of the cells in the disk.
+
+
+///ds_grid_get_disk_mean(id,xm,ym,r)
+//Returns the mean of the values of the cells in the disk.
+
+
+///ds_grid_get_disk_min(id,xm,ym,r)
+//Returns the min of the values of the cells in the disk.
+
+
+///ds_grid_get_disk_sum(id,xm,ym,r)
+//Returns the sum of the values of the cells in the disk.
+
+
+///ds_grid_height(id)
+//Returns the height of the grid with the indicated id.
+
+
+///ds_grid_multiply(id,x,y,val)
+//Multiplies the value to the indicated cell in the grid with the given id. Is only valid for numbers.
+
+
+///ds_grid_multiply_disk(id,xm,ym,r,val)
+//Multiply the value to all cells in the disk with center (xm,ym) and radius r.
+
+
+///ds_grid_read(id,str)
+//Reads the data structure from the given string (as created by the previous call).
+
+
+///ds_grid_resize(id,w,h)
+//Resizes the grid to the new width and height. Existing cells keep their original value.
+
+
+///ds_grid_set(id,x,y,val)
+//Sets the indicated cell in the grid with the given id, to the indicated value (can both be a number or a string).
+
+
+///ds_grid_set_disk(id,xm,ym,r,val)
+//Sets all cells in the disk with center (xm,ym) and radius r.
+
+
+///ds_grid_shuffle(id)
+//Shuffles the values in the grid such that they end up in a random order.
+
+
+///ds_grid_value_disk_exists(id,xm,ym,r,val)
+//Returns whether the value appears somewhere in the disk.
+
+
+///ds_grid_value_disk_x(id,xm,ym,r,val)
+//Returns the x-coordinate of the cell in which the value appears in the disk.
+
+
+///ds_grid_value_disk_y(id,xm,ym,r,val)
+//Returns the y-coordinate of the cell in which the value appears in the disk.
+
+
+///ds_grid_width(id)
+//Returns the width of the grid with the indicated id.
+
+
+///ds_grid_write(id)
+//Turns the data structure into a string and returns this string. The string can then be used to e.g. save it to a file. This provides an easy mechanism for saving data structures.
+
+
+///effect_clear()
+//Clears all effects.
+
+
+///effect_create_above(kind,x,y,size,color)
+//Similar to the previous function but this time the effect is created on top of the instances, that is, at a depth of -100000.
+
+
+///effect_create_below(kind,x,y,size,color)
+//Creates an effect of the given kind (see above) at the indicated position. size give the size as follows: 0 = small, 1 = medium, 2 = large. color indicates the color to be used. The effect is created below the instances, that is, at a depth of 100000.
+
+
+///part_type_blend(ind,additive)
+//Sets whether to use additive blending (1) or normal blending (0) for the particle type.
+
+
+///part_type_clear(ind)
+//Clears the particle type ind to its default settings.
+
+
+///part_type_color_hsv(ind,hmin,hmax,smin,smax,vmin,vmax)
+//Can be used to indicate that each particle must have a fixed color but choosen from a range. You specify a range in the hue saturation and value component of the color (each between 0 and 255).
+
+
+///part_type_color_rgb(ind,rmin,rmax,gmin,gmax,bmin,bmax)
+//Can be used to indicate that each particle must have a fixed color but choosen from a range. You specify a range in the red, green, and blue component of the color (each between 0 and 255).
+
+
+///part_type_create()
+//Creates a new particle type. It returns the index of the type. This index must be used in all calls below to set the properties of the particle type. So you will often store it in a global variable.
+
+
+///part_type_death(ind,death_number,death_type)
+//Sets the number and type of particles that must be generated when a particle of the indicated type dies. Again you can use negative numbers to create a particle with a particular chance. Note that these particles are only created when the particle dies at the end of its life, not when it dies because of a destroyer (see below).
+
+
+///part_type_destroy(ind)
+//Destroys particle type ind. Call this if you don't need it anymore to save space.
+
+
+///part_type_direction(ind,dir_min,dir_max,dir_incr,dir_wiggle)
+//Sets the direction properties for the particle type. (Default all values are 0.) Again you specify a range of directions (in counterclockwise degrees; 0 indicated a motion to the right). For example, to let the particle move in a random direction choose 0 and 360 as values. You can specify an increase in direction for each step, and an amount of wiggling.
+
+
+///part_type_exists(ind)
+//Returns whether the indicated particle type exists.
+
+
+///part_type_gravity(ind,grav_amount,grav_dir)
+//Sets the gravity properties for the particle type. (Default there is no gravity.) You specify the amount of gravity to be added in each step and the direction. E.g. use 270 for a downwards direction.
+
+
+///part_type_life(ind,life_min,life_max)
+//Sets the lifetime bounds for the particle type. (Default both are 100.)
+
+
+///part_type_orientation(ind,ang_min,ang_max,ang_incr,ang_wiggle,ang_relative)
+//Sets the orientation angle properties for the particle type. You specify the minimum angle, the maximum angle, the increase in each step and the amount of wiggling in angle. (Default all values are 0.) You can also indicate whether the given angle should be relative (1) to the current direction of motion or absolute (0). E.g. by setting all values to 0 but ang_relative to 1, the particle orientation will precisely follow the path of the particle.
+
+
+///part_type_scale(ind,xscale,yscale)
+//Sets the horizontal and vertical scale. This factor is multiplied with the size. It is in particular useful when you need to scale differently in x- and y-direction.
+
+
+///part_type_shape(ind,shape)
+//Sets the shape of the particle type to any of the constants above (default is pt_shape_pixel).
+
+
+///part_type_size(ind,size_min,size_max,size_incr,size_wiggle)
+//Sets the size parameters for the particle type. You specify the minimum starting size, the maximum starting size, the size increase in each step (use a negative number for a decrease in size) and the amount of wiggling. (The default size is 1 and default the size does not change.)
+
+
+///part_type_speed(ind,speed_min,speed_max,speed_incr,speed_wiggle)
+//Sets the speed properties for the particle type. (Default all values are 0.) You specify a minimal and maximal speed. A random value between the given bounds is chosen when the particle is created. You can indicate a speed increase in each step Use a negative number to slow the particle down (the speed will never become smaller than 0). Finally you can indicate some amount of wiggling of the speed.
+
+
+///part_type_sprite(ind,sprite,animat,stretch,random)
+//Sets your own sprite for the particle type. With animate you indicate whether the sprite should be animated (1) or not (0). With stretch (1 or 0) you indicate whether the animation must be stretched over the lifetime of the particle. And with random (1 or 0) you can indicate whether a random subimage must be choosen as starting image.
+
+
+///part_type_step(ind,step_number,step_type)
+//Sets the number and type of particles that must be generated in each step for the indicated particle type. If you use a negative value, in each step a particle is generated with a chance -1/number. So for example with a value of -5 a particle is generated on average once every 5 steps.
+
+
+///part_particles_clear(ind)
+//This functions removes all particles in the system.
+
+
+///part_particles_count(ind)
+//This functions returns the number of particles in the system.
+
+
+///part_particles_create(ind,x,y,parttype,number)
+//This functions creates <tt>number</tt> particles of the indicated type at postion (x,y) in the system.
+
+
+///part_particles_create_color(ind,x,y,parttype,color,number)
+//This functions creates <tt>number</tt> particles of the indicated type at postion (x,y) in the system with the indicated color. This is only useful when the particle type defines a single color (or does not define a color at all).
+
+
+///part_system_automatic_draw(ind,automatic)
+//Indicates whether the particle system must be drawn automatically (1) or not (0). Default is 1.
+
+
+///part_system_automatic_update(ind,automatic)
+//Indicates whether the particle system must be updated automatically (1) or not (0). Default is 1.
+
+
+///part_system_clear(ind)
+//Clears the particle system ind to its default settings, removing all particles and emitter and attractors in it.
+
+
+///part_system_create()
+//Creates a new particle system. It returns the index of the system. This index must be used in all calls below to set the properties of the particle system.
+
+
+///part_system_depth(ind,depth)
+//Sets the depth of the particle system. This can be used to let the particles appear behind, in front of, or in between instances.
+
+
+///part_system_destroy(ind)
+//Destroys the particle system ind. Call this if you don't need it anymore to save space.
+
+
+///part_system_draw_order(ind,oldtonew)
+//Sets the order in which the particle system draws the particles. When oldtonew is true the oldest particles are drawn first and the newer one lie on top of them (default). Otherwise the newest particles are drawn first. This can give rather different effects.
+
+
+///part_system_drawit(ind)
+//This functions draws the particles in the system. You only have to call this when drawing is not automatic. It should be called in the draw event of some object.
+
+
+///part_system_exists(ind)
+//Returns whether the indicated particle system exists.
+
+
+///part_system_position(ind,x,y)
+//Sets the position where the particle system is drawn. This is normally not necessary but if you want to have particles at a position relative to a moving object, you can set the position e.g. to that object.
+
+
+///part_system_update(ind)
+//This functions updates the position of all particles in the system and lets the emitters create particles. You only have to call this when updating is not automatic. (Although sometimes it is also useful to call this function a couple of time to get the system going.)
+
+
+///part_emitter_burst(ps,ind,parttype,number)
+//Bursts once <tt>number</tt> particles of the indicated type from the emitter.
+
+
+///part_emitter_clear(ps,ind)
+//Clears the emitter ind to its default settings.
+
+
+///part_emitter_create(ps)
+//Creates a new emitter in the given particle system. It returns the index of the emitter. This index must be used in all calls below to set the properties of the emitter.
+
+
+///part_emitter_destroy(ps,ind)
+//Destroys emitter ind in the particle system. Call this if you don't need it anymore to save space.
+
+
+///part_emitter_destroy_all(ps)
+//Destroys all emitters in the particle system that have been created.
+
+
+///part_emitter_exists(ps,ind)
+//Returns whether the indicated emitter exists in the particle system.
+
+
+///part_emitter_region(ps,ind,xmin,xmax,ymin,ymax,shape,distribution)
+//Sets the region and distribution for the emitter.
+
+
+///part_emitter_stream(ps,ind,parttype,number)
+//From this moment on create <tt>number</tt> particles of the indicated type from the emitter in every step. If you indicate a number smaller than 0 in each step a particle is generated with a chance of -1/number. So for example with a value of -5 a particle is generated on average once every 5 steps.
+
+
+///part_attractor_clear(ps,ind)
+//Clears the attractor ind to its default settings.
+
+
+///part_attractor_create(ps)
+//Creates a new attractor in the given particle system. It returns the index of the attractor. This index must be used in all calls below to set the properties of the attractor.
+
+
+///part_attractor_destroy(ps,ind)
+//Destroys attractor ind in the particle system. Call this if you don't need it anymore to save space.
+
+
+///part_attractor_destroy_all(ps)
+//Destroys all attractors in the particle system that have been created.
+
+
+///part_attractor_exists(ps,ind)
+//Returns whether the indicated attractor exists in the particle system.
+
+
+///part_attractor_force(ps,ind,force,dist,kind,aditive)
+//Sets the force parameters of attractor ind.
+
+
+///part_attractor_position(ps,ind,x,y)
+//Sets the position of attractor ind to (x,y).
+
+
+///part_destroyer_clear(ps,ind)
+//Clears the destroyer ind to its default settings.
+
+
+///part_destroyer_create(ps)
+//Creates a new destroyer in the given particle system. It returns the index of the destroyer. This index must be used in all calls below to set the properties of the destroyer.
+
+
+///part_destroyer_destroy(ps,ind)
+//Destroys destroyer ind in the particle system. Call this if you don't need it anymore to save space.
+
+
+///part_destroyer_destroy_all(ps)
+//Destroys all destroyers in the particle system that have been created.
+
+
+///part_destroyer_exists(ps,ind)
+//Returns whether the indicated destroyer exists in the particle system.
+
+
+///part_destroyer_region(ps,ind,xmin,xmax,ymin,ymax,shape)
+//Sets the region for the destroyer.
+
+
+///part_deflector_clear(ps,ind)
+//Clears the deflector ind to its default settings.
+
+
+///part_deflector_create(ps)
+//Creates a new deflector in the given particle system. It returns the index of the deflector. This index must be used in all calls below to set the properties of the deflector.
+
+
+///part_deflector_destroy(ps,ind)
+//Destroys deflector ind in the particle system. Call this if you don't need it anymore to save space.
+
+
+///part_deflector_destroy_all(ps)
+//Destroys all deflectors in the particle system that have been created.
+
+
+///part_deflector_exists(ps,ind)
+//Returns whether the indicated deflector exists in the particle system.
+
+
+///part_deflector_kind(ps,ind,kind)
+//Sets the kind for the deflector.
+
+
+///part_deflector_region(ps,ind,xmin,xmax,ymin,ymax)
+//Sets the region for the deflector.
+
+
+///part_changer_clear(ps,ind)
+//Clears the changer ind to its default settings.
+
+
+///part_changer_create(ps)
+//Creates a new changer in the given particle system. It returns the index of the changer. This index must be used in all calls below to set the properties of the changer.
+
+
+///part_changer_destroy(ps,ind)
+//Destroys changer ind in the particle system. Call this if you don't need it anymore to save space.
+
+
+///part_changer_destroy_all(ps)
+//Destroys all changers in the particle system that have been created.
+
+
+///part_changer_exists(ps,ind)
+//Returns whether the indicated changer exists in the particle system.
+
+
+///part_changer_region(ps,ind,xmin,xmax,ymin,ymax,shape)
+//Sets the region for the changer.
+
+
+///mplay_connect_status()
+//returns the status of the current connection. 0 = no connection, 1 = IPX connection, 2 = TCP/IP connection, 3 = modem connection, and 4 = serial connection.
+
+
+///mplay_end()
+//ends the current connection.
+
+
+///mplay_init_ipx()
+//initializes an IPX connection.
+
+
+///mplay_init_modem(initstr,phonenr)
+//initializes a modem connection. initstr is the initialization string for the modem (can be empty). phonenr is a string that contains the phone number to ring (e.g. '0201234567'). Only when joining a session (see below) do you need to provide a phone number.
+
+
+///mplay_init_serial(portno,baudrate,stopbits,parity,flow)
+//initializes a serial connection. portno is the port number (1-4). baudrate is the baudrate to be used (100-256K). stopbits indicates the number of stopbits (0 = 1 bit, 1 = 1.5 bit, 2 = 2 bits). parity indicates the parity (0=none, 1=odd, 2=even, 3=mark). And flow indicates the type of flow control (0=none, 1=xon/xoff, 2=rts, 3=dtr, 4=rts and dtr). Returns whether successful. A typical call is mplay_init_serial(1,57600,0,0,4). Give 0 as a first argument to open a dialog for the user to change the settings.
+
+
+///mplay_init_tcpip(addr)
+//initializes a TCP/IP connection. addr is a string containing the web address or IP address, e.g. 'www.gameplay.com' or '123.123.123.12', possibly followed by a port number (e.g. ':12'). Only when joining a session (see below) do you need to provide an address. On a local area network no addresses are necessary.
+
+
+///mplay_ipaddress()
+//returns the IP address of your machine (e.g. '123.123.123.12') as a string. You can e.g. display this somewhere on the screen. Note that this routine is slow so don't call it all the time.
+
+
+///mplay_session_create(sesname,playnumb,playername)
+//creates a new session on the current connection. sesname is a string indicating the name of the session. playnumb is a number that indicates the maximal number of players allowed in this game (use 0 for an arbitrary number). playname is your name as player. Returns whether successful.
+
+
+///mplay_session_end()
+//ends the session for this player.
+
+
+///mplay_session_find()
+//searches for all sessions that still accept players and returns the number of sessions found.
+
+
+///mplay_session_join(numb,playername)
+//makes you join session number numb (0 is the first session). playername is your name as a player. Returns whether successful.
+
+
+///mplay_session_mode(move)
+//sets whether or not to move the session host to another computer when the host ends. move should either be true or false (the default).
+
+
+///mplay_session_name(numb)
+//returns the name of session number numb (0 is the first session). This routine can only be called after calling the previous routine.
+
+
+///mplay_session_status()
+//returns the status of the current session. 0 = no session, 1 = created session, 2 = joined session.
+
+
+///mplay_player_find()
+//searches for all players in the current session and returns the number of players found.
+
+
+///mplay_player_id(numb)
+//returns the unique id of player number numb (0 is the first player, which is always yourself). This routine can only be called after calling the first routine. This id is used in sending and receiving messages to and from individual players.
+
+
+///mplay_player_name(numb)
+//returns the name of player number numb (0 is the first player, which is always yourself). This routine can only be called after calling the previous routine.
+
+
+///mplay_data_mode(guar)
+//sets whether or not to use guaranteed transmission for shared data. guar should either be true (the default) or false.
+
+
+///mplay_data_read(ind)
+//returns the value in location ind (ind between 0 and 1000000). Initially all values are 0.
+
+
+///mplay_data_write(ind,val)
+//write value val (string or real) into location ind (ind between 0 and 1000000).
+
+
+///mplay_message_clear(player)
+//Removes all messages left in the queue from the player (use 0 to remove all message).
+
+
+///mplay_message_count(player)
+//Returns the number of messages left in the queue from the player (use 0 to count all message).
+
+
+///mplay_message_id()
+//Returns the identifier of the last received message.
+
+
+///mplay_message_name()
+//Returns the name of the player who sent the last received message.
+
+
+///mplay_message_player()
+//Returns the player who sent the last received message.
+
+
+///mplay_message_receive(player)
+//receives the next message from the message queue that came from the indicated player (either an identifier or a name). Use 0 for messages from any player. The routine returns whether there was indeed a new message. If so you can use the following routines to get its contents:
+
+
+///mplay_message_send(player,id,val)
+//sends a message to the indicated player (either an identifier or a name; use 0 to send the message to all players). id is an integer message identifier and val is the value (either a real or a string). The message is sent in non-guaranteed mode. If val contains a string the maximal string length allowed is 30000 characters.
+
+
+///mplay_message_send_guaranteed(player,id,val)
+//sends a message to the indicated player (either an identifier or a name; use 0 to send the message to all players). id is an integer message identifier and val is the value (either a real or a string). This is a guaranteed send. If val contains a string the maximal string length allowed is 30000 characters.
+
+
+///mplay_message_value()
+//Returns the value of the last received message.
+
+
+///execute_file(fname)
+//Execute the piece of code in the file.
+
+
+///external_free(dll)
+//Frees the DLL with the given name. This is in particular necessary if the game should remove the DLL. As long as the DLL is not freed it cannot be removed. Best do this e.g. in an end of game event.
+
+
+///window_handle()
+//Returns the window handle for the main window.
+
+
