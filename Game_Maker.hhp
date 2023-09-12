@@ -1,6 +1,13 @@
 [OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Game_Maker.chm
 Contents file=Game_Maker.hhc
+Default topic=files\100_index.html
+Display compile progress=No
+Full-text search=Yes
 Index file=Game_Maker.hhk
+Language=0x809 English (United Kingdom)
+
 
 [FILES]
 files\100_index.html
@@ -193,15 +200,6 @@ files\415_09_1models.html
 files\415_09_final.html
 files\index.html
 files\new.html
-files\gm82core.html
-files\gm82core_constants.html
-files\gm82core_globals.html
-files\gm82core_utility.html
-files\gm82core_files.html
-files\gm82core_colors.html
-files\gm82core_math.html
-files\gm82core_geometry.html
-files\gm82core_strings.html
-files\gm82core_windows.html
-files\gm82core_studio.html
-files\gm82core_license.html
+
+[INFOTYPES]
+
