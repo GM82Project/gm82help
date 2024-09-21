@@ -4,7 +4,7 @@
 
     Initial draft 11 April 2022
     ---------------------------
-    Version 6 - 16 Nov 2022
+    Version 7 - 21 Sep 2024
     
     renex & Floogle
 
@@ -16,7 +16,7 @@
     - Modifying the generated room code by hand can cause the editor's parser to
       crash, as it has been written to be as fast as possible and as a result
       doesn't perform any kind of safety checks.
-    - a gm82 project version 4 is required (you can check the version in the
+    - a gm82 project version 4+ is required (you can check the version in the
       main project .gm82 file). The most recent version of gm82save will
       automatially convert any v3 projects into v4, but the room editor by
       itself doesn't have the ability to read v2 or v3 anymore.
@@ -39,6 +39,7 @@
     - number (strictly a numerical value, can optionally have a min/max)
     - color/colour (hex value)
     - bool/boolean (true/false)
+    - true/false (booleans with a noted default value)
     - instance (another instance from this room)
     - enum (list of options)
     - xy (coordinates, uses 2-position array)
@@ -56,6 +57,10 @@
         -- room
         -- datafile
         -- constant
+        
+    - Note that the "true" and "false" field types are equivalent to "bool" or
+      "boolean", but they only display which value is set by default. You still
+      have to initialize them in the object's create event.
     
     Additionally, a special description field can be used to display
     instructions right in the room editor:
@@ -102,10 +107,12 @@
     - You can then use the variable named after the field in this event.
     - Fields can be inherited from a parent object, much the same way as code.
     
+    
     If the type is not specified, it's assumed to be 'value':
     -----------------------------
     //field timer
     -----------------------------
+    
     
     More examples:    
     -----------------------------
@@ -115,24 +122,38 @@
     //field col: color
     -----------------------------
     
-    Indentation and whitespace is ignored, except for in "//field".
+    
+    Whitespace is ignored, except for in the "//field" part.
     -----------------------------
     //field   one:  value
-    //field three:  value
-    
+    //field three:  value    
     // field broken: string <-- this doesn't work because of the space
     -----------------------------
+    
+    
+    Indentation is used to denote field dependency.
+    -----------------------------
+    //field does_move: false
+        //field move_xy: xy
+        //field move_spd: number
+    -----------------------------
+    - Fields that depend on another field will only be shown in the editor if
+      the field that they depend on is set.
+    - Boolean fields can be used this way for grouping optional fields.
+    - Any hidden fields will not be written out to the instance on save.
+    - Multiple dependency is supported.
+    
     
     Enums require a list of options:
     -----------------------------
     //field option: enum(true,false)
     //field halign: enum(fa_left,fa_center,fa_right)
     //field type: enum("type 1","type 2")
-    //field size: enum(global.size,global.size + 5)
-    
+    //field size: enum(global.size,global.size + 5)    
     //field broken: enum <-- this doesn't work because it doesn't have options
     -----------------------------
     Each option is an expression, so you can use constants, resources etc.
+    
     
     The xy type creates an array with two positions. Example:
     -----------------------------
@@ -142,12 +163,12 @@
     warpY = target[1]
     -----------------------------
 
+
     The number type is strictly a number and can have a min and max:
     -----------------------------
     //field count: number(1,3)
-    //field fric: number
-    //field range: number(-10,10)
-    
+    //field fric:  number
+    //field range: number(-10,10)    
     //field broken: number(2) <-- this doesn't work
     -----------------------------
 
