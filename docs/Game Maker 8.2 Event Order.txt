@@ -85,23 +85,26 @@
   Create order
   ------------
   
-  Normally Create events execute in the same order that instances are placed in
-  the room. When using the builtin room editor, this order can change seemingly
-  randomly for unknown reasons.
+-> When entering a room, Create events execute in the order that the instances
+   are placed in the room.
+
+-> When using the builtin room editor, this order can change seemingly
+   randomly for unknown reasons.
   
-  When using the new 8.2 room editor, order within the same depth is preserved,
-  but instances are sorted by depth positive to negative in such a way that they
-  get created in roughly draw order. Additionally, order within the same depth
-  is preserved throughout editing.
+-> When using the new 8.2 room editor, order within the same depth is preserved,
+   but instances are sorted by depth positive to negative in such a way that
+   they get created in roughly draw order. Additionally, order within the same
+   depth is preserved throughout editing.
   
-  When created ingame, Create events run before instance_create returns. When
-  using instance_create_moving() from Core, which is a shim for
-  action_create_moving, speed/direction/hspeed/vspeed are set before the Create
-  event runs.
+-> When created in code, Create events run before instance_create returns.
   
-  Additionally, if a room change has been scheduled using the various room_goto
-  functions or setting the room variable directly, Create events do not execute
-  on any newly created instances until the new room is entered.
+-> When using instance_create_moving() from Core, which is a shim for
+   action_create_object_motion, speed/direction/hspeed/vspeed are set before the
+   Create event runs.
+   
+-> Additionally, if a room change has been scheduled using the various room_goto
+   functions or setting the room variable directly, Create events do not execute
+   on any newly created instances until the new room is entered.
 
 
 --------------------------------------------------------------------------------
