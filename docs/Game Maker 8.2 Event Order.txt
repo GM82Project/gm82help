@@ -1,7 +1,7 @@
 
     Game Maker 8.2 Event Order
     ==========================
-    version 1 - June 14 2022
+    version 5 - Nov 29 2024
 
     Written by renex and Floogle, using new information and old research by:
 
@@ -71,7 +71,7 @@
 * If automatic draw is off, Draw is skipped.
 
 ** You can swap the order in which Create and Fields+Creation Code execute in
-   the Game Settings. Using Fields with default GM8 order is not recommended.
+   the Game Settings. Using Fields with default GM8 order does not work.
 
 ->  While the game is scheduled for a room change, most code is skipped,
     however a few things can still execute:
