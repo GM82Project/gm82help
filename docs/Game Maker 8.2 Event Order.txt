@@ -149,7 +149,7 @@
     - Will execute every step with a single-image sprite or no sprite.
 - cursor animation is advanced
 - The debug form is updated
-- The game window is updated with the new frame and sleeps until the next frame
+- The window is updated with the new frame and sleeps until the next frame****
 
 ->  Automatic triggers are always executed in the order they display in the
     editor, but manually called triggers execute immediately.
@@ -163,6 +163,9 @@
 
 *** Collision events are more complicated if either instance is solid.
     More details in the next section.
+
+**** In 8.1, the game sleeps before presenting the new frame. This was switched
+     around for 8.2.
 
 
 --------------------------------------------------------------------------------
