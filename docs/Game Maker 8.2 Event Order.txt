@@ -79,6 +79,10 @@
 - solid collision pushback
 - alarms ticking (they won't execute their actions if they hit 0)
 
+->  Note that any instances whose sprites have been replaced at runtime will
+    have broken collision until they move, since the collision data is cached
+    at game load.
+
 
 --------------------------------------------------------------------------------
 
