@@ -1,7 +1,6 @@
 
-    Game Maker 8.2 DirectX 9
-    ========================
-    Extension Documentation
+    Game Maker 8.2 DirectX9
+    =======================
     version 2 - July 2023
 
     Written by Floogle & renex

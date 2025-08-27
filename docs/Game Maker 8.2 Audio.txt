@@ -1,0 +1,137 @@
+
+    Game Maker 8.2 Audio
+    ====================
+    version 1.3
+
+
+  New sound extension based on Cute Framework. Supports Wav and Ogg formats with
+  sound instance control and automatic music fading options. You can also use
+  builtin Sound Resources added through the IDE.
+
+  This document includes some general information about each function group,
+  and what they're most useful for.
+
+  You can find more detailed information for each function in the Johnny Panel.
+
+
+--------------------------------------------------------------------------------
+
+Handling sound resources
+
+  Functions to load and handle sounds from which instances are created.
+
+audio_load(filename)
+audio_load_buffer(buffer)
+audio_load_directory(dir)
+audio_load_included(filename)
+audio_preload_sound(gmsound)
+audio_exists(sound/inst)
+audio_isplaying(index)
+audio_delete(sound)
+
+  These functions allow loading raw pcm data with the specified settings.
+
+audio_load_raw(filename,samplerate,channels,bits,signed)
+audio_load_buffer_raw(buffer,samplerate,channels,bits,signed)
+
+
+--------------------------------------------------------------------------------
+
+WASD Packs
+
+  WASD Packs can contain whole bundles of sounds that can be loaded at once.
+  Ideal for games that are moddable or have lots of content.
+
+
+audio_pack_create(sourcedir,filename)
+audio_pack_load(filename)
+audio_pack_unload(pack)
+audio_pack_extract(filename,outdir)
+
+
+--------------------------------------------------------------------------------
+
+Global state
+
+audio_all_volume(volume)
+audio_all_pause()
+audio_all_resume()
+audio_all_stop()
+
+audio_instance_count()
+audio_instance_number(sound)
+
+
+--------------------------------------------------------------------------------
+
+Sound properties
+
+audio_set_all(inst,vol,pan,pitch,loops)
+audio_set_loop(inst,enabled)
+audio_set_loop_points(soundid,a,[b])
+audio_set_volume(index,volume)
+audio_set_pan(index,pan)
+audio_set_pitch(index,pitch)
+audio_set_pos(inst,pos)
+
+audio_get_instance_list(sound)
+audio_get_length(sound)
+audio_get_loop_point_a(sound)
+audio_get_loop_point_b(sound)
+audio_get_pos(inst)
+
+audio_sfx_volume(volume)
+
+  This function applies a 3D sound formula to a sound.
+  Call every frame for sounds which are meant to be 3D.
+
+audio_apply_3d(inst,vol,pitch,x,y,z,hspeed,vspeed,zspeed,mindist,maxdist,
+               listener_direction,falloff_model,volume_model)
+
+
+--------------------------------------------------------------------------------
+
+Sound effects
+
+  Functions to instantiate and manage sound effects.
+
+audio_play(sound)
+audio_play_ext(sound,vol,pan,pitch,loop)
+audio_play_single(sound)
+audio_play_single_ext(sound,vol,pan,pitch,loop)
+audio_loop(sound)
+audio_loop_single(sound)
+audio_pause(inst)
+audio_resume(inst)
+audio_stop(sound/inst)
+audio_sfx_stop()
+
+
+--------------------------------------------------------------------------------
+
+Music
+
+  Functions to manage the music engine. Music is treated as a separate channel.
+
+audio_music_crossfade(sound,fadetime)
+audio_music_crossfade_ext(sound,fadetime,vol,pan,pitch,loop)
+audio_music_play(sound,[fadeintime])
+audio_music_play_ext(sound,fadeintime,vol,pan,pitch,loop)
+audio_music_switch(sound,fadeouttime,[fadeintime])
+audio_music_switch_ext(sound,fadeouttime,fadeintime,vol,pan,pitch,loop)
+
+audio_music_get_pos()
+audio_music_set_pos(pos)
+
+audio_music_volume(volume)
+audio_music_pitch(pitch)
+audio_music_pan(pan)
+audio_music_loop(enabled)
+audio_music_set_all(volume,pan,pitch,loops)
+
+audio_music_pause()
+audio_music_resume()
+audio_music_stop([fadeouttime])
+
+
+--------------------------------------------------------------------------------
