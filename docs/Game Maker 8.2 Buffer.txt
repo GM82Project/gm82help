@@ -23,7 +23,6 @@ Buffer functions
   Buffers can also be used to more efficiently read binary files by loading
   whole chunks of files in memory rather than one byte at a time.
 
-
 buffer_create([filename])
 buffer_exists(id)
 buffer_clear(id)
@@ -39,7 +38,6 @@ buffer_get_address(id)
 Buffer data handling
 
   These functions can move and transform the data in buffers.
-
 
 buffer_load(id,filename)
 buffer_load_part(id,filename,pos,len)
@@ -69,7 +67,6 @@ buffer_make_pipe(id)
 Data types
 
   Functions to read and write specific data types and bit widths from buffers.
-
 
 buffer_peek(buffer,pos)
 buffer_poke(buffer,pos,value)
@@ -116,7 +113,6 @@ Hashing
 
   These functions take buffers or strings and return their hashes.
 
-
 md5_buffer(id)
 md5_buffer_part(id,pos,len)
 md5_file(filename)
@@ -135,7 +131,6 @@ Listener handling
   Listeners are used by servers to wait for incoming TCP connections and
   connect sockets together.
 
-
 listener_create()
 listener_exists(id)
 listener_is_active(id)
@@ -153,7 +148,6 @@ Sockets
 
   Sockets are reliable pipes between computers. They can also be used within
   the same computer, as a form to connect multiple running programs.
-
 
 socket_close(id)
 socket_connect(id,address,port)
@@ -182,7 +176,6 @@ UDP Sockets
   UDP Sockets are unreliable, but transmit faster than TCP sockets. They're
   ideal for things like game traffic which needs to arrive quickly but isn't
   critical to functionality.
-
 
 udpsocket_create()
 udpsocket_destroy(id)
