@@ -1,139 +1,189 @@
 
-      Game Maker 8.2 Buffer
-      ===================
-      version 1.0
-  
---------------------------------------------------------------------------------
+    Game Maker 8.2 Buffer
+    =====================
+    version 1.0
+
 
   Fork of Maarten Baert's HTTPDLL2 for Game Maker 8.2 focused on memory
   management, with many improvements and new features.
 
+  This document includes some general information about each function group,
+  and what they're most useful for.
+
+  You can find more detailed information for each function in the Johnny Panel.
+
 
 --------------------------------------------------------------------------------
 
-    Quick function reference
-    ------------------------    
-    
-buffer_at_end(id)
-buffer_clear(id)
-buffer_clear_error(id)
-buffer_copy(to,from)
-buffer_copy_part(to,from,pos,len)
-buffer_create()
-buffer_deflate(id)
-buffer_destroy(id)
+Buffer functions
+
+  Buffers are regions of memory that you can reserve to perform certain tasks
+  such as compression, encryption, hashing, and more general memory storage for
+  large data such as game data tables, or things like bitmaps from surfaces.
+  Buffers can also be used to more efficiently read binary files by loading
+  whole chunks of files in memory rather than one byte at a time.
+
+
+buffer_create([filename])
 buffer_exists(id)
-buffer_get_address(id,asrealpointer)
-buffer_get_address_string(id,ashexstring)
+buffer_clear(id)
+buffer_destroy(id)
 buffer_get_error(id)
-buffer_get_pos(id)
-buffer_get_size(id)
-buffer_inflate(id)
+buffer_clear_error(id)
+buffer_at_end(id)
+buffer_get_address(id)
+
+
+--------------------------------------------------------------------------------
+
+Buffer data handling
+
+  These functions can move and transform the data in buffers.
+
+
 buffer_load(id,filename)
 buffer_load_part(id,filename,pos,len)
+buffer_copy(to,from)
+buffer_copy_part(to,from,pos,len)
+buffer_save(id,filename)
+buffer_save_append(id,filename)
+buffer_save_temp(id,filename)
+
+buffer_get_pos(id)
+buffer_get_size(id)
+buffer_set_pos(id,pos)
+buffer_set_size(id,size)
+
+buffer_encode_base64(id,len)
+buffer_decode_base64(id,string)
 buffer_rc4(id,key)
 buffer_rc4_buffer(id,idkey)
-buffer_read_base64(id,len)
-buffer_read_data(id,len)
-buffer_read_double(id)
-buffer_read_float(id)
-buffer_read_hex(id,len)
-buffer_read_i16(id)
-buffer_read_i32(id)
-buffer_read_i64(id)
-buffer_read_i8(id)
-buffer_read_int(id)
+buffer_deflate(id)
+buffer_inflate(id)
+
+buffer_make_pipe(id)
+
+
+--------------------------------------------------------------------------------
+
+Data types
+
+  Functions to read and write specific data types and bit widths from buffers.
+
+
+buffer_peek(buffer,pos)
+buffer_poke(buffer,pos,value)
+
+buffer_read_variable(id)
+buffer_write_variable(id,value)
 buffer_read_string(id)
+buffer_write_string(id,string)
+buffer_read_data(id,len)
+buffer_write_data(id,string)
+buffer_read_hex(id,len)
+buffer_write_hex(id,string)
+
+buffer_read_u8(id)
 buffer_read_u16(id)
 buffer_read_u32(id)
 buffer_read_u64(id)
-buffer_read_u8(id)
-buffer_read_uint(id)
-buffer_save(id,filename)
-buffer_save_append(id,filename)
-buffer_set_pos(id,pos)
-buffer_set_size(id,size)
-buffer_to_string(id)
-buffer_write_base64(id,string)
-buffer_write_data(id,string)
-buffer_write_double(id,value)
-buffer_write_float(id,value)
-buffer_write_hex(id,string)
-buffer_write_i16(id,value)
-buffer_write_i32(id,value)
-buffer_write_i64(id,value)
-buffer_write_i8(id,value)
-buffer_write_int(id,value)
-buffer_write_string(id,string)
+buffer_read_i8(id)
+buffer_read_i16(id)
+buffer_read_i32(id)
+buffer_read_i64(id)
+buffer_read_float(id)
+buffer_read_double(id)
+
+buffer_write_u8(id,value)
 buffer_write_u16(id,value)
 buffer_write_u32(id,value)
 buffer_write_u64(id,value)
-buffer_write_u8(id,value)
-buffer_write_uint(id,value)
-httprequest_clear_post_parameters(id)
-httprequest_clear_request_headers(id)
-httprequest_connect(id,url,post)
-httprequest_create()
-httprequest_destroy(id)
-httprequest_exists(id)
-httprequest_find_response_header(id,name)
-httprequest_get_message_body(id)
-httprequest_get_message_body_buffer(id,buffer_id)
-httprequest_get_message_body_length(id)
-httprequest_get_response_header_count(id)
-httprequest_get_response_header_name(id,index)
-httprequest_get_response_header_value(id,index)
-httprequest_get_state(id)
-httprequest_get_status_code(id)
-httprequest_remove_post_parameter(id,name)
-httprequest_remove_request_header(id,name)
-httprequest_reset(id)
-httprequest_set_post_parameter(id,name,value)
-httprequest_set_post_parameter_file(id,name,filename,buffer_id)
-httprequest_set_request_header(id,name,value,replace)
-httprequest_update(id)
-httprequest_urldecode(string)
-httprequest_urlencode(string,keepspecialchars)
-listeningsocket_accept(id,socket_id)
-listeningsocket_can_accept(id)
-listeningsocket_create()
-listeningsocket_destroy(id)
-listeningsocket_exists(id)
-listeningsocket_is_listening(id)
-listeningsocket_start_listening(id,ipv6,port,local)
-listeningsocket_stop_listening(id)
-md5_begin()
-md5_end()
-md5_read_buffer(id)
-md5_read_buffer_part(id,pos,len)
-md5_read_file(filename)
-md5_read_string(string)
-md5_result()
-sha1_begin()
-sha1_end()
-sha1_read_buffer(id)
-sha1_read_buffer_part(id,pos,len)
-sha1_read_file(filename)
-sha1_read_string(string)
-sha1_result()
+buffer_write_i8(id,value)
+buffer_write_i16(id,value)
+buffer_write_i32(id,value)
+buffer_write_i64(id,value)
+buffer_write_float(id,value)
+buffer_write_float2(id,val1,val2)
+buffer_write_float3(id,val1,val2,val3)
+buffer_write_float4(id,val1,val2,val3,val4)
+buffer_write_float12(id,val1,val2,val3,val4,val5,val6,val7,val8,etc...)
+buffer_write_double(id,value)
+
+
+--------------------------------------------------------------------------------
+
+Hashing
+
+  These functions take buffers or strings and return their hashes.
+
+
+md5_buffer(id)
+md5_buffer_part(id,pos,len)
+md5_file(filename)
+md5_string(string)
+
+sha1_buffer(id)
+sha1_buffer_part(id,pos,len)
+sha1_file(filename)
+sha1_string(string)
+
+
+--------------------------------------------------------------------------------
+
+Listener handling
+
+  Listeners are used by servers to wait for incoming TCP connections and
+  connect sockets together.
+
+
+listener_create()
+listener_exists(id)
+listener_is_active(id)
+listener_destroy(id)
+
+listener_start(id,ipv6,port,local)
+listener_pending(id)
+listener_accept(id,socket_id)
+listener_stop(id)
+
+
+--------------------------------------------------------------------------------
+
+Sockets
+
+  Sockets are reliable pipes between computers. They can also be used within
+  the same computer, as a form to connect multiple running programs.
+
+
+socket_close(id)
 socket_connect(id,address,port)
 socket_create()
 socket_destroy(id)
 socket_exists(id)
 socket_get_peer_address(id)
-socket_get_read_data_length(id)
+socket_get_receiving_size(id)
+socket_get_sending_size(id)
 socket_get_state(id)
-socket_get_write_data_length(id)
-socket_read_data(id,buffer_id,bytes)
-socket_read_message(id,buffer_id)
-socket_read_message_delimiter(id,buffer_id,delimiter)
+socket_read_data(id,buffer,length)
+socket_read_message(id,buffer)
+socket_read_message_delimiter(id,buffer,delimiter)
+socket_receive(id)
 socket_reset(id)
-socket_shut_down(id)
-socket_update_read(id)
-socket_update_write(id)
-socket_write_data(id,buffer_id)
-socket_write_message(id,buffer_id)
-socket_write_message_delimiter(id,buffer_id,delimiter)
+socket_send(id)
+socket_write_data(id,buffer)
+socket_write_message(id,buffer)
+socket_write_message_delimiter(id,buffer,delimiter)
+
+
+--------------------------------------------------------------------------------
+
+UDP Sockets
+
+  UDP Sockets are unreliable, but transmit faster than TCP sockets. They're
+  ideal for things like game traffic which needs to arrive quickly but isn't
+  critical to functionality.
+
+
 udpsocket_create()
 udpsocket_destroy(id)
 udpsocket_exists(id)
@@ -148,5 +198,6 @@ udpsocket_send(id,buffer_id)
 udpsocket_set_destination(id,address,port)
 udpsocket_set_ttl(id,ttl)
 udpsocket_start(id,ipv6,port)
-  
+
+
 --------------------------------------------------------------------------------
