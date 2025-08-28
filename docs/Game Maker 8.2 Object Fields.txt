@@ -1,9 +1,6 @@
 
     Game Maker 8.2 Object Fields Feature
     ====================================
-
-    Initial draft 11 April 2022
-    ---------------------------
     Version 7 - 21 Sep 2024
     
     renex & Floogle
@@ -18,7 +15,7 @@
       doesn't perform any kind of safety checks.
     - a gm82 project version 4+ is required (you can check the version in the
       main project .gm82 file). The most recent version of gm82save will
-      automatially convert any v3 projects into v4, but the room editor by
+      automatially convert any v3 projects into v4+, but the room editor by
       itself doesn't have the ability to read v2 or v3 anymore.
 
 

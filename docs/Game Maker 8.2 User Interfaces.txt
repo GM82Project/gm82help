@@ -6,3 +6,52 @@
     made by renex
 
 --------------------------------------------------------------------------------
+
+    This extension package contains functions to create and handle hierarchical
+    user interface layouts with basic interaction capabilities.
+
+
+--------------------------------------------------------------------------------
+
+Quick function reference
+
+
+ui_append_child(element,child)
+ui_create(type,[handler])
+ui_create_button(text,script,[sprite,frame])
+ui_default_handler(message,data)
+ui_default_styler(element)
+ui_destroy(element)
+ui_draw(ui,[x,y])
+ui_draw_default_tooltip(x,y)
+ui_get_alt()
+ui_get_by_name(name)
+ui_get_help()
+ui_get_variable(element,variable)
+ui_has_message(message)
+ui_orphan(element)
+ui_process_messages(element)
+ui_push_default_keyboard()
+ui_push_default_messages()
+ui_push_default_mouse([x,y])
+ui_push_message(message,[data])
+ui_set_alt(element,alt,help)
+ui_set_blend(element,color,alpha)
+ui_set_blend(element,state)
+ui_set_constraints(element,minwidth,minheight,maxwidth,maxheight)
+ui_set_enabled(element,enabled)
+ui_set_format(element,resize,direction1,direction2)
+ui_set_handler(element,handler)
+ui_set_keyboard_enabled(element,enabled)
+ui_set_name(element,name)
+ui_set_offset(element,xoffset,yoffset)
+ui_set_pos(element,x,y)
+ui_set_size(element,width,height,[margin,padding])
+ui_set_style(element,style)
+ui_set_text(element,string)
+ui_set_transform(ui,rotation,xscale,yscale)
+ui_set_variable(element,variable,value)
+ui_settings(setting,value)
+
+
+--------------------------------------------------------------------------------

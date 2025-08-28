@@ -10,7 +10,7 @@
 
   General considerations
   
-    -> This extension requires the Game Maker 8.2 Network extension. If it is
+    -> This extension requires the Game Maker 8.2 Buffer extension. If it is
        not added to the project, it will be automatically added when compiling,
        so make sure your project is compatible with it.
     -> This extension makes extensive in-memory modifications to the Game Runner
