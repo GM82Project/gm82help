@@ -101,7 +101,7 @@
     -----------------------------
     
     - Initialize the fields in the create event to prevent errors.
-    - You can then use the variable named after the field in this event.
+    - You can then use the variable named after the field in room start.
     - Fields can be inherited from a parent object, much the same way as code.
     
     
