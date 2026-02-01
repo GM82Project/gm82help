@@ -135,8 +135,9 @@
 - Instance Update*
     - Friction is applied
     - Gravity is applied
+    - Paths update
+    - End Of Path
     - Instance is moved to new position
-- End Of Path*
 - Outside room
 - Intersect Boundary
 - Collision events***
