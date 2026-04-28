@@ -1,0 +1,12 @@
+grid {
+    u32 601
+    u32 width
+    u32 height
+    height * width [
+        u32 is string
+        f64 real
+        u32 string length {
+            string
+        }
+    ]
+}
