@@ -3,7 +3,7 @@ Game Maker 8.2 has a few command line options.
 
 1. Building a game from source
 
-    GameMaker.exe --build [project] [exe]    
+    GameMaker.exe [project] --build [exe]    
     This will produce an executable at the specified location.
 
 
