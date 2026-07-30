@@ -1,7 +1,7 @@
 
     Game Maker 8.2 DirectX9
     =======================
-    version 2 - July 2023
+    version 3 - July 2026
 
     Written by Floogle & renex
 
@@ -13,14 +13,16 @@
     -> This extension requires the Game Maker 8.2 Buffer extension. If it is
        not added to the project, it will be automatically added when compiling,
        so make sure your project is compatible with it.
+       Additionally, whenever a "buffer" is mentioned, it is usually referring
+       to the buffer objects created by such extension.
     -> This extension makes extensive in-memory modifications to the Game Runner
-       when launching the game, in order to activate DirectX 9. Any extensions
-       that inject DirectX state, like Game Maker 8.2 DirectX8, are not
-       compatible by definition.
+       when launching the game, in order to activate DirectX 9 features. Any
+       extensions that also inject DirectX state, like 8.2 DirectX8, Surface
+       Fix, or Shader Dll, are not simultaneously compatible.
     -> While the extension aims to improve your control over the graphics
        pipeline, making incorrect assumptions or changing the wrong settings
        has the potential to decrease performance. Carefully measure your
-       render times, and fine-tune things to find the fastest configuration.
+       render times, and fine-tune things to find the fastest configurations.
     -> Shaders and Vertex Buffers take a lot of effort to use, so be prepared to
        pour in when you decide to use them. Feel free to reach out to us on the
        Discord server if you run into any issues.
@@ -105,10 +107,13 @@ surface_discard(id)
     Deletes a surface.
     -> This function prevents errors when the surface doesn't exist.
 surface_set_depth(id)
-    Sets the depth buffer to use a different surface.
+    Sets the depth buffer to use a different surface. This function can be used
+    to create advanced 3d rendering effects.
+surface_load(id,filename)
+    Loads a surface from an image file.
 
 buffer_get_surface(buffer,surface)
-    buffer: a gm82net buffer to receive the surface contents.
+    buffer: a buffer to receive the surface contents.
     surface: a surface to get the contents from.
     This function will retrieve the surface's color data into the buffer.
     -> Each pixel is stored as an u32 0xAABBGGRR color value.
@@ -117,13 +122,13 @@ buffer_get_surface(buffer,surface)
     -> To get a specific (x,y) pixel from the buffer, the address would be: 
        ((y * width) + x) * 4
     -> To get the alpha and color values of a pixel:
-       pixel_u32 = buffer_read_u32(b)
-       alpha = argb_get_alpha(pixel_u32)
-       color = argb_get_color(pixel_u32)
-    -> Do note that this function is very slow, so use it sparingly.
+       pixel= buffer_read_u32(b)
+       alpha = argb_get_alpha(pixel)
+       color = argb_get_color(pixel)
+    -> Do note that this function is relatively slow, so use it sparingly.
     
 buffer_set_surface(buffer,surface)
-    buffer: a gm82net buffer with the color data.
+    buffer: a buffer with the color data.
     surface: a surface to receive the contents.
     This function will push the buffer's color data to the surface.
     -> The bufer must have enough data in it (at least width*height*4 bytes).
@@ -443,7 +448,8 @@ shader_draw_shadertoy(shader,x,y,w,h,time)
        integers, while 1.0/1024.0 evaluates to 0.0009765625.
     -> Whenever you modify a position-type vec4, make sure that the w coordinate
        is set to 1.0 before multiplying with a matrix, or your coordinates may
-       become completely corrupted.
+       become corrupted. The same applies to any normal vector types, which
+       should have a w component of 0.0 instead.
 
 
 --------------------------------------------------------------------------------
@@ -471,9 +477,9 @@ shader_vertex_create_base64(string)
     -> Don't call this multiple times. It's recommended to call this once for
        each shader during a load screen or game start.
 shader_vertex_create_buffer(buffer)
-    buffer: a gm82net buffer containing a vertex shader.
+    buffer: a buffer containing a vertex shader.
     returns: the vertex shader.
-    Creates a new vertex shader from a gm82net buffer.
+    Creates a new vertex shader from a buffer.
     -> A reference to the new vertex shader is returned.
     -> Don't call this multiple times. It's recommended to call this once for
        each shader during a load screen or game start.
@@ -539,9 +545,11 @@ shader_vertex_uniform_matrix(uniform,mtx_type)
     -> Accepted matrices are: mtx_world, mtx_view, mtx_projection,
        mtx_world_view, mtx_view_projection, mtx_world_view_projection
     -> Notice that the world matrix will change whenever a transform is applied.
+       Additionally, the projection and view matrices change when the projection
+       is modified.
 shader_vertex_uniform_f_buffer(uniform,buffer)
     uniform: a uniform name, or its register ID
-    buffer: a gm82net containing the uniform data
+    buffer: a containing the uniform data
     Copies the given buffer data into the float uniform in the vertex shader.
     -> Buffers must contain sets of 4 32-bit floats.
     -> Uniform names are accepted as strings.
@@ -551,7 +559,7 @@ shader_vertex_uniform_f_buffer(uniform,buffer)
     -> This function should be called after setting the relevant vertex shader.
 shader_vertex_uniform_b_buffer(uniform,buffer)
     uniform: a uniform name, or its register ID
-    buffer: a gm82net containing the uniform data
+    buffer: a containing the uniform data
     Copies the given buffer data into the boolean uniform in the vertex shader.
     -> Buffers must contain sets of 4 32-bit booleans (0 or 1 integers).
     -> Uniform names are accepted as strings.
@@ -561,7 +569,7 @@ shader_vertex_uniform_b_buffer(uniform,buffer)
     -> This function should be called after setting the relevant vertex shader.
 shader_vertex_uniform_i_buffer(uniform,buffer)
     uniform: a uniform name, or its register ID
-    buffer: a gm82net containing the uniform data
+    buffer: a containing the uniform data
     Copies the given buffer data into the integer uniform in the vertex shader.
     -> Buffers must contain sets of 4 32-bit integers.
     -> Uniform names are accepted as strings.
@@ -619,9 +627,9 @@ shader_pixel_create_base64(string)
     -> Don't call this multiple times. It's recommended to call this once for
        each shader during a load screen or game start.
 shader_pixel_create_buffer(buffer)
-    buffer: a gm82net buffer containing a pixel shader.
+    buffer: a buffer containing a pixel shader.
     returns: the pixel shader.
-    Creates a new pixel shader from a gm82net buffer.
+    Creates a new pixel shader from a buffer.
     -> A reference to the new pixel shader is returned.
     -> Don't call this multiple times. It's recommended to call this once for
        each shader during a load screen or game start.
@@ -687,9 +695,11 @@ shader_pixel_uniform_matrix(uniform,mtx_type)
     -> Accepted matrices are: mtx_world, mtx_view, mtx_projection,
        mtx_world_view, mtx_view_projection, mtx_world_view_projection
     -> Notice that the world matrix will change whenever a transform is applied.
+       Additionally, the projection and view matrices change when the projection
+       is modified.
 shader_pixel_uniform_f_buffer(uniform,buffer)
     uniform: a uniform name, or its register ID
-    buffer: a gm82net containing the uniform data
+    buffer: a containing the uniform data
     Copies the given buffer data into the float uniform in the pixel shader.
     -> Buffers must contain sets of 4 32-bit floats.
     -> Uniform names are accepted as strings.
@@ -699,7 +709,7 @@ shader_pixel_uniform_f_buffer(uniform,buffer)
     -> This function should be called after setting the relevant pixel shader.
 shader_pixel_uniform_b_buffer(uniform,buffer)
     uniform: a uniform name, or its register ID
-    buffer: a gm82net containing the uniform data
+    buffer: a containing the uniform data
     Copies the given buffer data into the boolean uniform in the pixel shader.
     -> Buffers must contain sets of 4 32-bit booleans (0 or 1 integers).
     -> Uniform names are accepted as strings.
@@ -709,7 +719,7 @@ shader_pixel_uniform_b_buffer(uniform,buffer)
     -> This function should be called after setting the relevant pixel shader.
 shader_pixel_uniform_i_buffer(uniform,buffer)
     uniform: a uniform name, or its register ID
-    buffer: a gm82net containing the uniform data
+    buffer: a containing the uniform data
     Copies the given buffer data into the integer uniform in the pixel shader.
     -> Buffers must contain sets of 4 32-bit integers.
     -> Uniform names are accepted as strings.
@@ -812,7 +822,7 @@ vertex_format_delete(format)
     and manage vertex buffers:
 
 vertex_buffer_create(buffer,format,slot)
-    Creates a vbuffer from a gm82net buffer using the supplied format and slot
+    Creates a vbuffer from a buffer using the supplied format and slot
     as a template.
 vertex_buffer_bind(vbuffer,slot)
     Binds a vbuffer to a specific buffer slot. More on slots later.
@@ -833,7 +843,7 @@ vertex_buffer_delete(vbuffer)
     instanced rendering modes.
 
 index_buffer_create(buffer,ib_...)
-    Creates an index buffer from a gm82net buffer, using the specified format
+    Creates an index buffer from a buffer, using the specified format
     constant (either ib_format_16 using buffer u16, or ib_format_32 using
     buffer u32).
 index_buffer_delete(ibuffer)
