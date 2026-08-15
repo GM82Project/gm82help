@@ -1,27 +1,26 @@
 
-    Game Maker 8.2 Object Fields Feature
-    ====================================
-    Version 7 - 21 Sep 2024
+    Game Maker 8.2 Fields Feature
+    =============================
+    Version 8 - 15 Aug 2026
     
     renex & Floogle
 
 --------------------------------------------------------------------------------
 
-0. Initial remarks
+1. Initial remarks
 
     - The builtin GM8 room editor cannot be used for any of this functionality.
-    - Modifying the generated room code by hand can cause the editor's parser to
-      crash, as it has been written to be as fast as possible and as a result
-      doesn't perform any kind of safety checks.
+      You must use the new enhanced room editor with the .gm82 project format.
     - a gm82 project version 4+ is required (you can check the version in the
-      main project .gm82 file). The most recent version of gm82save will
-      automatially convert any v3 projects into v4+, but the room editor by
-      itself doesn't have the ability to read v2 or v3 anymore.
-
+      main project .gm82 file). Re-saving the project in the IDE will usually
+      upgrade it to the newest version.
+    - Modifying the generated creation code by hand can cause the editor to
+      crash on load, as it is designed to expect a strict formatting style.
+    
 
 --------------------------------------------------------------------------------
 
-1. What are fields?
+2. What are fields?
 
     "Fields" are a neat way to declare "templates" for room creation code.
     Instead of having to remember or look in the object code to figure out what
@@ -32,17 +31,17 @@
     Fields can be of type:
 
     - value (gml expression)
-    - string (treated as text, quotes and apostrophes are escaped automatically)
+    - string (treated as text, quotes and ticks are escaped automatically)
     - number (strictly a numerical value, can optionally have a min/max)
-    - color/colour (hex value)
+    - color/colour
     - bool/boolean (true/false)
-    - true/false (booleans with a noted default value)
+    - true/false (booleans with a default value)
     - instance (another instance from this room)
     - enum (list of options)
     - xy (coordinates, uses 2-position array)
     - angle (0-360)
     - radius (length value)
-    - resource (any of the resource types:)
+    - any of these resource types:
         -- sprite
         -- sound
         -- background
@@ -56,28 +55,29 @@
         -- constant
         
     - Note that the "true" and "false" field types are equivalent to "bool" or
-      "boolean", but they only display which value is set by default. You still
-      have to initialize them in the object's create event.
+      "boolean", but they merely display which value is the default. You still
+      have to initialize them in the object's create event!
     
-    Additionally, a special description field can be used to display
-    instructions right in the room editor:
+    
+    Additionally, a description field can be used to display instructions
+    right in the room editor:
     -----------------------------
     /*desc
-    This object is used to group a selection of Yoku Blocks.
-    Placing it in a room will activate any blocks inside of it,
-    when the Player object of the engine enters it.
+        This object is used to group a selection of Yoku Blocks.
+        Placing it in a room will activate any blocks inside of it,
+        when the Player object of the engine enters it.
     */
     -----------------------------
     
-    For better room editor integration, it's possible to define a preview field:
+    
+    For better integration, it's also possible to define a preview field:
     -----------------------------
     /*preview
         draw_text(x,y,"Hello world!")
     */
     -----------------------------
     Any code inside of the preview field will be executed on the instance's draw
-    event in the room editor. Keep the code self-contained, don't modify any
-    variables, and try to prevent errors as the whole system is rather delicate.
+    event in the room editor. 
     
     You can use the following functions inside of a preview field:
     
@@ -90,10 +90,27 @@
     - ShaderFromBase64(string): loads a shader from a base64 packed string
     - ShaderFromPack(script name): loads a shader from an Anvil packed shader
     
+    There are some considerations due to preview fields running code:
+    - Declare all your local variables with var to prevent collisions with
+      the editor's builtin global variables.
+    - Don't modify any instance variables, it can break the editor state.
+    - Don't throw message boxes or errors since the code runs every frame.
+    - Don't do a lot of computation as it can slow the editor down.
+    - You can use variables to store state between calls, but give them safe
+      names such as "__field_preview_etc".
+    
+    
+    Override fields are also available to change certain room settings whenever
+    those objects are selected in the palette:    
+    -----------------------------
+    //override grid 16,16,8,8
+    -----------------------------
+    This would change the grid to 16x16 with an 8x8 offset for this object.
+    
 
 --------------------------------------------------------------------------------
 
-2. Field declarations are placed on Room Start events
+3. Field declarations are placed on Room Start events
 
     Fields can only be used in room start events, in a format like this:
     -----------------------------
@@ -136,9 +153,9 @@
     -----------------------------
     - Fields that depend on another field will only be shown in the editor if
       the field that they depend on is set.
-    - Boolean fields can be used this way for grouping optional fields.
-    - Any hidden fields will not be written out to the instance on save.
-    - Multiple dependency is supported.
+    - Boolean fields can be used this way for folding optional fields.
+    - Any hidden/unset fields will not be written out to the instance on save.
+    - Multiple dependency levels are supported.
     
     
     Enums require a list of options:
@@ -172,10 +189,10 @@
 
 --------------------------------------------------------------------------------
 
-3. The new room editor technology
+4. The new room editor technology
 
-    The 8.2 room editor will parse and detect any issues with field declarations
-    in objects, when they're loaded (f.ex. when selected for the first time).
+    The 8.2 room editor will parse and detect any issues with field
+    declarations in objects.
     
     Valid fields are displayed for editing, and will be compiled to specially
     formatted creation code.
@@ -196,7 +213,7 @@
 
 --------------------------------------------------------------------------------
 
-4. Instance ids
+5. Instance ids
 
     In order to make instance ids possible, a new system was developed.
     
@@ -209,8 +226,7 @@
       anywhere in your code, but remember that they will only point to a valid
       instance in the room they're stored in.
     - When editing a room, the first part of the name is omitted, so you'd only
-      see the "0EEDFADE" part. This is normal, as the room name is written down
-      when saving.
+      see the "0EEDFADE" part.
     - The old "copy object name" button will now instead copy the unique
       instance name for use in code.
 
